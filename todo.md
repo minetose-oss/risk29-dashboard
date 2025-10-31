@@ -125,3 +125,19 @@
 - [x] Apply color scheme across dashboard
 - [x] Test all customization features
 - [x] Ensure settings persist across page reloads
+
+## Phase 9: Multiple Dashboards
+
+- [x] Create DashboardProfileContext for managing profiles
+- [x] Define 3 preset profiles (Conservative, Balanced, Aggressive)
+- [x] Conservative: High weight on Liquidity & Credit, low thresholds (40-60)
+- [x] Balanced: Equal weights, normal thresholds (60-75)
+- [x] Aggressive: High weight on Valuation & Technical, high thresholds (70-85)
+- [x] Build dashboard switcher UI component
+- [x] Add profile selector dropdown in header
+- [x] Implement weighted scoring calculation
+- [x] Apply profile-specific thresholds to alerts
+- [x] Save active profile to localStorage
+- [x] Test switching between profiles
+- [x] Verify weighted scores update correctly
+- [x] Test alert thresholds for each profile

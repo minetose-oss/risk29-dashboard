@@ -8,6 +8,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { exportToCSV, exportChartAsPNG, generateHistoricalData } from "@/lib/exportUtils";
 import { toast } from "sonner";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useDashboardProfile, DashboardProfile } from "@/contexts/DashboardProfileContext";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from '@dnd-kit/core';
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
@@ -23,6 +25,7 @@ interface CategoryData {
 
 export default function Home() {
   const { theme, toggleTheme } = useTheme();
+  const { profile, setProfile, config, getWeightedScore } = useDashboardProfile();
   const [riskData, setRiskData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [visibleCategories, setVisibleCategories] = useState<string[]>(() => {
@@ -115,7 +118,18 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  const score = riskData?.score || 20;
+  // Calculate weighted score based on profile
+  const categoryScores = {
+    liquidity: riskData?.categories?.liquidity?.score || 50,
+    valuation: riskData?.categories?.valuation?.score || 48,
+    macro: riskData?.categories?.macro?.score || 24,
+    credit: riskData?.categories?.credit?.score || 11,
+    technical: riskData?.categories?.technical?.score || 10,
+    sentiment: riskData?.categories?.sentiment?.score || 5,
+    qualitative: riskData?.categories?.qualitative?.score || 0,
+    global: riskData?.categories?.global?.score || 0,
+  };
+  const score = getWeightedScore(categoryScores);
   const lastUpdate = riskData?.last_updated 
     ? new Date(riskData.last_updated).toLocaleDateString('en-US', {
         year: 'numeric',
@@ -234,6 +248,31 @@ export default function Home() {
             <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
           </div>
           <div className="flex items-center gap-3">
+            <Select value={profile} onValueChange={(value) => setProfile(value as DashboardProfile)}>
+              <SelectTrigger className="w-[180px]">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="conservative">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span>Conservative</span>
+                  </div>
+                </SelectItem>
+                <SelectItem value="balanced">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <span>Balanced</span>
+                  </div>
+                </SelectItem>
+                <SelectItem value="aggressive">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <span>Aggressive</span>
+                  </div>
+                </SelectItem>
+              </SelectContent>
+            </Select>
             {toggleTheme && (
               <Button
                 onClick={toggleTheme}

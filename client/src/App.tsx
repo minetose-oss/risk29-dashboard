@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { ColorSchemeProvider } from "./contexts/ColorSchemeContext";
+import { DashboardProfileProvider } from "./contexts/DashboardProfileContext";
 import Home from "./pages/Home";
 import CategoryDetail from "./pages/CategoryDetail";
 import Settings from "./pages/Settings";
@@ -41,10 +42,12 @@ function App() {
         switchable
       >
         <ColorSchemeProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
+          <DashboardProfileProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+            </TooltipProvider>
+          </DashboardProfileProvider>
         </ColorSchemeProvider>
       </ThemeProvider>
     </ErrorBoundary>
