@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { TrendingDown, Activity, BarChart3 } from "lucide-react";
@@ -204,24 +205,29 @@ export default function Home() {
           <h2 className="text-xl font-semibold mb-6">📊 Risk Breakdown by Category</h2>
           
           <div className="space-y-4">
-            {categories.map((category, index) => (
-              <div key={index} className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xl">{category.icon}</span>
-                    <span className="font-medium">{category.name}</span>
+            {categories.map((category, index) => {
+              const categoryId = category.name.toLowerCase().replace(' ', '');
+              return (
+                <Link key={index} href={`/category/${categoryId}`}>
+                  <div className="space-y-2 p-4 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xl">{category.icon}</span>
+                        <span className="font-medium">{category.name}</span>
+                      </div>
+                      <span className={`text-2xl font-bold ${category.color}`}>
+                        {category.score}
+                      </span>
+                    </div>
+                    <Progress 
+                      value={category.score} 
+                      className="h-2"
+                    />
+                    <p className="text-xs text-muted-foreground">{category.signals} signals tracked</p>
                   </div>
-                  <span className={`text-2xl font-bold ${category.color}`}>
-                    {category.score}
-                  </span>
-                </div>
-                <Progress 
-                  value={category.score} 
-                  className="h-2"
-                />
-                <p className="text-xs text-muted-foreground">{category.signals} signals tracked</p>
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </Card>
 

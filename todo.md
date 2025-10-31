@@ -16,3 +16,14 @@
 
 - [x] Project initialization
 - [x] Basic structure setup
+
+## New Features to Add
+
+- [x] Create category detail pages for all 8 categories
+- [x] Add routing to category pages (/category/liquidity, etc.)
+- [x] Display individual signals with current values
+- [x] Show risk scores for each signal
+- [x] Add interpretation (Low Score Good vs High Score Risk)
+- [x] Display current status for each signal
+- [x] Add "Back to Dashboard" navigation button
+- [x] Make category cards clickable from main dashboard
