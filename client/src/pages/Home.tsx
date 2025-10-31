@@ -313,7 +313,12 @@ export default function Home() {
               <FileDown className="w-4 h-4" />
               Export CSV
             </Button>
-            <Link href="/custom-indicator">
+            <Link href="/predictions">
+            <Button variant="outline" size="sm">
+              🔮 Predict
+            </Button>
+          </Link>
+          <Link href="/custom-indicator">
             <Button variant="outline" size="sm">
               🔧 Custom
             </Button>

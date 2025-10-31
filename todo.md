@@ -160,3 +160,22 @@
 - [x] Save custom indicators to localStorage
 - [x] Add indicator management (create, edit, delete)
 - [x] Test custom indicators with different weights
+
+## Phase 7: Predictive Analytics
+
+- [x] Create prediction engine using linear regression
+- [x] Implement trend analysis algorithm
+- [x] Calculate momentum and direction indicators
+- [x] Build 7-day prediction model
+- [x] Build 30-day prediction model
+- [x] Add confidence intervals for predictions
+- [x] Implement anomaly detection algorithm
+- [x] Detect sudden spikes and drops
+- [x] Calculate z-scores for anomaly threshold
+- [x] Create Predictions page component
+- [x] Add prediction charts with confidence bands
+- [x] Show trend direction indicators
+- [x] Display anomaly alerts
+- [x] Integrate with LINE alert system
+- [x] Test predictions with historical data
+- [x] Validate anomaly detection accuracy
