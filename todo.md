@@ -261,3 +261,42 @@
 - [x] Fix "Signal Not Found" error when clicking "View Detailed Analysis" from signal cards
 - [x] Fix signal ID mapping between signal cards and detail page
 - [x] Ensure signal detail page can load data from risk_data.json correctly
+
+## Phase 14: Mobile App Experience
+
+- [x] Improve mobile responsive design across all pages
+- [x] Add swipe gestures for category navigation
+- [x] Implement bottom navigation bar for mobile
+- [x] Add pull-to-refresh functionality
+- [x] Optimize touch targets for mobile (min 44px)
+- [x] Add mobile-specific layouts for dashboard
+- [x] Implement hamburger menu for mobile
+- [x] Add gesture-based chart interactions
+- [x] Optimize performance for mobile devices
+- [x] Test on various mobile screen sizes
+
+## Phase 15: Smart Notifications
+
+- [x] Create notification settings page
+- [x] Implement daily risk summary notification
+- [x] Implement weekly risk report notification
+- [x] Add customizable notification schedule
+- [x] Create notification templates
+- [x] Add notification history log
+- [x] Implement notification preferences (email format)
+- [x] Add one-click unsubscribe option
+- [x] Test notification delivery timing
+- [x] Add notification preview feature
+
+## Phase 16: Advanced Analytics
+
+- [x] Create risk heatmap calendar component
+- [x] Implement sector rotation analysis chart
+- [x] Add volatility clustering detection algorithm
+- [x] Create correlation network graph
+- [x] Add risk distribution histogram
+- [x] Implement rolling statistics calculator
+- [x] Create advanced analytics page
+- [x] Add interactive tooltips for all charts
+- [x] Implement data export for analytics
+- [x] Test analytics calculations accuracy

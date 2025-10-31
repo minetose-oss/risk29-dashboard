@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import InstallPrompt from "./components/InstallPrompt";
+import MobileBottomNav from "./components/MobileBottomNav";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
@@ -18,6 +19,7 @@ import Correlation from "./pages/Correlation";
 import Scenarios from "./pages/Scenarios";
 import Portfolio from "./pages/Portfolio";
 import Alerts from "./pages/Alerts";
+import Analytics from "./pages/Analytics";
 
 function Router() {
   return (
@@ -31,6 +33,7 @@ function Router() {
       <Route path="/scenarios" component={Scenarios} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/alerts" component={Alerts} />
+      <Route path="/analytics" component={Analytics} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -56,6 +59,7 @@ function App() {
               <Toaster />
               <InstallPrompt />
               <Router />
+              <MobileBottomNav />
             </TooltipProvider>
           </DashboardProfileProvider>
         </ColorSchemeProvider>

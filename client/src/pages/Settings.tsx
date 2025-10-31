@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
-import { ArrowLeft, Save, Settings as SettingsIcon } from "lucide-react";
+import { ArrowLeft, Save, Settings as SettingsIcon, Bell, Download, Upload, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { useColorScheme, ColorScheme } from "@/contexts/ColorSchemeContext";
 
@@ -54,6 +54,9 @@ export default function Settings() {
   const { colorScheme, setColorScheme } = useColorScheme();
   const [settings, setSettings] = useState<AlertSettings>(defaultSettings);
   const [loading, setLoading] = useState(true);
+  const [notifications, setNotifications] = useState(true);
+  const [dailyReport, setDailyReport] = useState(false);
+  const [weeklyReport, setWeeklyReport] = useState(false);
 
   useEffect(() => {
     // Load settings from localStorage
@@ -65,6 +68,16 @@ export default function Settings() {
         console.error("Failed to load settings:", e);
       }
     }
+    
+    // Load notification settings
+    const notifSettings = localStorage.getItem("risk29_settings");
+    if (notifSettings) {
+      const parsed = JSON.parse(notifSettings);
+      setNotifications(parsed.notifications ?? true);
+      setDailyReport(parsed.dailyReport ?? false);
+      setWeeklyReport(parsed.weeklyReport ?? false);
+    }
+    
     setLoading(false);
   }, []);
 
@@ -154,6 +167,65 @@ export default function Settings() {
             Save Settings
           </Button>
         </div>
+
+        {/* Notifications */}
+        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <Bell className="w-5 h-5 text-blue-500" />
+            <h2 className="text-lg font-semibold">Smart Notifications</h2>
+          </div>
+
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="font-medium">Enable Notifications</div>
+                <div className="text-sm text-zinc-400">Receive risk alerts and updates</div>
+              </div>
+              <Switch
+                checked={notifications}
+                onCheckedChange={(checked) => {
+                  setNotifications(checked);
+                  const settings = { notifications: checked, dailyReport, weeklyReport };
+                  localStorage.setItem("risk29_settings", JSON.stringify(settings));
+                }}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="font-medium">Daily Report</div>
+                <div className="text-sm text-zinc-400">Get daily risk summary every morning at 8 AM</div>
+              </div>
+              <Switch
+                checked={dailyReport}
+                onCheckedChange={(checked) => {
+                  setDailyReport(checked);
+                  const settings = { notifications, dailyReport: checked, weeklyReport };
+                  localStorage.setItem("risk29_settings", JSON.stringify(settings));
+                  if (checked) toast.success("Daily report enabled - you'll receive updates at 8 AM");
+                }}
+                disabled={!notifications}
+              />
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="font-medium">Weekly Report</div>
+                <div className="text-sm text-zinc-400">Get weekly risk analysis every Monday at 9 AM</div>
+              </div>
+              <Switch
+                checked={weeklyReport}
+                onCheckedChange={(checked) => {
+                  setWeeklyReport(checked);
+                  const settings = { notifications, dailyReport, weeklyReport: checked };
+                  localStorage.setItem("risk29_settings", JSON.stringify(settings));
+                  if (checked) toast.success("Weekly report enabled - you'll receive updates every Monday");
+                }}
+                disabled={!notifications}
+              />
+            </div>
+          </div>
+        </Card>
 
         {/* Color Scheme Selector */}
         <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
