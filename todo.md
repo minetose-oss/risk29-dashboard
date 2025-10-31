@@ -179,3 +179,27 @@
 - [x] Integrate with LINE alert system
 - [x] Test predictions with historical data
 - [x] Validate anomaly detection accuracy
+
+## Phase 6: Mobile App (PWA)
+
+- [x] Create PWA manifest.json
+- [x] Configure app icons and splash screens
+- [x] Add service worker for offline support
+- [x] Implement caching strategy
+- [x] Add install prompt
+- [x] Enable push notifications
+- [x] Test offline functionality
+- [x] Test installation on mobile devices
+- [x] Optimize for mobile performance
+
+## Phase 7: Historical Scenario Analysis
+
+- [x] Create Scenarios page component
+- [x] Define historical scenarios (2008 crisis, 2020 pandemic, etc.)
+- [x] Implement scenario simulation engine
+- [x] Compare current risk profile with historical events
+- [x] Add "What if" scenario builder
+- [x] Show impact analysis for each scenario
+- [x] Display scenario comparison charts
+- [x] Add scenario backtest results
+- [x] Test scenario accuracy with real data

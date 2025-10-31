@@ -313,6 +313,11 @@ export default function Home() {
               <FileDown className="w-4 h-4" />
               Export CSV
             </Button>
+            <Link href="/scenarios">
+              <Button variant="ghost" size="sm">
+                Scenarios
+              </Button>
+            </Link>
             <Link href="/predictions">
             <Button variant="outline" size="sm">
               🔮 Predict

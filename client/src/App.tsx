@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import InstallPrompt from "./components/InstallPrompt";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
@@ -14,6 +15,7 @@ import Predictions from "./pages/Predictions";
 import Comparison from "./pages/Comparison";
 import SignalDetail from "./pages/SignalDetail";
 import Correlation from "./pages/Correlation";
+import Scenarios from "./pages/Scenarios";
 
 function Router() {
   return (
@@ -24,6 +26,7 @@ function Router() {
       <Route path={"/predictions"} component={Predictions} />      <Route path="/comparison" component={Comparison} />
       <Route path="/signal/:id" component={SignalDetail} />
       <Route path="/correlation" component={Correlation} />
+      <Route path="/scenarios" component={Scenarios} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -47,6 +50,7 @@ function App() {
           <DashboardProfileProvider>
             <TooltipProvider>
               <Toaster />
+              <InstallPrompt />
               <Router />
             </TooltipProvider>
           </DashboardProfileProvider>
