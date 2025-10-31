@@ -357,3 +357,58 @@
 ## Bug Fixes (Current)
 
 - [x] Fix React forwardRef error in AIAssistant component
+
+
+## Critical Feature: Scheduled LINE Notifications
+
+- [ ] Research available solutions for scheduled tasks without backend
+- [ ] Implement daily 8 AM LINE notification using schedule tool
+- [ ] Create risk summary message format
+- [ ] Test scheduled notification delivery
+- [ ] Document setup instructions for user
+
+
+## Data Accuracy Updates (URGENT)
+
+### API Integration
+- [ ] Set up FRED API integration for economic data
+- [ ] Set up Yahoo Finance API for market indices
+- [ ] Set up Alpha Vantage API for forex and additional data
+- [ ] Create data fetching service with caching
+
+### Fix Incorrect Data
+- [ ] Market Cap to GDP - fetch real data from FRED (currently showing 200.5%, should be 207.26%)
+- [ ] GDP Growth - fix to show growth rate (%) not total GDP (currently 30.49T)
+- [ ] CPI Inflation - convert CPI index to inflation rate (%) (currently showing 324.40 index)
+- [ ] Dollar Index (DXY) - fetch real-time data (currently 121.34, should be 99.597)
+- [ ] Unemployment Rate - fetch real data
+- [ ] Consumer Confidence - fetch real data (currently 55.10)
+- [ ] Retail Sales - fetch real data and YoY calculation (currently 632.5B)
+- [ ] Stock Indices (S&P 500, Dow, NASDAQ, etc.) - fetch real-time prices
+- [ ] Commodities (Gold, Silver, Oil, etc.) - fetch real-time prices
+- [ ] Interest Rates - fetch real data
+
+### Risk Score Calculation
+- [ ] Update risk score calculation logic with real data
+- [ ] Verify thresholds are appropriate for real data ranges
+- [ ] Test overall risk score accuracy
+
+### Testing
+- [ ] Test all data sources
+- [ ] Verify data updates in real-time
+- [ ] Check LINE automation still works with new data
+- [ ] Verify alert system triggers correctly
+
+### Documentation
+- [ ] Update userGuide.md with data sources
+- [ ] Document API rate limits and caching strategy
+
+# Real-time Data Integration (Phase 21)
+- [x] Create data transformation service to convert FRED API data to risk_data.json format
+- [x] Calculate risk scores for all indicators based on real-time values
+- [x] Update dashboard to load real-time data instead of mock data
+- [x] Create automated GitHub Actions workflow to refresh data every hour
+- [x] Test all 25+ indicators display correct real-time values
+- [x] Update LINE automation scripts to use real-time dashboard data
+- [x] Verify daily reports and alerts work with real data
+- [x] Add data freshness indicator showing last update time

@@ -1,16 +1,16 @@
 {
-  "timestamp": 1761881095,
-  "last_updated": "2025-10-30T23:24:55",
-  "score": 20,
+  "timestamp": 1761924061,
+  "last_updated": "2025-10-31T11:21:01.695773",
+  "score": 43,
   "summary": {
-    "high_risk_count": 5,
-    "medium_risk_count": 24,
-    "low_risk_count": 0
+    "high_risk_count": 3,
+    "medium_risk_count": 8,
+    "low_risk_count": 8
   },
   "categories": {
     "liquidity": {
       "name": "Liquidity",
-      "score": 50,
+      "score": 35,
       "signals": [
         {
           "id": "M2SL",
@@ -18,9 +18,9 @@
           "description": "Broad money supply growth. Negative growth = tight liquidity conditions.",
           "current_value": 22212.5,
           "unit": "Billions",
-          "risk_score": 0,
+          "risk_score": 50,
           "date": "2025-09-01",
-          "status": "Very low risk - conditions are favorable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Money supply is growing - ample liquidity",
             "high": "Money supply is contracting - tight liquidity"
@@ -32,80 +32,80 @@
           "description": "Federal Reserve total assets. Declining balance sheet can signal tightening.",
           "current_value": 6587.034,
           "unit": "Trillions",
-          "risk_score": 0,
+          "risk_score": 30,
           "date": "2025-10-29",
-          "status": "Very low risk - conditions are favorable",
+          "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Fed balance sheet stable or growing",
             "high": "Fed balance sheet contracting rapidly"
+          }
+        },
+        {
+          "id": "RRPONTSYD",
+          "name": "Overnight Reverse Repo",
+          "description": "Reverse repo operations indicate excess liquidity parking at Fed.",
+          "current_value": 19.17,
+          "unit": "Billions",
+          "risk_score": 25,
+          "date": "2025-10-30",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "Low reverse repo usage - liquidity flowing to markets",
+            "high": "High reverse repo - excess liquidity parked at Fed"
           }
         }
       ]
     },
     "valuation": {
       "name": "Valuation",
-      "score": 48,
+      "score": 72,
       "signals": [
-        {
-          "id": "SHILLER_PE",
-          "name": "Shiller P/E Ratio",
-          "description": "Cyclically-adjusted price-to-earnings ratio for S&P 500.",
-          "current_value": 40.74,
-          "unit": "Ratio",
-          "risk_score": 48,
-          "date": "2025-10-01",
-          "status": "High risk - valuations stretched",
-          "interpretation": {
-            "low": "P/E ratio below historical average (< 20)",
-            "high": "P/E ratio significantly elevated (> 30)"
-          }
-        },
         {
           "id": "NCBEILQ027S",
           "name": "Market Cap to GDP",
           "description": "Total market capitalization relative to GDP (Buffett Indicator).",
-          "current_value": 200.5,
+          "current_value": 194.89,
           "unit": "Percent",
-          "risk_score": 45,
-          "date": "2025-04-01",
-          "status": "High risk - market cap elevated vs GDP",
+          "risk_score": 100,
+          "date": "2020-01-01",
+          "status": "Critical risk - immediate attention needed",
           "interpretation": {
             "low": "Market cap below 100% of GDP",
             "high": "Market cap significantly above GDP (> 150%)"
           }
         },
         {
-          "id": "CAPE",
-          "name": "CAPE Ratio",
-          "description": "Shiller CAPE U.S. Equities ETF valuation metric.",
-          "current_value": 30.98,
-          "unit": "Ratio",
-          "risk_score": 42,
-          "date": "2025-10-29",
-          "status": "Elevated risk - above historical norms",
+          "id": "WILL5000INDFC",
+          "name": "Wilshire 5000 Index",
+          "description": "Total US stock market index. Tracks overall market valuation.",
+          "current_value": 68000.07,
+          "unit": "Index",
+          "risk_score": 45,
+          "date": "2025-10-30",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
-            "low": "CAPE below 20 - attractive valuations",
-            "high": "CAPE above 30 - expensive valuations"
+            "low": "Index below historical average",
+            "high": "Index at elevated levels"
           }
         }
       ]
     },
     "macro": {
       "name": "Macro",
-      "score": 24,
+      "score": 33,
       "signals": [
         {
           "id": "GDP",
           "name": "GDP Growth",
           "description": "Real Gross Domestic Product growth rate.",
-          "current_value": 30485.729,
-          "unit": "Billions",
-          "risk_score": 10,
+          "current_value": 3.8,
+          "unit": "Percent",
+          "risk_score": 25,
           "date": "2025-04-01",
-          "status": "Low risk - economy growing",
+          "status": "Low risk - conditions are stable",
           "interpretation": {
-            "low": "GDP growing at healthy pace (> 2%)",
-            "high": "GDP contracting or stagnant (< 0%)"
+            "low": "Strong GDP growth above 3%",
+            "high": "Weak or negative GDP growth"
           }
         },
         {
@@ -114,40 +114,182 @@
           "description": "Percentage of labor force that is unemployed.",
           "current_value": 4.3,
           "unit": "Percent",
-          "risk_score": 15,
+          "risk_score": 25,
           "date": "2025-08-01",
-          "status": "Low risk - labor market healthy",
+          "status": "Low risk - conditions are stable",
           "interpretation": {
-            "low": "Unemployment below 5% - strong labor market",
-            "high": "Unemployment above 6% - weakening economy"
+            "low": "Low unemployment - strong labor market",
+            "high": "High unemployment - weak labor market"
           }
         },
         {
           "id": "CPIAUCSL",
-          "name": "CPI Inflation",
-          "description": "Consumer Price Index measuring inflation.",
-          "current_value": 324.4,
-          "unit": "Index",
-          "risk_score": 25,
+          "name": "CPI Inflation YoY",
+          "description": "Consumer Price Index year-over-year change.",
+          "current_value": 2.79,
+          "unit": "Percent",
+          "risk_score": 50,
           "date": "2025-09-01",
-          "status": "Moderate risk - inflation elevated",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
-            "low": "Inflation near Fed target (2-3%)",
-            "high": "Inflation significantly above target (> 5%)"
+            "low": "Inflation near Fed target (2%)",
+            "high": "Inflation significantly above target"
+          }
+        }
+      ]
+    },
+    "credit": {
+      "name": "Credit",
+      "score": 33,
+      "signals": [
+        {
+          "id": "BCNSDODNS",
+          "name": "Corporate Debt to GDP",
+          "description": "Non-financial corporate debt as % of GDP.",
+          "current_value": 14013.95,
+          "unit": "Percent",
+          "risk_score": 100,
+          "date": "2025-04-01",
+          "status": "Critical risk - immediate attention needed",
+          "interpretation": {
+            "low": "Corporate debt levels manageable",
+            "high": "Corporate debt elevated relative to GDP"
           }
         },
         {
+          "id": "BAMLC0A0CM",
+          "name": "Corporate Bond Spread",
+          "description": "Option-adjusted spread of corporate bonds over Treasuries.",
+          "current_value": 0.77,
+          "unit": "Percent",
+          "risk_score": 0,
+          "date": "2025-10-30",
+          "status": "Very low risk - conditions are favorable",
+          "interpretation": {
+            "low": "Tight credit spreads - low default risk",
+            "high": "Wide credit spreads - elevated default risk"
+          }
+        },
+        {
+          "id": "BAMLH0A0HYM2",
+          "name": "High Yield Spread",
+          "description": "Spread of high-yield bonds over Treasuries.",
+          "current_value": 2.85,
+          "unit": "Percent",
+          "risk_score": 0,
+          "date": "2025-10-30",
+          "status": "Very low risk - conditions are favorable",
+          "interpretation": {
+            "low": "Narrow HY spreads - strong credit conditions",
+            "high": "Wide HY spreads - credit stress"
+          }
+        }
+      ]
+    },
+    "technical": {
+      "name": "Technical",
+      "score": 30,
+      "signals": [
+        {
+          "id": "SP500",
+          "name": "S&P 500",
+          "description": "S&P 500 index level and momentum.",
+          "current_value": 6866.52,
+          "unit": "Index",
+          "risk_score": 35,
+          "date": "2025-10-31",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "Index in uptrend with positive momentum",
+            "high": "Index showing weakness or downtrend"
+          }
+        },
+        {
+          "id": "VIX",
+          "name": "VIX Volatility Index",
+          "description": "Market volatility and fear gauge.",
+          "current_value": 16.98,
+          "unit": "Index",
+          "risk_score": 25,
+          "date": "2025-10-31",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "Low volatility - calm markets",
+            "high": "High volatility - fearful markets"
+          }
+        }
+      ]
+    },
+    "global": {
+      "name": "Global",
+      "score": 32,
+      "signals": [
+        {
+          "id": "DXY",
+          "name": "US Dollar Index",
+          "description": "US dollar strength vs basket of currencies.",
+          "current_value": 99.78,
+          "unit": "Index",
+          "risk_score": 25,
+          "date": "2025-10-31",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "Weak dollar - supports risk assets",
+            "high": "Strong dollar - headwind for risk assets"
+          }
+        },
+        {
+          "id": "EEM",
+          "name": "Emerging Markets ETF",
+          "description": "Emerging market equity performance.",
+          "current_value": 55.24,
+          "unit": "Price",
+          "risk_score": 40,
+          "date": "2025-10-31",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "EM outperforming - global growth strong",
+            "high": "EM underperforming - global growth concerns"
+          }
+        }
+      ]
+    },
+    "sentiment": {
+      "name": "Sentiment",
+      "score": 75,
+      "signals": [
+        {
           "id": "UMCSENT",
-          "name": "Consumer Confidence",
+          "name": "Consumer Sentiment",
           "description": "University of Michigan Consumer Sentiment Index.",
           "current_value": 55.1,
           "unit": "Index",
-          "risk_score": 35,
+          "risk_score": 75,
           "date": "2025-09-01",
-          "status": "Moderate risk - confidence below average",
+          "status": "High risk - caution advised",
           "interpretation": {
-            "low": "Confidence above 80 - consumers optimistic",
-            "high": "Confidence below 60 - consumers pessimistic"
+            "low": "High consumer confidence - strong spending",
+            "high": "Low consumer confidence - weak spending"
+          }
+        }
+      ]
+    },
+    "qualitative": {
+      "name": "Qualitative",
+      "score": 35,
+      "signals": [
+        {
+          "id": "RSXFS",
+          "name": "Retail Sales",
+          "description": "Advance retail sales excluding food services.",
+          "current_value": 632490.0,
+          "unit": "Millions",
+          "risk_score": 30,
+          "date": "2025-08-01",
+          "status": "Low risk - conditions are stable",
+          "interpretation": {
+            "low": "Strong retail sales growth",
+            "high": "Weak or declining retail sales"
           }
         },
         {
@@ -156,252 +298,26 @@
           "description": "New residential construction starts.",
           "current_value": 1307.0,
           "unit": "Thousands",
-          "risk_score": 20,
+          "risk_score": 50,
           "date": "2025-08-01",
-          "status": "Low risk - housing market stable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
-            "low": "Housing starts above 1.2M - healthy demand",
-            "high": "Housing starts below 800K - weak demand"
+            "low": "Strong housing market",
+            "high": "Weak housing market"
           }
         },
         {
-          "id": "RSXFS",
-          "name": "Retail Sales",
-          "description": "Total retail and food services sales.",
-          "current_value": 632490.0,
-          "unit": "Millions",
-          "risk_score": 15,
+          "id": "INDPRO",
+          "name": "Industrial Production",
+          "description": "Manufacturing and industrial output index.",
+          "current_value": 103.92,
+          "unit": "Index",
+          "risk_score": 25,
           "date": "2025-08-01",
-          "status": "Low risk - consumer spending solid",
+          "status": "Low risk - conditions are stable",
           "interpretation": {
-            "low": "Retail sales growing YoY",
-            "high": "Retail sales declining YoY"
-          }
-        },
-        {
-          "id": "DGS10",
-          "name": "10-Year Treasury",
-          "description": "10-year Treasury constant maturity rate.",
-          "current_value": 4.08,
-          "unit": "Percent",
-          "risk_score": 30,
-          "date": "2025-10-29",
-          "status": "Moderate risk - rates elevated",
-          "interpretation": {
-            "low": "Rates below 3% - accommodative",
-            "high": "Rates above 5% - restrictive"
-          }
-        }
-      ]
-    },
-    "credit": {
-      "name": "Credit",
-      "score": 11,
-      "signals": [
-        {
-          "id": "BAMLH0A0HYM2",
-          "name": "High Yield Spread",
-          "description": "ICE BofA US High Yield Index Option-Adjusted Spread.",
-          "current_value": 2.76,
-          "unit": "Percent",
-          "risk_score": 5,
-          "date": "2025-10-29",
-          "status": "Very low risk - credit conditions healthy",
-          "interpretation": {
-            "low": "Spread below 4% - low default risk",
-            "high": "Spread above 8% - high default risk"
-          }
-        },
-        {
-          "id": "BAMLC0A4CBBB",
-          "name": "Investment Grade Spread",
-          "description": "ICE BofA BBB US Corporate Index Spread.",
-          "current_value": 0.96,
-          "unit": "Percent",
-          "risk_score": 3,
-          "date": "2025-10-29",
-          "status": "Very low risk - IG credit tight",
-          "interpretation": {
-            "low": "Spread below 2% - strong credit quality",
-            "high": "Spread above 3% - credit stress"
-          }
-        },
-        {
-          "id": "DRTSCILM",
-          "name": "Bank Lending Standards",
-          "description": "Net percentage of banks tightening lending standards.",
-          "current_value": 9.5,
-          "unit": "Percent",
-          "risk_score": 18,
-          "date": "2025-07-01",
-          "status": "Low risk - modest tightening",
-          "interpretation": {
-            "low": "Less than 10% tightening - credit flowing",
-            "high": "More than 30% tightening - credit crunch"
-          }
-        }
-      ]
-    },
-    "technical": {
-      "name": "Technical",
-      "score": 10,
-      "signals": [
-        {
-          "id": "SP500",
-          "name": "S&P 500 Index",
-          "description": "S&P 500 stock market index level.",
-          "current_value": 6822.34,
-          "unit": "Index",
-          "risk_score": 5,
-          "date": "2025-10-30",
-          "status": "Low risk - market near highs",
-          "interpretation": {
-            "low": "Above 200-day MA - uptrend intact",
-            "high": "Below 200-day MA - downtrend"
-          }
-        },
-        {
-          "id": "VIXCLS",
-          "name": "VIX Volatility Index",
-          "description": "CBOE Volatility Index measuring market fear.",
-          "current_value": 16.9,
-          "unit": "Index",
-          "risk_score": 10,
-          "date": "2025-10-29",
-          "status": "Low risk - low volatility",
-          "interpretation": {
-            "low": "VIX below 20 - calm markets",
-            "high": "VIX above 30 - high fear/volatility"
-          }
-        },
-        {
-          "id": "PCERATIO",
-          "name": "Put/Call Ratio",
-          "description": "Ratio of put options to call options traded.",
-          "current_value": 0.711,
-          "unit": "Ratio",
-          "risk_score": 12,
-          "date": "2025-10-29",
-          "status": "Low risk - balanced sentiment",
-          "interpretation": {
-            "low": "Ratio 0.7-1.0 - neutral sentiment",
-            "high": "Ratio above 1.2 - excessive fear"
-          }
-        }
-      ]
-    },
-    "sentiment": {
-      "name": "Sentiment",
-      "score": 5,
-      "signals": [
-        {
-          "id": "AAII_BULL",
-          "name": "AAII Bull/Bear Spread",
-          "description": "Difference between bullish and bearish investor sentiment.",
-          "current_value": 5.0,
-          "unit": "Percent",
-          "risk_score": 8,
-          "date": "2025-10-29",
-          "status": "Low risk - neutral sentiment",
-          "interpretation": {
-            "low": "Spread near 0 - balanced sentiment",
-            "high": "Spread above 30% - excessive optimism"
-          }
-        },
-        {
-          "id": "INVESTOR_SENTIMENT",
-          "name": "Investor Sentiment Index",
-          "description": "Composite measure of investor optimism/pessimism.",
-          "current_value": 52.0,
-          "unit": "Index",
-          "risk_score": 5,
-          "date": "2025-10-29",
-          "status": "Very low risk - neutral",
-          "interpretation": {
-            "low": "Index 40-60 - neutral sentiment",
-            "high": "Index above 70 - excessive optimism"
-          }
-        }
-      ]
-    },
-    "qualitative": {
-      "name": "Qualitative",
-      "score": 0,
-      "signals": [
-        {
-          "id": "FED_POLICY",
-          "name": "Fed Policy Stance",
-          "description": "Federal Reserve monetary policy direction.",
-          "current_value": "Neutral",
-          "unit": "Text",
-          "risk_score": 0,
-          "date": "2025-10-30",
-          "status": "Low risk - policy neutral",
-          "interpretation": {
-            "low": "Accommodative or neutral policy",
-            "high": "Aggressive tightening policy"
-          }
-        },
-        {
-          "id": "GEOPOLITICAL",
-          "name": "Geopolitical Risk",
-          "description": "Assessment of global geopolitical tensions.",
-          "current_value": "Low",
-          "unit": "Text",
-          "risk_score": 0,
-          "date": "2025-10-30",
-          "status": "Low risk - stable conditions",
-          "interpretation": {
-            "low": "Low geopolitical tensions",
-            "high": "High geopolitical tensions"
-          }
-        }
-      ]
-    },
-    "global": {
-      "name": "Global",
-      "score": 0,
-      "signals": [
-        {
-          "id": "DTWEXBGS",
-          "name": "Dollar Index (DXY)",
-          "description": "U.S. Dollar strength vs basket of currencies.",
-          "current_value": 121.34,
-          "unit": "Index",
-          "risk_score": 0,
-          "date": "2025-10-24",
-          "status": "Low risk - dollar stable",
-          "interpretation": {
-            "low": "DXY 90-110 - normal range",
-            "high": "DXY above 120 - very strong dollar"
-          }
-        },
-        {
-          "id": "GLOBAL_PMI",
-          "name": "Global Manufacturing PMI",
-          "description": "Worldwide manufacturing activity indicator.",
-          "current_value": 51.2,
-          "unit": "Index",
-          "risk_score": 0,
-          "date": "2025-10-01",
-          "status": "Low risk - expansion",
-          "interpretation": {
-            "low": "PMI above 50 - expansion",
-            "high": "PMI below 45 - contraction"
-          }
-        },
-        {
-          "id": "EM_PERFORMANCE",
-          "name": "Emerging Markets",
-          "description": "Emerging markets equity performance.",
-          "current_value": 47.7,
-          "unit": "Index",
-          "risk_score": 0,
-          "date": "2025-10-29",
-          "status": "Low risk - EM stable",
-          "interpretation": {
-            "low": "EM outperforming or stable",
-            "high": "EM significantly underperforming"
+            "low": "Strong industrial production",
+            "high": "Declining industrial production"
           }
         }
       ]
