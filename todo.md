@@ -10,7 +10,7 @@
 - [x] Real-time data loading from JSON file
 - [x] Auto-refresh functionality
 - [x] Responsive layout for mobile/tablet
-- [ ] Deploy to GitHub Pages
+- [x] Deploy to GitHub Pages
 
 ## Completed
 
@@ -55,9 +55,9 @@
 
 ## Final UI Polish
 
-- [ ] Add "X signals tracked" text above historical trend chart
-- [ ] Add Risk Levels legend section (Info, Watch, Warning, Alert)
-- [ ] Add footer with "Powered by Risk29 Free-Real API Pack PLUS"
-- [ ] Add data sources text "Data sources: FRED, Yahoo Finance, FINRA"
-- [ ] Add "Made with Manus" branding
-- [ ] Match exact styling from reference image
+- [x] Add "X signals tracked" text above historical trend chart
+- [x] Add Risk Levels legend section (Info, Watch, Warning, Alert)
+- [x] Add footer with "Powered by Risk29 Free-Real API Pack PLUS"
+- [x] Add data sources text "Data sources: FRED, Yahoo Finance, FINRA"
+- [x] Add "Made with Manus" branding
+- [x] Match exact styling from reference image
