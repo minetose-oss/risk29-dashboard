@@ -352,3 +352,8 @@
 - [x] Add regional risk heatmap
 - [x] Create currency strength meter
 - [x] Test global markets data integration
+
+
+## Bug Fixes (Current)
+
+- [x] Fix React forwardRef error in AIAssistant component
