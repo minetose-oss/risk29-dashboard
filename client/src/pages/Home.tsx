@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { TrendingDown, Activity, BarChart3 } from "lucide-react";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 interface CategoryData {
   name: string;
@@ -273,102 +274,88 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
         </div>
 
-        <div className="relative h-64 overflow-x-auto">
-          <svg className="h-full" style={{ width: '1600px', minWidth: '100%' }} viewBox="0 0 1600 256" preserveAspectRatio="none">
-            {/* Grid lines */}
-            <line x1="0" y1="64" x2="1600" y2="64" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="0" y1="128" x2="1600" y2="128" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="0" y1="192" x2="1600" y2="192" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
-            
-            {/* Overall Risk Line */}
-            <polyline
-              points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.overall / 100) * 256}`
-              ).join(' ')}
-              fill="none"
-              stroke="#3b82f6"
-              strokeWidth="3"
-              strokeLinejoin="round"
-            />
-            
-            {/* Liquidity Line */}
-            <polyline
-              points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.liquidity / 100) * 256}`
-              ).join(' ')}
-              fill="none"
-              stroke="#f97316"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeDasharray="5 5"
-            />
-            
-            {/* Valuation Line */}
-            <polyline
-              points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.valuation / 100) * 256}`
-              ).join(' ')}
-              fill="none"
-              stroke="#eab308"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeDasharray="5 5"
-            />
-            
-            {/* Credit Line */}
-            <polyline
-              points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.credit / 100) * 256}`
-              ).join(' ')}
-              fill="none"
-              stroke="#ef4444"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeDasharray="5 5"
-            />
-            
-            {/* Macro Line */}
-            <polyline
-              points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.macro / 100) * 256}`
-              ).join(' ')}
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeDasharray="5 5"
-            />
-          </svg>
-          
-          {/* X-axis labels */}
-          <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs text-zinc-500">
-            {historicalData.filter((_, i) => i % 6 === 0).map((day, i) => (
-              <span key={i}>{day.date}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center gap-6 mt-6 text-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-blue-500 rounded"></div>
-            <span>Overall Risk</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-orange-500 rounded"></div>
-            <span>Liquidity</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-yellow-500 rounded"></div>
-            <span>Valuation</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-red-500 rounded"></div>
-            <span>Credit</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 bg-green-500 rounded"></div>
-            <span>Macro</span>
-          </div>
+        <div className="h-80">
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={historicalData}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
+              <XAxis 
+                dataKey="date" 
+                stroke="#71717a"
+                tick={{ fill: '#71717a', fontSize: 12 }}
+              />
+              <YAxis 
+                stroke="#71717a"
+                tick={{ fill: '#71717a', fontSize: 12 }}
+                domain={[0, 100]}
+              />
+              <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: '#18181b', 
+                  border: '1px solid #3f3f46',
+                  borderRadius: '8px',
+                  color: '#fff'
+                }}
+                labelStyle={{ color: '#a1a1aa' }}
+                formatter={(value: any) => [`${value.toFixed(1)}`, '']}
+              />
+              <Legend 
+                wrapperStyle={{ paddingTop: '20px' }}
+                iconType="line"
+              />
+              <Line 
+                type="monotone" 
+                dataKey="overall" 
+                stroke="#3b82f6" 
+                strokeWidth={3}
+                name="Overall Risk"
+                dot={false}
+                activeDot={{ r: 6 }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="liquidity" 
+                stroke="#f97316" 
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                name="Liquidity"
+                dot={false}
+                activeDot={{ r: 5 }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="valuation" 
+                stroke="#eab308" 
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                name="Valuation"
+                dot={false}
+                activeDot={{ r: 5 }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="credit" 
+                stroke="#ef4444" 
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                name="Credit"
+                dot={false}
+                activeDot={{ r: 5 }}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="macro" 
+                stroke="#22c55e" 
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                name="Macro"
+                dot={false}
+                activeDot={{ r: 5 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
 
         <p className="text-center text-zinc-500 text-sm mt-4">

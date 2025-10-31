@@ -61,3 +61,11 @@
 - [ ] Add data sources text "Data sources: FRED, Yahoo Finance, FINRA"
 - [ ] Add "Made with Manus" branding
 - [ ] Match exact styling from reference image
+
+## Chart Improvements (User Feedback)
+
+- [x] Make legend more visible and clear on mobile
+- [x] Add interactive tooltips showing daily values when hovering/touching
+- [x] Improve line identification with better colors and labels
+- [x] Replace SVG chart with Recharts for better interactivity
+- [x] Test tooltip functionality on mobile devices
