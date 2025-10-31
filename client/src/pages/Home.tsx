@@ -264,6 +264,10 @@ export default function Home() {
 
       {/* Historical Trend */}
       <Card className="bg-zinc-900 border-zinc-800 p-6">
+        <div className="text-zinc-500 text-sm mb-4">
+          {Object.values(riskData.categories).reduce((sum: number, cat: any) => sum + (cat?.signals?.length || 0), 0)} signals tracked
+        </div>
+        
         <div className="flex items-center gap-2 mb-6">
           <Activity className="w-5 h-5" />
           <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
@@ -372,10 +376,45 @@ export default function Home() {
         </p>
       </Card>
 
+      {/* Risk Levels */}
+      <Card className="bg-zinc-900 border-zinc-800 p-6">
+        <h3 className="text-lg font-semibold mb-4">Risk Levels</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <div className="text-green-500 font-bold text-lg">Info</div>
+            <div className="text-zinc-400 text-sm">(0-39)</div>
+          </div>
+          <div>
+            <div className="text-yellow-500 font-bold text-lg">Watch</div>
+            <div className="text-zinc-400 text-sm">(40-59)</div>
+          </div>
+          <div>
+            <div className="text-orange-500 font-bold text-lg">Warning</div>
+            <div className="text-zinc-400 text-sm">(60-74)</div>
+          </div>
+          <div>
+            <div className="text-red-500 font-bold text-lg">Alert</div>
+            <div className="text-zinc-400 text-sm">(75-100)</div>
+          </div>
+        </div>
+      </Card>
+
       {/* Footer */}
-      <div className="mt-8 text-center text-zinc-500 text-sm">
-        <p>Risk29 Pipeline • Automated risk monitoring system • Data from FRED API</p>
-        <p className="mt-1">Last pipeline run: {lastUpdate}</p>
+      <div className="mt-8 space-y-2">
+        <div className="text-right text-zinc-500 text-sm">
+          <p className="font-semibold">Powered by Risk29</p>
+          <p>Free-Real API Pack PLUS</p>
+        </div>
+        <div className="text-right text-zinc-500 text-xs">
+          <p>Data sources: FRED, Yahoo Finance, FINRA</p>
+        </div>
+        <div className="flex items-center justify-end gap-2 text-zinc-500 text-sm">
+          <span>Made with Manus</span>
+        </div>
+        <div className="text-center text-zinc-600 text-xs mt-4">
+          <p>Risk29 Pipeline • Automated risk monitoring system</p>
+          <p className="mt-1">Last pipeline run: {lastUpdate}</p>
+        </div>
       </div>
     </div>
   );

@@ -43,12 +43,21 @@
 - [x] Convert historical trend chart from stacked bar to line chart
 - [x] Add proper axis labels and grid lines
 - [x] Test line chart display on different screen sizes
-- [ ] Save dashboard to GitHub repository
-- [ ] Create backup archive
-- [ ] Verify all data persistence methods
+- [x] Save dashboard to GitHub repository
+- [x] Create backup archive
+- [x] Verify all data persistence methods
 
 ## Chart Enhancement
 
 - [x] Add horizontal scroll to historical trend chart
 - [x] Make chart wider to show all 30 days clearly
 - [x] Test scroll functionality on mobile and desktop
+
+## Final UI Polish
+
+- [ ] Add "X signals tracked" text above historical trend chart
+- [ ] Add Risk Levels legend section (Info, Watch, Warning, Alert)
+- [ ] Add footer with "Powered by Risk29 Free-Real API Pack PLUS"
+- [ ] Add data sources text "Data sources: FRED, Yahoo Finance, FINRA"
+- [ ] Add "Made with Manus" branding
+- [ ] Match exact styling from reference image
