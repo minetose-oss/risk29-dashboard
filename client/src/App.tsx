@@ -21,6 +21,7 @@ import Portfolio from "./pages/Portfolio";
 import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
 import Performance from "./pages/Performance";
+import GlobalMarkets from "./pages/GlobalMarkets";
 
 // Register Chart.js components
 import {
@@ -60,6 +61,7 @@ function Router() {
       <Route path="/alerts" component={Alerts} />
       <Route path="/analytics" component={Analytics} />
       <Route path="/performance" component={Performance} />
+      <Route path="/global-markets" component={GlobalMarkets} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

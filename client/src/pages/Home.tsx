@@ -383,6 +383,11 @@ export default function Home() {
                 📈 Portfolio
               </Button>
             </Link>
+            <Link href="/global-markets">
+              <Button variant="outline" size="sm">
+                🌍 Global
+              </Button>
+            </Link>
             <Link href="/alerts">
               <Button variant="outline" size="sm">
                 🔔 Alerts

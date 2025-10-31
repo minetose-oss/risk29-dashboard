@@ -339,3 +339,16 @@
 - [x] Create performance report generator
 - [x] Add time-weighted return calculation
 - [x] Test performance calculations accuracy
+
+## Phase 20: Global Markets
+
+- [x] Create Global Markets page
+- [x] Add international indices tracking (Asia, Europe, Americas)
+- [x] Implement currency risk monitoring (major pairs)
+- [x] Add commodity prices tracking (Gold, Oil, Copper, etc.)
+- [x] Create cross-market correlation matrix
+- [x] Add global economic calendar
+- [x] Implement market hours indicator
+- [x] Add regional risk heatmap
+- [x] Create currency strength meter
+- [x] Test global markets data integration
