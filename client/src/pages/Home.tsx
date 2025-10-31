@@ -55,8 +55,8 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Try to load from pipeline data
-        const response = await fetch('/risk29_pipeline/data/risk_score.json');
+        // Load real FRED data
+        const response = await fetch('/risk_data.json');
         if (response.ok) {
           const data = await response.json();
           setRiskData(data);

@@ -27,3 +27,13 @@
 - [x] Display current status for each signal
 - [x] Add "Back to Dashboard" navigation button
 - [x] Make category cards clickable from main dashboard
+
+## Pipeline Enhancement & Integration
+
+- [x] Update fetch_data.py to fetch all 29 indicators from FRED
+- [x] Update calc_scores.py to calculate real risk scores
+- [x] Generate comprehensive JSON with all signal details
+- [ ] Push JSON to GitHub repository
+- [ ] Update dashboard to read from GitHub JSON
+- [ ] Test complete data flow
+- [ ] Verify auto-update schedule
