@@ -82,3 +82,16 @@
 - [x] Add threshold information to LINE messages
 - [x] Test threshold system with different values
 - [x] Add Settings link to main dashboard navigation
+
+## Phase 2: Data Export & Comparison Features
+
+- [x] Add CSV export button for historical data
+- [x] Implement Excel export with formatted sheets
+- [x] Add "Export Chart as PNG" button
+- [x] Create comparison view page
+- [x] Add date range selector for comparison
+- [x] Show side-by-side comparison charts
+- [x] Display percentage changes between periods
+- [x] Add export buttons to dashboard header
+- [x] Test CSV export with real data
+- [x] Test PNG export functionality

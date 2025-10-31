@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { TrendingDown, Activity, BarChart3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TrendingDown, Activity, BarChart3, Download, FileDown } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { exportToCSV, exportChartAsPNG, generateHistoricalData } from "@/lib/exportUtils";
+import { toast } from "sonner";
 
 interface CategoryData {
   name: string;
@@ -16,6 +19,25 @@ interface CategoryData {
 export default function Home() {
   const [riskData, setRiskData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const chartRef = useRef<HTMLDivElement>(null);
+
+  // Handle CSV export
+  const handleExportCSV = () => {
+    const historicalData = generateHistoricalData();
+    exportToCSV(historicalData, `risk29_data_${new Date().toISOString().split('T')[0]}.csv`);
+    toast.success('Data exported to CSV successfully!');
+  };
+
+  // Handle chart export
+  const handleExportChart = async () => {
+    if (!chartRef.current) return;
+    try {
+      await exportChartAsPNG(chartRef.current, `risk29_chart_${new Date().toISOString().split('T')[0]}.png`);
+      toast.success('Chart exported as PNG successfully!');
+    } catch (error) {
+      toast.error('Failed to export chart');
+    }
+  };
 
   // Load risk data from FRED API
   useEffect(() => {
@@ -159,15 +181,36 @@ export default function Home() {
             <p className="text-zinc-400">Financial Risk Monitoring System</p>
             <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
           </div>
-          <Link href="/settings">
-            <button className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-colors flex items-center gap-2">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Alert Settings
-            </button>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/comparison">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+              >
+                <BarChart3 className="w-4 h-4" />
+                Compare
+              </Button>
+            </Link>
+            <Button
+              onClick={handleExportCSV}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              <FileDown className="w-4 h-4" />
+              Export CSV
+            </Button>
+            <Link href="/settings">
+              <button className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-colors flex items-center gap-2">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Alert Settings
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -282,12 +325,23 @@ export default function Home() {
           {Object.values(riskData.categories).reduce((sum: number, cat: any) => sum + (cat?.signals?.length || 0), 0)} signals tracked
         </div>
         
-        <div className="flex items-center gap-2 mb-6">
-          <Activity className="w-5 h-5" />
-          <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <Activity className="w-5 h-5" />
+            <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
+          </div>
+          <Button
+            onClick={handleExportChart}
+            variant="outline"
+            size="sm"
+            className="gap-2"
+          >
+            <Download className="w-4 h-4" />
+            Export Chart
+          </Button>
         </div>
 
-        <div className="h-80">
+        <div ref={chartRef} className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={historicalData}
