@@ -141,3 +141,22 @@
 - [x] Test switching between profiles
 - [x] Verify weighted scores update correctly
 - [x] Test alert thresholds for each profile
+
+## Phase 6: Custom Indicators
+
+- [x] Create Custom Indicator Builder page
+- [x] Add weight editor for all 8 categories
+- [x] Implement slider controls for fine-tuning weights
+- [x] Create formula builder UI
+- [x] Support basic operations (+, -, *, /)
+- [x] Allow combining multiple categories in formulas
+- [x] Build backtesting engine
+- [x] Load historical data for backtesting
+- [x] Calculate custom indicator scores over time
+- [x] Compare custom vs default scoring
+- [x] Add performance metrics visualization
+- [x] Show accuracy, precision, recall metrics
+- [x] Display backtest results chart
+- [x] Save custom indicators to localStorage
+- [x] Add indicator management (create, edit, delete)
+- [x] Test custom indicators with different weights
