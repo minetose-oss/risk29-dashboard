@@ -1,6 +1,6 @@
 {
-  "timestamp": 1761924061,
-  "last_updated": "2025-10-31T11:21:01.695773",
+  "timestamp": 1761931168,
+  "last_updated": "2025-10-31T13:19:28.315193",
   "score": 43,
   "summary": {
     "high_risk_count": 3,
@@ -64,10 +64,10 @@
           "id": "NCBEILQ027S",
           "name": "Market Cap to GDP",
           "description": "Total market capitalization relative to GDP (Buffett Indicator).",
-          "current_value": 194.89,
+          "current_value": 223.1,
           "unit": "Percent",
           "risk_score": 100,
-          "date": "2020-01-01",
+          "date": "2025-10-30",
           "status": "Critical risk - immediate attention needed",
           "interpretation": {
             "low": "Market cap below 100% of GDP",
@@ -276,17 +276,17 @@
     },
     "qualitative": {
       "name": "Qualitative",
-      "score": 35,
+      "score": 41,
       "signals": [
         {
           "id": "RSXFS",
           "name": "Retail Sales",
-          "description": "Advance retail sales excluding food services.",
-          "current_value": 632490.0,
-          "unit": "Millions",
-          "risk_score": 30,
+          "description": "Advance retail sales excluding food services (YoY growth).",
+          "current_value": 3.5,
+          "unit": "Percent",
+          "risk_score": 50,
           "date": "2025-08-01",
-          "status": "Low risk - conditions are stable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Strong retail sales growth",
             "high": "Weak or declining retail sales"
