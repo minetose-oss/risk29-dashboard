@@ -269,43 +269,79 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
         </div>
 
-        <div className="h-64 flex items-end justify-between gap-1">
-          {historicalData.map((day, index) => (
-            <div key={index} className="flex-1 flex flex-col items-center justify-end h-full">
-              <div className="w-full flex flex-col justify-end" style={{ height: '100%' }}>
-                <div 
-                  className="w-full bg-blue-500" 
-                  style={{ height: `${(day.overall / 100) * 100}%` }}
-                  title={`Overall: ${day.overall}`}
-                ></div>
-                <div 
-                  className="w-full bg-orange-500" 
-                  style={{ height: `${(day.liquidity / 100) * 100}%` }}
-                  title={`Liquidity: ${day.liquidity}`}
-                ></div>
-                <div 
-                  className="w-full bg-yellow-500" 
-                  style={{ height: `${(day.valuation / 100) * 100}%` }}
-                  title={`Valuation: ${day.valuation}`}
-                ></div>
-                <div 
-                  className="w-full bg-red-500" 
-                  style={{ height: `${(day.credit / 100) * 100}%` }}
-                  title={`Credit: ${day.credit}`}
-                ></div>
-                <div 
-                  className="w-full bg-green-500" 
-                  style={{ height: `${(day.macro / 100) * 100}%` }}
-                  title={`Macro: ${day.macro}`}
-                ></div>
-              </div>
-              {index % 5 === 0 && (
-                <div className="text-xs text-zinc-500 mt-2 rotate-45 origin-left">
-                  {day.date}
-                </div>
-              )}
-            </div>
-          ))}
+        <div className="relative h-64">
+          <svg className="w-full h-full" viewBox="0 0 800 256" preserveAspectRatio="none">
+            {/* Grid lines */}
+            <line x1="0" y1="64" x2="800" y2="64" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="0" y1="128" x2="800" y2="128" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="0" y1="192" x2="800" y2="192" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            
+            {/* Overall Risk Line */}
+            <polyline
+              points={historicalData.map((day, i) => 
+                `${(i / (historicalData.length - 1)) * 800},${256 - (day.overall / 100) * 256}`
+              ).join(' ')}
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="3"
+              strokeLinejoin="round"
+            />
+            
+            {/* Liquidity Line */}
+            <polyline
+              points={historicalData.map((day, i) => 
+                `${(i / (historicalData.length - 1)) * 800},${256 - (day.liquidity / 100) * 256}`
+              ).join(' ')}
+              fill="none"
+              stroke="#f97316"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeDasharray="5 5"
+            />
+            
+            {/* Valuation Line */}
+            <polyline
+              points={historicalData.map((day, i) => 
+                `${(i / (historicalData.length - 1)) * 800},${256 - (day.valuation / 100) * 256}`
+              ).join(' ')}
+              fill="none"
+              stroke="#eab308"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeDasharray="5 5"
+            />
+            
+            {/* Credit Line */}
+            <polyline
+              points={historicalData.map((day, i) => 
+                `${(i / (historicalData.length - 1)) * 800},${256 - (day.credit / 100) * 256}`
+              ).join(' ')}
+              fill="none"
+              stroke="#ef4444"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeDasharray="5 5"
+            />
+            
+            {/* Macro Line */}
+            <polyline
+              points={historicalData.map((day, i) => 
+                `${(i / (historicalData.length - 1)) * 800},${256 - (day.macro / 100) * 256}`
+              ).join(' ')}
+              fill="none"
+              stroke="#22c55e"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeDasharray="5 5"
+            />
+          </svg>
+          
+          {/* X-axis labels */}
+          <div className="absolute bottom-0 left-0 right-0 flex justify-between px-2 text-xs text-zinc-500">
+            {historicalData.filter((_, i) => i % 6 === 0).map((day, i) => (
+              <span key={i}>{day.date}</span>
+            ))}
+          </div>
         </div>
 
         <div className="flex items-center justify-center gap-6 mt-6 text-sm">

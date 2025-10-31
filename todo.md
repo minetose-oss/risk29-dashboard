@@ -37,3 +37,12 @@
 - [x] Update dashboard to read from real FRED data
 - [x] Test complete data flow
 - [x] Verify auto-update schedule
+
+## Chart Update & Data Persistence
+
+- [x] Convert historical trend chart from stacked bar to line chart
+- [x] Add proper axis labels and grid lines
+- [x] Test line chart display on different screen sizes
+- [ ] Save dashboard to GitHub repository
+- [ ] Create backup archive
+- [ ] Verify all data persistence methods
