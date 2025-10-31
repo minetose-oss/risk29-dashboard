@@ -108,3 +108,20 @@
 - [x] Link from CategoryDetail to individual signals
 - [x] Test signal detail pages with real data
 - [x] Add navigation breadcrumbs
+
+## Phase 8: Dashboard Customization (UI/UX Improvements)
+
+- [x] Enable theme switching (Dark/Light mode)
+- [x] Add theme toggle button to header
+- [x] Update ThemeProvider to support switchable themes
+- [x] Implement show/hide categories feature
+- [x] Add category visibility settings
+- [x] Save category preferences to localStorage
+- [x] Install @dnd-kit for drag-drop
+- [x] Implement drag-drop reordering for category cards
+- [x] Save card order to localStorage
+- [x] Add color scheme customization
+- [x] Create color presets (Blue, Green, Purple, Red)
+- [x] Apply color scheme across dashboard
+- [x] Test all customization features
+- [x] Ensure settings persist across page reloads

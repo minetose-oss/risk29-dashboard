@@ -6,6 +6,7 @@ import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { ArrowLeft, Save, Settings as SettingsIcon } from "lucide-react";
 import { toast } from "sonner";
+import { useColorScheme, ColorScheme } from "@/contexts/ColorSchemeContext";
 
 interface ThresholdConfig {
   enabled: boolean;
@@ -50,6 +51,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 export default function Settings() {
+  const { colorScheme, setColorScheme } = useColorScheme();
   const [settings, setSettings] = useState<AlertSettings>(defaultSettings);
   const [loading, setLoading] = useState(true);
 
@@ -152,6 +154,38 @@ export default function Settings() {
             Save Settings
           </Button>
         </div>
+
+        {/* Color Scheme Selector */}
+        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+          <h2 className="text-lg font-semibold mb-4">Color Scheme</h2>
+          <div className="grid grid-cols-4 gap-4">
+            {(['blue', 'green', 'purple', 'red'] as ColorScheme[]).map(scheme => (
+              <button
+                key={scheme}
+                onClick={() => setColorScheme(scheme)}
+                className={`p-4 rounded-lg border-2 transition-all ${
+                  colorScheme === scheme
+                    ? 'border-white bg-zinc-800'
+                    : 'border-zinc-700 hover:border-zinc-600'
+                }`}
+              >
+                <div className="flex flex-col items-center gap-2">
+                  <div
+                    className="w-12 h-12 rounded-full"
+                    style={{
+                      backgroundColor:
+                        scheme === 'blue' ? '#3b82f6' :
+                        scheme === 'green' ? '#10b981' :
+                        scheme === 'purple' ? '#a855f7' :
+                        '#ef4444'
+                    }}
+                  />
+                  <span className="text-sm capitalize">{scheme}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </Card>
 
         {/* Info Card */}
         <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">

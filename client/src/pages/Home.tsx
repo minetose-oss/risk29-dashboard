@@ -3,10 +3,15 @@ import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { TrendingDown, Activity, BarChart3, Download, FileDown } from "lucide-react";
+import { TrendingDown, Activity, BarChart3, Download, FileDown, Sun, Moon } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { exportToCSV, exportChartAsPNG, generateHistoricalData } from "@/lib/exportUtils";
 import { toast } from "sonner";
+import { useTheme } from "@/contexts/ThemeContext";
+import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors, DragEndEvent } from '@dnd-kit/core';
+import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import { SortableCategory } from '@/components/SortableCategory';
 
 interface CategoryData {
   name: string;
@@ -17,9 +22,56 @@ interface CategoryData {
 }
 
 export default function Home() {
+  const { theme, toggleTheme } = useTheme();
   const [riskData, setRiskData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [visibleCategories, setVisibleCategories] = useState<string[]>(() => {
+    const saved = localStorage.getItem('visibleCategories');
+    return saved ? JSON.parse(saved) : ['Liquidity', 'Valuation', 'Macro', 'Credit', 'Technical', 'Sentiment', 'Qualitative', 'Global'];
+  });
+  const [categoryOrder, setCategoryOrder] = useState<string[]>(() => {
+    const saved = localStorage.getItem('categoryOrder');
+    return saved ? JSON.parse(saved) : ['Liquidity', 'Valuation', 'Macro', 'Credit', 'Technical', 'Sentiment', 'Qualitative', 'Global'];
+  });
   const chartRef = useRef<HTMLDivElement>(null);
+  const [showCategorySettings, setShowCategorySettings] = useState(false);
+
+  // Save visible categories to localStorage
+  useEffect(() => {
+    localStorage.setItem('visibleCategories', JSON.stringify(visibleCategories));
+  }, [visibleCategories]);
+
+  // Save category order to localStorage
+  useEffect(() => {
+    localStorage.setItem('categoryOrder', JSON.stringify(categoryOrder));
+  }, [categoryOrder]);
+
+  // Drag-drop sensors
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+    if (over && active.id !== over.id) {
+      setCategoryOrder((items) => {
+        const oldIndex = items.indexOf(active.id as string);
+        const newIndex = items.indexOf(over.id as string);
+        return arrayMove(items, oldIndex, newIndex);
+      });
+    }
+  };
+
+  const toggleCategoryVisibility = (categoryName: string) => {
+    setVisibleCategories(prev => 
+      prev.includes(categoryName) 
+        ? prev.filter(c => c !== categoryName)
+        : [...prev, categoryName]
+    );
+  };
 
   // Handle CSV export
   const handleExportCSV = () => {
@@ -182,6 +234,17 @@ export default function Home() {
             <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
           </div>
           <div className="flex items-center gap-3">
+            {toggleTheme && (
+              <Button
+                onClick={toggleTheme}
+                variant="outline"
+                size="sm"
+                className="gap-2"
+              >
+                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                {theme === 'dark' ? 'Light' : 'Dark'}
+              </Button>
+            )}
             <Link href="/correlation">
               <Button
                 variant="outline"
@@ -296,37 +359,64 @@ export default function Home() {
 
       {/* Risk Breakdown by Category */}
       <Card className="bg-zinc-900 border-zinc-800 p-6 mb-8">
-        <div className="flex items-center gap-2 mb-6">
-          <BarChart3 className="w-5 h-5" />
-          <h2 className="text-lg font-semibold">Risk Breakdown by Category</h2>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <BarChart3 className="w-5 h-5" />
+            <h2 className="text-lg font-semibold">Risk Breakdown by Category</h2>
+          </div>
+          <Button
+            onClick={() => setShowCategorySettings(!showCategorySettings)}
+            variant="outline"
+            size="sm"
+          >
+            {showCategorySettings ? 'Done' : 'Customize'}
+          </Button>
         </div>
 
-        <div className="space-y-6">
-          {categories.map((category, index) => (
-            <Link key={index} href={`/category/${category.name.toLowerCase()}`}>
-              <div className="cursor-pointer hover:bg-zinc-800/50 p-4 rounded-lg transition-colors">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{category.icon}</span>
-                    <span className="font-medium">{category.name}</span>
-                  </div>
-                  <span className={`text-2xl font-bold ${category.color}`}>
-                    {category.score}
-                  </span>
-                </div>
-                
-                <Progress 
-                  value={category.score} 
-                  className="h-2 bg-zinc-800"
-                />
-                
-                <p className="text-zinc-500 text-sm mt-2">
-                  {category.signals} signals tracked
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {showCategorySettings && (
+          <Card className="bg-zinc-800 border-zinc-700 p-4 mb-4">
+            <h3 className="text-sm font-semibold mb-3">Show/Hide Categories</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              {['Liquidity', 'Valuation', 'Macro', 'Credit', 'Technical', 'Sentiment', 'Qualitative', 'Global'].map(cat => (
+                <label key={cat} className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={visibleCategories.includes(cat)}
+                    onChange={() => toggleCategoryVisibility(cat)}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm">{cat}</span>
+                </label>
+              ))}
+            </div>
+          </Card>
+        )}
+
+        <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+        >
+          <SortableContext
+            items={categoryOrder}
+            strategy={verticalListSortingStrategy}
+          >
+            <div className="space-y-6">
+              {categoryOrder
+                .filter(catName => visibleCategories.includes(catName))
+                .map(catName => {
+                  const category = categories.find(c => c.name === catName);
+                  if (!category) return null;
+                  return (
+                    <SortableCategory
+                      key={category.name}
+                      category={category}
+                    />
+                  );
+                })}
+            </div>
+          </SortableContext>
+        </DndContext>
       </Card>
 
       {/* Historical Trend */}
