@@ -69,3 +69,16 @@
 - [x] Improve line identification with better colors and labels
 - [x] Replace SVG chart with Recharts for better interactivity
 - [x] Test tooltip functionality on mobile devices
+
+## Alert Threshold Customization (Phase 1)
+
+- [x] Create Settings page UI with threshold sliders
+- [x] Add enable/disable toggle for each category
+- [x] Implement Warning threshold (default: 60)
+- [x] Implement Critical threshold (default: 75)
+- [x] Create threshold configuration JSON storage
+- [x] Update LINE alert script to read thresholds
+- [x] Send alerts only when thresholds are exceeded
+- [x] Add threshold information to LINE messages
+- [x] Test threshold system with different values
+- [x] Add Settings link to main dashboard navigation
