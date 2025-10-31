@@ -20,6 +20,31 @@ import Scenarios from "./pages/Scenarios";
 import Portfolio from "./pages/Portfolio";
 import Alerts from "./pages/Alerts";
 import Analytics from "./pages/Analytics";
+import Performance from "./pages/Performance";
+
+// Register Chart.js components
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 function Router() {
   return (
@@ -34,6 +59,7 @@ function Router() {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/alerts" component={Alerts} />
       <Route path="/analytics" component={Analytics} />
+      <Route path="/performance" component={Performance} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

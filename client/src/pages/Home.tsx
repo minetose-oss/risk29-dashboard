@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import AIAssistant from "@/components/AIAssistant";
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -42,6 +43,7 @@ export default function Home() {
   });
   const chartRef = useRef<HTMLDivElement>(null);
   const [showCategorySettings, setShowCategorySettings] = useState(false);
+  const [showAIAssistant, setShowAIAssistant] = useState(false);
 
   // Save visible categories to localStorage
   useEffect(() => {
@@ -692,6 +694,20 @@ export default function Home() {
           <p className="mt-1">Last pipeline run: {lastUpdate}</p>
         </div>
       </div>
+
+      {/* AI Assistant Floating Button */}
+      <button
+        onClick={() => setShowAIAssistant(true)}
+        className="fixed bottom-20 md:bottom-6 right-6 w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center z-40"
+        title="AI Assistant"
+      >
+        <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+      </button>
+
+      {/* AI Assistant Dialog */}
+      {showAIAssistant && <AIAssistant onClose={() => setShowAIAssistant(false)} />}
     </div>
   );
 }

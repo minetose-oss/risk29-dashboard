@@ -347,6 +347,92 @@ export default function Settings() {
           })}
         </div>
 
+        {/* Data Management */}
+        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+          <h2 className="text-lg font-semibold mb-4">Data Management</h2>
+
+          <div className="space-y-3">
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              onClick={() => {
+                const data = {
+                  portfolio: localStorage.getItem("risk29_portfolio"),
+                  alerts: localStorage.getItem("risk29_alerts"),
+                  settings: localStorage.getItem("risk29_settings"),
+                  alertSettings: localStorage.getItem("alertSettings"),
+                  customization: localStorage.getItem("risk29_customization"),
+                };
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `risk29_backup_${new Date().toISOString().split('T')[0]}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                toast.success("Data exported successfully");
+              }}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Export All Data
+            </Button>
+
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              onClick={() => {
+                const input = document.createElement("input");
+                input.type = "file";
+                input.accept = "application/json";
+                input.onchange = (e: any) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event: any) => {
+                      try {
+                        const data = JSON.parse(event.target.result);
+                        if (data.portfolio) localStorage.setItem("risk29_portfolio", data.portfolio);
+                        if (data.alerts) localStorage.setItem("risk29_alerts", data.alerts);
+                        if (data.settings) localStorage.setItem("risk29_settings", data.settings);
+                        if (data.alertSettings) localStorage.setItem("alertSettings", data.alertSettings);
+                        if (data.customization) localStorage.setItem("risk29_customization", data.customization);
+                        toast.success("Data imported successfully - refreshing page...");
+                        setTimeout(() => window.location.reload(), 1000);
+                      } catch (error) {
+                        toast.error("Failed to import data - invalid file format");
+                      }
+                    };
+                    reader.readAsText(file);
+                  }
+                };
+                input.click();
+              }}
+            >
+              <Upload className="w-4 h-4 mr-2" />
+              Import Data
+            </Button>
+
+            <Button
+              variant="outline"
+              className="w-full justify-start text-red-500 hover:text-red-400 border-red-500/20 hover:border-red-500/40"
+              onClick={() => {
+                if (confirm("Are you sure you want to clear all data? This cannot be undone.")) {
+                  localStorage.removeItem("risk29_portfolio");
+                  localStorage.removeItem("risk29_alerts");
+                  localStorage.removeItem("risk29_settings");
+                  localStorage.removeItem("alertSettings");
+                  localStorage.removeItem("risk29_customization");
+                  toast.success("All data cleared - refreshing page...");
+                  setTimeout(() => window.location.reload(), 1000);
+                }
+              }}
+            >
+              <Trash2 className="w-4 h-4 mr-2" />
+              Clear All Data
+            </Button>
+          </div>
+        </Card>
+
         {/* Save Button (Bottom) */}
         <div className="mt-6 flex justify-end">
           <Button onClick={handleSave} size="lg" className="gap-2">

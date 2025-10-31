@@ -1,4 +1,4 @@
-import { Home, BarChart3, Bell, Briefcase, Settings } from "lucide-react";
+import { Home, BarChart3, Bell, Briefcase, TrendingUp } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
 export default function MobileBottomNav() {
@@ -9,7 +9,7 @@ export default function MobileBottomNav() {
     { path: "/portfolio", icon: Briefcase, label: "Portfolio" },
     { path: "/alerts", icon: Bell, label: "Alerts" },
     { path: "/analytics", icon: BarChart3, label: "Analytics" },
-    { path: "/settings", icon: Settings, label: "Settings" },
+    { path: "/performance", icon: TrendingUp, label: "Performance" },
   ];
 
   return (
