@@ -4,112 +4,99 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp, TrendingDown, Activity } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { generateHistoricalData } from "@/lib/exportUtils";
 
 interface SignalData {
   id: string;
   name: string;
+  description: string;
+  current_value: number | string;
+  unit: string;
+  risk_score: number;
+  date: string;
+  status: string;
+  interpretation: {
+    low: string;
+    high: string;
+  };
   category: string;
-  currentValue: number;
-  riskScore: number;
-  interpretation: string;
-  trend: 'up' | 'down' | 'stable';
-  change: number;
 }
-
-// Mock signal data
-const SIGNALS: Record<string, SignalData> = {
-  'dff': {
-    id: 'dff',
-    name: 'Federal Funds Rate (DFF)',
-    category: 'Liquidity',
-    currentValue: 5.33,
-    riskScore: 65,
-    interpretation: 'Elevated interest rates indicate tighter monetary policy',
-    trend: 'stable',
-    change: 0.0
-  },
-  't10y2y': {
-    id: 't10y2y',
-    name: '10Y-2Y Treasury Spread',
-    category: 'Credit',
-    currentValue: -0.45,
-    riskScore: 75,
-    interpretation: 'Inverted yield curve suggests recession risk',
-    trend: 'down',
-    change: -5.2
-  },
-  'vix': {
-    id: 'vix',
-    name: 'VIX Volatility Index',
-    category: 'Sentiment',
-    currentValue: 18.5,
-    riskScore: 45,
-    interpretation: 'Moderate market volatility',
-    trend: 'up',
-    change: 12.3
-  },
-  'sp500': {
-    id: 'sp500',
-    name: 'S&P 500 Index',
-    category: 'Valuation',
-    currentValue: 4500,
-    riskScore: 55,
-    interpretation: 'Market at elevated valuation levels',
-    trend: 'up',
-    change: 2.5
-  },
-};
 
 export default function SignalDetail() {
   const [, params] = useRoute("/signal/:id");
   const signalId = params?.id || '';
-  const signal = SIGNALS[signalId];
-
+  const [signal, setSignal] = useState<SignalData | null>(null);
+  const [loading, setLoading] = useState(true);
   const [historicalData, setHistoricalData] = useState<any[]>([]);
-  const [performance, setPerformance] = useState<any>(null);
 
   useEffect(() => {
-    // Generate mock historical data for this signal
-    const data = Array.from({ length: 30 }, (_, i) => {
-      const date = new Date();
-      date.setDate(date.getDate() - (29 - i));
-      return {
-        date: date.toISOString().split('T')[0],
-        value: signal?.currentValue + (Math.random() - 0.5) * 10,
-        riskScore: signal?.riskScore + (Math.random() - 0.5) * 20,
-      };
-    });
-    setHistoricalData(data);
+    const loadSignalData = async () => {
+      try {
+        const response = await fetch('/risk_data.json');
+        if (response.ok) {
+          const data = await response.json();
+          
+          // Search for signal across all categories
+          let foundSignal: SignalData | null = null;
+          let foundCategory = '';
+          
+          Object.entries(data.categories || {}).forEach(([categoryKey, categoryData]: [string, any]) => {
+            const signals = categoryData.signals || [];
+            const matchedSignal = signals.find((s: any) => s.id === signalId);
+            if (matchedSignal) {
+              foundSignal = {
+                ...matchedSignal,
+                category: categoryData.name || categoryKey
+              };
+              foundCategory = categoryKey;
+            }
+          });
+          
+          if (foundSignal) {
+            const signalData: SignalData = foundSignal;
+            setSignal(signalData);
+            
+            // Generate mock historical data
+            const baseValue = typeof signalData.current_value === 'number' 
+              ? signalData.current_value 
+              : parseFloat(String(signalData.current_value));
+            const baseRiskScore = signalData.risk_score;
+            
+            const historical = Array.from({ length: 30 }, (_, i) => {
+              const date = new Date();
+              date.setDate(date.getDate() - (29 - i));
+              
+              return {
+                date: date.toISOString().split('T')[0],
+                value: baseValue + (Math.random() - 0.5) * (baseValue * 0.1),
+                riskScore: baseRiskScore + (Math.random() - 0.5) * 20,
+              };
+            });
+            setHistoricalData(historical);
+          }
+        }
+      } catch (error) {
+        console.error('Error loading signal data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    // Calculate performance metrics
-    const values = data.map(d => d.value);
-    const scores = data.map(d => d.riskScore);
-    
-    const avg = values.reduce((a, b) => a + b, 0) / values.length;
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    const volatility = Math.sqrt(values.reduce((sum, val) => sum + Math.pow(val - avg, 2), 0) / values.length);
-    
-    const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
-    const daysAboveThreshold = scores.filter(s => s > 60).length;
-    
-    setPerformance({
-      average: avg,
-      min,
-      max,
-      volatility,
-      avgRiskScore: avgScore,
-      daysAboveThreshold,
-      range: max - min,
-    });
+    loadSignalData();
   }, [signalId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
+        <div className="text-white">Loading signal data...</div>
+      </div>
+    );
+  }
 
   if (!signal) {
     return (
-      <div className="min-h-screen bg-zinc-950 p-6 flex items-center justify-center">
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Signal Not Found</h1>
+          <h1 className="text-3xl font-bold text-white mb-4">Signal Not Found</h1>
           <Link href="/">
             <Button variant="outline">Back to Dashboard</Button>
           </Link>
@@ -119,203 +106,160 @@ export default function SignalDetail() {
   }
 
   const getRiskColor = (score: number) => {
-    if (score < 40) return 'text-green-500';
-    if (score < 60) return 'text-yellow-500';
-    if (score < 75) return 'text-orange-500';
-    return 'text-red-500';
+    if (score >= 75) return 'text-red-500';
+    if (score >= 60) return 'text-orange-500';
+    if (score >= 40) return 'text-yellow-500';
+    return 'text-green-500';
   };
 
-  const getRiskLevel = (score: number) => {
-    if (score < 40) return 'Info';
-    if (score < 60) return 'Watch';
-    if (score < 75) return 'Warning';
-    return 'Alert';
+  const getRiskBgColor = (score: number) => {
+    if (score >= 75) return 'bg-red-500/10 border-red-500/20';
+    if (score >= 60) return 'bg-orange-500/10 border-orange-500/20';
+    if (score >= 40) return 'bg-yellow-500/10 border-yellow-500/20';
+    return 'bg-green-500/10 border-green-500/20';
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4">
+    <div className="min-h-screen bg-zinc-950 text-white p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-6">
-          <Link href={`/category/${signal.category.toLowerCase()}`}>
-            <Button variant="outline" size="sm" className="gap-2">
-              <ArrowLeft className="w-4 h-4" />
-              Back to {signal.category}
+        <div className="mb-8">
+          <Link href="/">
+            <Button variant="outline" size="sm" className="mb-4">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Dashboard
             </Button>
           </Link>
-          <div>
-            <h1 className="text-2xl font-bold">{signal.name}</h1>
-            <p className="text-zinc-400 text-sm">{signal.category} Category</p>
+          
+          <div className="flex items-start justify-between">
+            <div>
+              <div className="text-sm text-zinc-400 mb-2">{signal.category}</div>
+              <h1 className="text-4xl font-bold mb-2">{signal.name}</h1>
+              <p className="text-zinc-400">{signal.description}</p>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-zinc-400 mb-1">Current Value</div>
+              <div className="text-3xl font-bold text-green-400">
+                {typeof signal.current_value === 'number' 
+                  ? signal.current_value.toLocaleString() 
+                  : signal.current_value}
+                <span className="text-lg text-zinc-400 ml-2">{signal.unit}</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Signal Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          {/* Current Value */}
-          <Card className="bg-zinc-900 border-zinc-800 p-6">
-            <div className="text-zinc-500 text-sm mb-2">Current Value</div>
-            <div className="text-3xl font-bold mb-2">
-              {signal.currentValue.toFixed(2)}
+        {/* Risk Score Card */}
+        <Card className={`p-6 mb-8 border ${getRiskBgColor(signal.risk_score)}`}>
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-bold mb-2">Risk Score</h2>
+              <div className={`text-5xl font-bold ${getRiskColor(signal.risk_score)}`}>
+                {signal.risk_score}
+                <span className="text-2xl text-zinc-400">/100</span>
+              </div>
+              <div className="text-sm text-zinc-400 mt-2">{signal.status}</div>
             </div>
-            <div className={`flex items-center gap-1 text-sm ${signal.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-              {signal.change >= 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}
-              {Math.abs(signal.change).toFixed(1)}% from previous
+            <div className={`w-32 h-32 rounded-full flex items-center justify-center ${getRiskBgColor(signal.risk_score)}`}>
+              {signal.risk_score >= 60 ? (
+                <TrendingUp className="w-16 h-16 text-red-500" />
+              ) : (
+                <TrendingDown className="w-16 h-16 text-green-500" />
+              )}
+            </div>
+          </div>
+        </Card>
+
+        {/* Interpretation Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <Card className="p-6 bg-green-500/10 border-green-500/20">
+            <div className="flex items-start gap-3">
+              <TrendingDown className="w-6 h-6 text-green-500 mt-1" />
+              <div>
+                <h3 className="font-bold text-green-500 mb-2">Low Score (Good)</h3>
+                <p className="text-sm text-zinc-300">{signal.interpretation.low}</p>
+              </div>
             </div>
           </Card>
-
-          {/* Risk Score */}
-          <Card className="bg-zinc-900 border-zinc-800 p-6">
-            <div className="text-zinc-500 text-sm mb-2">Risk Score</div>
-            <div className={`text-3xl font-bold mb-2 ${getRiskColor(signal.riskScore)}`}>
-              {signal.riskScore}/100
-            </div>
-            <div className="text-sm text-zinc-400">
-              Level: {getRiskLevel(signal.riskScore)}
-            </div>
-          </Card>
-
-          {/* Trend */}
-          <Card className="bg-zinc-900 border-zinc-800 p-6">
-            <div className="text-zinc-500 text-sm mb-2">Trend</div>
-            <div className="text-3xl font-bold mb-2 capitalize">
-              {signal.trend}
-            </div>
-            <div className="text-sm text-zinc-400">
-              Last 30 days
+          
+          <Card className="p-6 bg-red-500/10 border-red-500/20">
+            <div className="flex items-start gap-3">
+              <TrendingUp className="w-6 h-6 text-red-500 mt-1" />
+              <div>
+                <h3 className="font-bold text-red-500 mb-2">High Score (Risk)</h3>
+                <p className="text-sm text-zinc-300">{signal.interpretation.high}</p>
+              </div>
             </div>
           </Card>
         </div>
 
-        {/* Interpretation */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+        {/* Historical Trend Chart */}
+        <Card className="p-6 bg-zinc-900/50 border-zinc-800">
+          <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Activity className="w-5 h-5" />
-            Interpretation
+            Historical Trend (30 Days)
           </h2>
-          <p className="text-zinc-300">{signal.interpretation}</p>
-        </Card>
-
-        {/* Performance Metrics */}
-        {performance && (
-          <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
-            <h2 className="text-lg font-semibold mb-4">30-Day Performance Metrics</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div>
-                <div className="text-zinc-500 text-sm mb-1">Average Value</div>
-                <div className="text-2xl font-bold">{performance.average.toFixed(2)}</div>
-              </div>
-              <div>
-                <div className="text-zinc-500 text-sm mb-1">Range</div>
-                <div className="text-2xl font-bold">{performance.range.toFixed(2)}</div>
-                <div className="text-xs text-zinc-500">{performance.min.toFixed(2)} - {performance.max.toFixed(2)}</div>
-              </div>
-              <div>
-                <div className="text-zinc-500 text-sm mb-1">Volatility</div>
-                <div className="text-2xl font-bold">{performance.volatility.toFixed(2)}</div>
-                <div className="text-xs text-zinc-500">Standard deviation</div>
-              </div>
-              <div>
-                <div className="text-zinc-500 text-sm mb-1">Avg Risk Score</div>
-                <div className={`text-2xl font-bold ${getRiskColor(performance.avgRiskScore)}`}>
-                  {performance.avgRiskScore.toFixed(1)}
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 pt-4 border-t border-zinc-800">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-zinc-400">Days Above Warning Threshold (60)</span>
-                <span className="text-lg font-semibold">{performance.daysAboveThreshold} / 30</span>
-              </div>
-              <div className="mt-2 h-2 bg-zinc-800 rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-orange-500"
-                  style={{ width: `${(performance.daysAboveThreshold / 30) * 100}%` }}
-                />
-              </div>
-            </div>
-          </Card>
-        )}
-
-        {/* Historical Chart - Value */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
-          <h2 className="text-lg font-semibold mb-4">Historical Value (Last 30 Days)</h2>
-          <div className="h-64">
+          
+          <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={historicalData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
+              <LineChart data={historicalData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#333" />
                 <XAxis 
                   dataKey="date" 
-                  stroke="#71717a"
-                  tick={{ fill: '#71717a', fontSize: 12 }}
-                  tickFormatter={(value) => new Date(value).getDate().toString()}
+                  stroke="#666"
+                  tick={{ fill: '#999' }}
                 />
                 <YAxis 
-                  stroke="#71717a"
-                  tick={{ fill: '#71717a', fontSize: 12 }}
+                  stroke="#666"
+                  tick={{ fill: '#999' }}
                 />
                 <Tooltip 
                   contentStyle={{ 
                     backgroundColor: '#18181b', 
-                    border: '1px solid #3f3f46',
-                    borderRadius: '8px',
-                    color: '#fff'
+                    border: '1px solid #333',
+                    borderRadius: '8px'
                   }}
-                  labelStyle={{ color: '#a1a1aa' }}
-                  formatter={(value: any) => [value.toFixed(2), 'Value']}
                 />
                 <Line 
                   type="monotone" 
                   dataKey="value" 
                   stroke="#3b82f6" 
-                  strokeWidth={3}
+                  strokeWidth={2}
                   dot={false}
-                  activeDot={{ r: 6 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
-
-        {/* Historical Chart - Risk Score */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6">
-          <h2 className="text-lg font-semibold mb-4">Risk Score History (Last 30 Days)</h2>
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={historicalData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#3f3f46" />
-                <XAxis 
-                  dataKey="date" 
-                  stroke="#71717a"
-                  tick={{ fill: '#71717a', fontSize: 12 }}
-                  tickFormatter={(value) => new Date(value).getDate().toString()}
-                />
-                <YAxis 
-                  stroke="#71717a"
-                  tick={{ fill: '#71717a', fontSize: 12 }}
-                  domain={[0, 100]}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: '#18181b', 
-                    border: '1px solid #3f3f46',
-                    borderRadius: '8px',
-                    color: '#fff'
-                  }}
-                  labelStyle={{ color: '#a1a1aa' }}
-                  formatter={(value: any) => [value.toFixed(1), 'Risk Score']}
+                  name={signal.name}
                 />
                 <Line 
                   type="monotone" 
                   dataKey="riskScore" 
                   stroke="#ef4444" 
-                  strokeWidth={3}
+                  strokeWidth={2}
                   dot={false}
-                  activeDot={{ r: 6 }}
+                  name="Risk Score"
                 />
               </LineChart>
             </ResponsiveContainer>
           </div>
+          
+          <div className="mt-4 flex gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-1 bg-blue-500"></div>
+              <span className="text-zinc-400">Value</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-1 bg-red-500"></div>
+              <span className="text-zinc-400">Risk Score</span>
+            </div>
+          </div>
         </Card>
+
+        {/* Metadata */}
+        <div className="mt-6 text-sm text-zinc-500">
+          Last updated: {new Date(signal.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </div>
       </div>
     </div>
   );

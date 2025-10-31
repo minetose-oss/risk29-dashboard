@@ -255,3 +255,9 @@
 - [x] Test URL sharing across different browsers
 - [x] Add share via LINE/Email buttons
 - [x] Validate URL parameter parsing
+
+## Bug Fixes
+
+- [x] Fix "Signal Not Found" error when clicking "View Detailed Analysis" from signal cards
+- [x] Fix signal ID mapping between signal cards and detail page
+- [x] Ensure signal detail page can load data from risk_data.json correctly
