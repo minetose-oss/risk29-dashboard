@@ -269,17 +269,17 @@ export default function Home() {
           <h2 className="text-lg font-semibold">Historical Trend (Last 30 Days)</h2>
         </div>
 
-        <div className="relative h-64">
-          <svg className="w-full h-full" viewBox="0 0 800 256" preserveAspectRatio="none">
+        <div className="relative h-64 overflow-x-auto">
+          <svg className="h-full" style={{ width: '1600px', minWidth: '100%' }} viewBox="0 0 1600 256" preserveAspectRatio="none">
             {/* Grid lines */}
-            <line x1="0" y1="64" x2="800" y2="64" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="0" y1="128" x2="800" y2="128" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
-            <line x1="0" y1="192" x2="800" y2="192" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="0" y1="64" x2="1600" y2="64" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="0" y1="128" x2="1600" y2="128" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
+            <line x1="0" y1="192" x2="1600" y2="192" stroke="#3f3f46" strokeWidth="1" strokeDasharray="4 4" />
             
             {/* Overall Risk Line */}
             <polyline
               points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 800},${256 - (day.overall / 100) * 256}`
+                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.overall / 100) * 256}`
               ).join(' ')}
               fill="none"
               stroke="#3b82f6"
@@ -290,7 +290,7 @@ export default function Home() {
             {/* Liquidity Line */}
             <polyline
               points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 800},${256 - (day.liquidity / 100) * 256}`
+                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.liquidity / 100) * 256}`
               ).join(' ')}
               fill="none"
               stroke="#f97316"
@@ -302,7 +302,7 @@ export default function Home() {
             {/* Valuation Line */}
             <polyline
               points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 800},${256 - (day.valuation / 100) * 256}`
+                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.valuation / 100) * 256}`
               ).join(' ')}
               fill="none"
               stroke="#eab308"
@@ -314,7 +314,7 @@ export default function Home() {
             {/* Credit Line */}
             <polyline
               points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 800},${256 - (day.credit / 100) * 256}`
+                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.credit / 100) * 256}`
               ).join(' ')}
               fill="none"
               stroke="#ef4444"
@@ -326,7 +326,7 @@ export default function Home() {
             {/* Macro Line */}
             <polyline
               points={historicalData.map((day, i) => 
-                `${(i / (historicalData.length - 1)) * 800},${256 - (day.macro / 100) * 256}`
+                `${(i / (historicalData.length - 1)) * 1600},${256 - (day.macro / 100) * 256}`
               ).join(' ')}
               fill="none"
               stroke="#22c55e"
