@@ -16,6 +16,8 @@ import Comparison from "./pages/Comparison";
 import SignalDetail from "./pages/SignalDetail";
 import Correlation from "./pages/Correlation";
 import Scenarios from "./pages/Scenarios";
+import Portfolio from "./pages/Portfolio";
+import Alerts from "./pages/Alerts";
 
 function Router() {
   return (
@@ -27,6 +29,8 @@ function Router() {
       <Route path="/signal/:id" component={SignalDetail} />
       <Route path="/correlation" component={Correlation} />
       <Route path="/scenarios" component={Scenarios} />
+      <Route path="/portfolio" component={Portfolio} />
+      <Route path="/alerts" component={Alerts} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

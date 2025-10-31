@@ -3,9 +3,12 @@ import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { TrendingDown, Activity, BarChart3, Download, FileDown, Sun, Moon } from "lucide-react";
+import { TrendingDown, Activity, BarChart3, Download, FileDown, Sun, Moon, FileText } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { exportToCSV, exportChartAsPNG, generateHistoricalData } from "@/lib/exportUtils";
+import { generatePDFReport, PDFReportData } from "@/lib/pdfGenerator";
+import { getDashboardStateFromURL, DashboardState } from "@/lib/dashboardSharing";
+import ShareDashboard from "@/components/ShareDashboard";
 import { toast } from "sonner";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useDashboardProfile, DashboardProfile } from "@/contexts/DashboardProfileContext";
@@ -26,6 +29,7 @@ interface CategoryData {
 export default function Home() {
   const { theme, toggleTheme } = useTheme();
   const { profile, setProfile, config, getWeightedScore } = useDashboardProfile();
+  const [colorScheme] = useState(() => localStorage.getItem('colorScheme') || 'blue');
   const [riskData, setRiskData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [visibleCategories, setVisibleCategories] = useState<string[]>(() => {
@@ -93,6 +97,42 @@ export default function Home() {
       toast.error('Failed to export chart');
     }
   };
+
+  // Handle PDF export
+  const handleExportPDF = async () => {
+    if (!riskData) return;
+    try {
+      const pdfData: PDFReportData = {
+        overallRiskScore: score,
+        lastUpdate: lastUpdate,
+        categories: categories.map(cat => ({
+          name: cat.name,
+          score: cat.score,
+          signals: cat.signals,
+        })),
+        topHighlights: highlights,
+      };
+      await generatePDFReport(pdfData);
+      toast.success('PDF report generated successfully!');
+    } catch (error) {
+      toast.error('Failed to generate PDF report');
+    }
+  };
+
+  // Load shared dashboard state from URL
+  useEffect(() => {
+    const sharedState = getDashboardStateFromURL();
+    if (sharedState) {
+      setProfile(sharedState.profile);
+      if (toggleTheme && sharedState.theme !== theme) {
+        toggleTheme();
+      }
+      setVisibleCategories(sharedState.visibleCategories);
+      setCategoryOrder(sharedState.categoryOrder);
+      localStorage.setItem('colorScheme', sharedState.colorScheme);
+      toast.success('Dashboard configuration loaded from shared link!');
+    }
+  }, []);
 
   // Load risk data from FRED API
   useEffect(() => {
@@ -248,6 +288,15 @@ export default function Home() {
             <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
           </div>
           <div className="flex items-center gap-3">
+            <ShareDashboard
+              dashboardState={{
+                profile,
+                theme: theme || 'dark',
+                colorScheme,
+                visibleCategories,
+                categoryOrder,
+              }}
+            />
             <Select value={profile} onValueChange={(value) => setProfile(value as DashboardProfile)}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue />
@@ -313,9 +362,28 @@ export default function Home() {
               <FileDown className="w-4 h-4" />
               Export CSV
             </Button>
+            <Button
+              onClick={handleExportPDF}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              <FileText className="w-4 h-4" />
+              Export PDF
+            </Button>
             <Link href="/scenarios">
               <Button variant="ghost" size="sm">
                 Scenarios
+              </Button>
+            </Link>
+            <Link href="/portfolio">
+              <Button variant="outline" size="sm">
+                📈 Portfolio
+              </Button>
+            </Link>
+            <Link href="/alerts">
+              <Button variant="outline" size="sm">
+                🔔 Alerts
               </Button>
             </Link>
             <Link href="/predictions">
