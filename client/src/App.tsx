@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import CategoryDetail from "./pages/CategoryDetail";
 import Settings from "./pages/Settings";
 import Comparison from "./pages/Comparison";
+import SignalDetail from "./pages/SignalDetail";
+import Correlation from "./pages/Correlation";
 
 function Router() {
   return (
@@ -16,6 +18,8 @@ function Router() {
       <Route path="/category/:id" component={CategoryDetail} />
       <Route path="/settings" component={Settings} />
       <Route path="/comparison" component={Comparison} />
+      <Route path="/signal/:id" component={SignalDetail} />
+      <Route path="/correlation" component={Correlation} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

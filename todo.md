@@ -95,3 +95,16 @@
 - [x] Add export buttons to dashboard header
 - [x] Test CSV export with real data
 - [x] Test PNG export functionality
+
+## Phase 4: Detailed Signal Analysis
+
+- [x] Create SignalDetail page component
+- [x] Add individual signal historical chart (30-day trend)
+- [x] Show signal metadata (current value, risk score, interpretation)
+- [x] Add correlation matrix heatmap
+- [x] Calculate correlation coefficients between signals
+- [x] Display historical performance metrics
+- [x] Add signal-to-signal comparison view
+- [x] Link from CategoryDetail to individual signals
+- [x] Test signal detail pages with real data
+- [x] Add navigation breadcrumbs

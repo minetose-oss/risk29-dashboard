@@ -182,6 +182,16 @@ export default function Home() {
             <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
           </div>
           <div className="flex items-center gap-3">
+            <Link href="/correlation">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2"
+              >
+                <Activity className="w-4 h-4" />
+                Correlations
+              </Button>
+            </Link>
             <Link href="/comparison">
               <Button
                 variant="outline"

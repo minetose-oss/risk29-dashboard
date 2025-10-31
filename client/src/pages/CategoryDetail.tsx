@@ -229,6 +229,15 @@ export default function CategoryDetail() {
                 </div>
               </div>
 
+              {/* View Details Button */}
+              <div className="mt-4">
+                <Link href={`/signal/${signal.id}`}>
+                  <Button variant="outline" className="w-full">
+                    View Detailed Analysis
+                  </Button>
+                </Link>
+              </div>
+
               {/* Current Status */}
               <div className={`mt-4 p-4 rounded-lg ${
                 signal.risk_score < 20 
