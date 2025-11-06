@@ -37,6 +37,7 @@ jobs:
       - name: Build
         run: cd client && pnpm build
         env:
+          GITHUB_PAGES: true
           VITE_APP_TITLE: "Risk29 Financial Risk Monitor"
           VITE_APP_LOGO: "/logo.svg"
 
