@@ -442,3 +442,10 @@
 - [x] Run data update script to fetch latest Asia indices
 - [x] Test all Asia indices display current values
 - [ ] Publish updated site with real-time Asia data
+
+# Fix Published Site Showing Old Data (Phase 25)
+- [x] Run update_all_data.py to generate latest real_data.json and risk_data.json
+- [x] Verify data files contain current date (Nov 6, 2025)
+- [x] Commit updated data files
+- [x] Save checkpoint with latest data
+- [ ] Guide user to publish updated site
