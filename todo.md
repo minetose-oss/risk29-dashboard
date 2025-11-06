@@ -431,3 +431,14 @@
 - [ ] Verify all indices show real-time data (S&P ~6860, Dow ~43000, NASDAQ ~17000)
 - [ ] Update LINE bot to use new dashboard URL
 - [ ] Test LINE bot sends correct dashboard link
+
+# Add Real-time Asia Pacific Indices (Phase 24)
+- [x] Add Nikkei 225 (^N225) to fetch_real_data.py
+- [x] Add Hang Seng (^HSI) to fetch_real_data.py
+- [x] Add Shanghai Composite (000001.SS) to fetch_real_data.py
+- [x] Add KOSPI (^KS11) to fetch_real_data.py
+- [x] Add SET Thailand (^SET.BK) to fetch_real_data.py
+- [x] Update GlobalMarkets.tsx to load Asia indices from real_data.json
+- [x] Run data update script to fetch latest Asia indices
+- [x] Test all Asia indices display current values
+- [ ] Publish updated site with real-time Asia data

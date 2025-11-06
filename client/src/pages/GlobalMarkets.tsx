@@ -26,14 +26,37 @@ export default function GlobalMarkets() {
       });
   }, []);
 
-  // International Indices (mock data - not available in API)
-  const asiaIndices: MarketData[] = [
-    { name: "Nikkei 225", value: 33464, change: 245, changePercent: 0.74 },
-    { name: "Hang Seng", value: 17408, change: -123, changePercent: -0.70 },
-    { name: "Shanghai Composite", value: 3027, change: 15, changePercent: 0.50 },
-    { name: "KOSPI", value: 2456, change: 8, changePercent: 0.33 },
-    { name: "SET (Thailand)", value: 1425, change: -5, changePercent: -0.35 },
-  ];
+  // Asia Pacific Indices - Load from real_data.json
+  const getAsiaIndices = (): MarketData[] => {
+    // Fallback data while loading
+    const fallback: MarketData[] = [
+      { name: "Nikkei 225", value: 50884, change: 245, changePercent: 0.48 },
+      { name: "Hang Seng", value: 26486, change: -123, changePercent: -0.46 },
+      { name: "Shanghai Composite", value: 4008, change: 15, changePercent: 0.38 },
+      { name: "KOSPI", value: 4026, change: 8, changePercent: 0.20 },
+      { name: "SET (Thailand)", value: 1313, change: -5, changePercent: -0.38 },
+    ];
+
+    if (!realData) return fallback;
+
+    const nikkei = realData.technical?.nikkei;
+    const hangSeng = realData.technical?.hang_seng;
+    const shanghai = realData.technical?.shanghai;
+    const kospi = realData.technical?.kospi;
+    const set = realData.technical?.set;
+
+    const indices = [
+      nikkei ? { name: "Nikkei 225", value: Math.round(nikkei.value), change: nikkei.change || 0, changePercent: nikkei.change_pct || 0 } : null,
+      hangSeng ? { name: "Hang Seng", value: Math.round(hangSeng.value), change: hangSeng.change || 0, changePercent: hangSeng.change_pct || 0 } : null,
+      shanghai ? { name: "Shanghai Composite", value: Math.round(shanghai.value), change: shanghai.change || 0, changePercent: shanghai.change_pct || 0 } : null,
+      kospi ? { name: "KOSPI", value: Math.round(kospi.value), change: kospi.change || 0, changePercent: kospi.change_pct || 0 } : null,
+      set ? { name: "SET (Thailand)", value: Math.round(set.value), change: set.change || 0, changePercent: set.change_pct || 0 } : null,
+    ].filter(Boolean) as MarketData[];
+
+    return indices.length > 0 ? indices : fallback;
+  };
+
+  const asiaIndices = getAsiaIndices();
 
   const europeIndices: MarketData[] = [
     { name: "FTSE 100", value: 7532, change: 42, changePercent: 0.56 },

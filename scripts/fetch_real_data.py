@@ -154,6 +154,12 @@ def fetch_all_data() -> Dict[str, Any]:
             "nasdaq": fetch_yahoo_finance("^IXIC"),  # NASDAQ
             "dow": fetch_yahoo_finance("^DJI"),  # Dow Jones
             "russell_2000": fetch_yahoo_finance("^RUT"),  # Russell 2000
+            # Asia Pacific Indices
+            "nikkei": fetch_yahoo_finance("^N225"),  # Nikkei 225
+            "hang_seng": fetch_yahoo_finance("^HSI"),  # Hang Seng
+            "shanghai": fetch_yahoo_finance("000001.SS"),  # Shanghai Composite
+            "kospi": fetch_yahoo_finance("^KS11"),  # KOSPI
+            "set": fetch_yahoo_finance("^SET.BK"),  # SET Thailand
         },
         
         # Sentiment Category
