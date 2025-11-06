@@ -449,3 +449,20 @@
 - [x] Commit updated data files
 - [x] Save checkpoint with latest data
 - [ ] Guide user to publish updated site
+
+# Fix Console Error and Published Site Data (Phase 26)
+- [ ] Fix React ref warning: "Function components cannot be given refs"
+- [ ] Verify build completes without errors
+- [ ] Test published site shows current data (11/06/2025)
+- [ ] Save checkpoint for republishing
+
+# Deploy to GitHub Pages (Phase 27)
+- [ ] Check GitHub CLI authentication status
+- [ ] Initialize git repository in project
+- [ ] Create GitHub repository using gh CLI
+- [ ] Push code to GitHub
+- [ ] Configure GitHub Pages settings
+- [ ] Set up FRED_API_KEY secret
+- [ ] Verify GitHub Actions workflow runs successfully
+- [ ] Test deployed site shows current data
+- [ ] Update LINE bot to use new GitHub Pages URL
