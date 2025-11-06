@@ -1,11 +1,10 @@
 // Service Worker for Risk29 Dashboard PWA
-const CACHE_NAME = 'risk29-v1';
+const CACHE_NAME = 'risk29-v2';
+const BASE_PATH = '/risk29-dashboard';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
+  `${BASE_PATH}/`,
+  `${BASE_PATH}/index.html`,
+  `${BASE_PATH}/manifest.json`,
 ];
 
 // Install event - cache assets
@@ -14,7 +13,9 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Opened cache');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch(err => {
+          console.error('Failed to cache:', err);
+        });
       })
   );
   self.skipWaiting();
@@ -47,7 +48,10 @@ self.addEventListener('fetch', (event) => {
 
             return response;
           }
-        );
+        ).catch(err => {
+          console.error('Fetch failed:', err);
+          throw err;
+        });
       })
   );
 });
@@ -73,8 +77,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'Risk alert notification',
-    icon: '/icon-192.png',
-    badge: '/icon-192.png',
     vibrate: [200, 100, 200],
     data: {
       dateOfArrival: Date.now(),
@@ -103,7 +105,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'view') {
     event.waitUntil(
-      clients.openWindow('/')
+      clients.openWindow(`${BASE_PATH}/`)
     );
   }
 });
