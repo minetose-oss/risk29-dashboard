@@ -419,3 +419,15 @@
 - [x] Verify all economic indicators show correct units and values
 - [x] Test dashboard displays corrected values
 - [x] Update data validation report with fixes
+
+# Fix Outdated Market Indices (Phase 23)
+- [x] Investigate why Yahoo Finance returns old data for S&P 500, Dow, NASDAQ, Russell 2000
+- [x] Fix GlobalMarkets.tsx to load real-time data from API
+- [x] Update LINE Bot to use new dashboard URL
+- [x] Test all indices display current values
+- [x] Verify LINE Bot sends correct dashboard link
+- [ ] Find alternative real-time data source or fix Yahoo Finance API calls
+- [ ] Update fetch_real_data.py to get current market values
+- [ ] Verify all indices show real-time data (S&P ~6860, Dow ~43000, NASDAQ ~17000)
+- [ ] Update LINE bot to use new dashboard URL
+- [ ] Test LINE bot sends correct dashboard link
