@@ -1,11 +1,11 @@
 {
-  "timestamp": 1762444465,
-  "last_updated": "2025-11-06T10:54:25.007237",
-  "score": 44,
+  "timestamp": 1762519746,
+  "last_updated": "2025-11-07T07:49:06.426162",
+  "score": 46,
   "summary": {
     "high_risk_count": 3,
-    "medium_risk_count": 8,
-    "low_risk_count": 8
+    "medium_risk_count": 9,
+    "low_risk_count": 7
   },
   "categories": {
     "liquidity": {
@@ -30,10 +30,10 @@
           "id": "WALCL",
           "name": "Fed Balance Sheet",
           "description": "Federal Reserve total assets. Declining balance sheet can signal tightening.",
-          "current_value": 6587.034,
+          "current_value": 6572.732,
           "unit": "Trillions",
           "risk_score": 30,
-          "date": "2025-10-29",
+          "date": "2025-11-05",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Fed balance sheet stable or growing",
@@ -44,10 +44,10 @@
           "id": "RRPONTSYD",
           "name": "Overnight Reverse Repo",
           "description": "Reverse repo operations indicate excess liquidity parking at Fed.",
-          "current_value": 12.81,
+          "current_value": 10.75,
           "unit": "Billions",
           "risk_score": 25,
-          "date": "2025-11-05",
+          "date": "2025-11-06",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Low reverse repo usage - liquidity flowing to markets",
@@ -78,10 +78,10 @@
           "id": "WILL5000INDFC",
           "name": "Wilshire 5000 Index",
           "description": "Total US stock market index. Tracks overall market valuation.",
-          "current_value": 67762.07,
+          "current_value": 66980.19,
           "unit": "Index",
           "risk_score": 45,
-          "date": "2025-11-05",
+          "date": "2025-11-06",
           "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Index below historical average",
@@ -188,13 +188,13 @@
     },
     "technical": {
       "name": "Technical",
-      "score": 30,
+      "score": 42,
       "signals": [
         {
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6732.49,
+          "current_value": 6720.32,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-06",
@@ -208,11 +208,11 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 19.55,
+          "current_value": 20.55,
           "unit": "Index",
-          "risk_score": 25,
-          "date": "2025-11-06",
-          "status": "Low risk - conditions are stable",
+          "risk_score": 50,
+          "date": "2025-11-07",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Low volatility - calm markets",
             "high": "High volatility - fearful markets"
@@ -228,10 +228,10 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.89,
+          "current_value": 99.68,
           "unit": "Index",
           "risk_score": 25,
-          "date": "2025-11-06",
+          "date": "2025-11-07",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Weak dollar - supports risk assets",
@@ -242,7 +242,7 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.65,
+          "current_value": 54.71,
           "unit": "Price",
           "risk_score": 40,
           "date": "2025-11-06",
