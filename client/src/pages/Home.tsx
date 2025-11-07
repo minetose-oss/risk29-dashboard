@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import AIAssistant from "@/components/AIAssistant";
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
+import { getAssetUrl } from "@/lib/basePath";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { TrendingDown, Activity, BarChart3, Download, FileDown, Sun, Moon, FileText } from "lucide-react";
@@ -140,7 +141,7 @@ export default function Home() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/risk_data.json');
+        const response = await fetch(getAssetUrl('risk_data.json'));
         if (response.ok) {
           const data = await response.json();
           setRiskData(data);
