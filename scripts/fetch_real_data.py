@@ -236,7 +236,10 @@ def main():
         data["macro"]["inflation_rate"] = inflation_rate
     
     # Save to JSON file
-    output_path = "/home/ubuntu/risk29-dashboard/client/public/real_data.json"
+    # Use relative path for GitHub Actions compatibility
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, "..", "client", "public", "real_data.json")
+    output_path = os.path.normpath(output_path)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
     with open(output_path, 'w') as f:
