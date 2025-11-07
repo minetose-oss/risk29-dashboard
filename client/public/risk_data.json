@@ -1,6 +1,6 @@
 {
-  "timestamp": 1762550850,
-  "last_updated": "2025-11-07T21:27:30.916406",
+  "timestamp": 1762554996,
+  "last_updated": "2025-11-07T22:36:36.069730",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -208,7 +208,7 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 19.14,
+          "current_value": 19.08,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-07",
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.54,
+          "current_value": 99.56,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-07",
