@@ -47,7 +47,7 @@ ChartJS.register(
   Filler
 );
 
-function Router() {
+function AppRouter() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -86,7 +86,7 @@ function App() {
             <TooltipProvider>
               <Toaster />
               <InstallPrompt />
-              <Router />
+              <AppRouter />
               <MobileBottomNav />
             </TooltipProvider>
           </DashboardProfileProvider>
