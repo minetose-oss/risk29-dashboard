@@ -3,6 +3,7 @@ import { ArrowLeft, Plus, Trash2, TrendingUp, TrendingDown, AlertTriangle } from
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getAssetUrl } from "@/lib/basePath";
 import { Input } from "@/components/ui/input";
 import {
   LineChart,
@@ -50,7 +51,7 @@ export default function Portfolio() {
 
   // Load risk data
   useEffect(() => {
-    fetch("/risk_data.json")
+    fetch(getAssetUrl("risk_data.json"))
       .then((res) => res.json())
       .then((data) => setRiskData(data))
       .catch((err) => console.error("Failed to load risk data:", err));
