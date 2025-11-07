@@ -70,8 +70,10 @@ def get_risk_status(risk_score: int) -> str:
 def transform_data():
     """Transform real_data.json to risk_data.json format"""
     
-    # Load real-time data
-    real_data_path = "/home/ubuntu/risk29-dashboard/client/public/real_data.json"
+    # Load real-time data (use relative path for GitHub Actions)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    real_data_path = os.path.join(script_dir, "..", "client", "public", "real_data.json")
+    real_data_path = os.path.normpath(real_data_path)
     with open(real_data_path, 'r') as f:
         real_data = json.load(f)
     
@@ -556,8 +558,10 @@ def transform_data():
     dashboard_data["summary"]["medium_risk_count"] = len([s for s in all_signals if 30 <= s["risk_score"] < 60])
     dashboard_data["summary"]["low_risk_count"] = len([s for s in all_signals if s["risk_score"] < 30])
     
-    # Save to risk_data.json
-    output_path = "/home/ubuntu/risk29-dashboard/client/public/risk_data.json"
+    # Save to risk_data.json (use relative path for GitHub Actions)
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, "..", "client", "public", "risk_data.json")
+    output_path = os.path.normpath(output_path)
     with open(output_path, 'w') as f:
         json.dump(dashboard_data, f, indent=2)
     
