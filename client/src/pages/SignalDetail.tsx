@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRoute, Link } from "wouter";
 import { Card } from "@/components/ui/card";
+import { getAssetUrl } from "@/lib/basePath";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, TrendingUp, TrendingDown, Activity } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
@@ -31,7 +32,7 @@ export default function SignalDetail() {
   useEffect(() => {
     const loadSignalData = async () => {
       try {
-        const response = await fetch('/risk_data.json');
+        const response = await fetch(getAssetUrl('risk_data.json'));
         if (response.ok) {
           const data = await response.json();
           
