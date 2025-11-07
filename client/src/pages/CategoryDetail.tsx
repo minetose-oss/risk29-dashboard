@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRoute, Link } from "wouter";
 import { Card } from "@/components/ui/card";
+import { getAssetUrl } from "@/lib/basePath";
 import { Progress } from "@/components/ui/progress";
 import { Home, TrendingDown, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -73,7 +74,7 @@ export default function CategoryDetail() {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await fetch('/risk_data.json');
+        const response = await fetch(getAssetUrl('risk_data.json'));
         if (response.ok) {
           const data = await response.json();
           const catData = data.categories?.[category];
