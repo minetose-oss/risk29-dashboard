@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Globe, DollarSign, Coins } from "lucide-react";
+import { getAssetUrl } from "@/lib/basePath";
 
 interface MarketData {
   name: string;
