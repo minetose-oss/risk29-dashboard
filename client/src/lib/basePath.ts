@@ -9,12 +9,21 @@ export function getBasePath(): string {
 /**
  * Get the full URL for a public asset
  * @param path - Path to the asset (e.g., 'risk_data.json')
+ * @param bustCache - Whether to add cache-busting parameter (default: false)
  */
-export function getAssetUrl(path: string): string {
+export function getAssetUrl(path: string, bustCache: boolean = false): string {
   const basePath = getBasePath();
   // Remove leading slash from path if present
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   // Ensure basePath ends with /
   const baseWithSlash = basePath.endsWith('/') ? basePath : basePath + '/';
-  return baseWithSlash + cleanPath;
+  const url = baseWithSlash + cleanPath;
+  
+  // Add cache-busting parameter if requested
+  if (bustCache) {
+    const timestamp = new Date().getTime();
+    return url + (url.includes('?') ? '&' : '?') + `_t=${timestamp}`;
+  }
+  
+  return url;
 }
