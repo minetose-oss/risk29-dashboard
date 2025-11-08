@@ -3,7 +3,7 @@
 Master script to update all Risk29 Dashboard data
 1. Fetches real-time data from FRED API and Yahoo Finance
 2. Transforms data to dashboard format with risk scores
-3. Updates risk_data.json for dashboard consumption
+3. Updates risk_data_v2.json for dashboard consumption
 """
 
 import subprocess
@@ -56,7 +56,7 @@ def main():
     print("✅ Data Update Complete!")
     print("="*60)
     print("\nDashboard data has been updated with latest real-time values.")
-    print("risk_data.json is ready for dashboard consumption.")
+    print("risk_data_v2.json is ready for dashboard consumption.")
     print("="*60 + "\n")
 
 if __name__ == "__main__":
