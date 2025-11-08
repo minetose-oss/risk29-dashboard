@@ -200,6 +200,17 @@ def fetch_all_data() -> Dict[str, Any]:
             "ftse_mib": fetch_yahoo_finance("FTSEMIB.MI"),  # FTSE MIB
             "bovespa": fetch_yahoo_finance("^BVSP"),  # Bovespa
             "stoxx50": fetch_yahoo_finance("^STOXX50E"),  # Euro Stoxx 50
+        
+            },
+        
+        # Forex / Currency Pairs
+        "forex": {
+            "eurusd": fetch_yahoo_finance("EURUSD=X"),  # EUR/USD
+            "gbpusd": fetch_yahoo_finance("GBPUSD=X"),  # GBP/USD
+            "usdjpy": fetch_yahoo_finance("USDJPY=X"),  # USD/JPY
+            "usdcny": fetch_yahoo_finance("USDCNY=X"),  # USD/CNY
+            "audusd": fetch_yahoo_finance("AUDUSD=X"),  # AUD/USD
+            "usdchf": fetch_yahoo_finance("USDCHF=X"),  # USD/CHF
         }
     }
     
