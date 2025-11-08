@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-11-08T07:28:41.491736",
-  "last_updated": "November 08, 2025 07:28",
+  "timestamp": "2025-11-08T08:59:45.906317",
+  "last_updated": "November 08, 2025 08:59",
   "valuation": {
     "market_cap_to_gdp": {
       "value": 194.889,
@@ -5769,5 +5769,27 @@
         }
       ]
     }
+  },
+  "economic_calendar": {
+    "events": [
+      {
+        "time": "20:30",
+        "currency": "CNY",
+        "event": "CPI (YoY)  (Oct)",
+        "impact": "Medium"
+      },
+      {
+        "time": "20:30",
+        "currency": "CNY",
+        "event": "CPI (MoM)  (Oct)",
+        "impact": "Medium"
+      },
+      {
+        "time": "20:30",
+        "currency": "CNY",
+        "event": "PPI (YoY)  (Oct)",
+        "impact": "Medium"
+      }
+    ]
   }
 }
