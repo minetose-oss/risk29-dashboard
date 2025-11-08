@@ -235,6 +235,20 @@ def main():
         inflation_rate = calculate_inflation_rate(data["macro"]["inflation_cpi"])
         data["macro"]["inflation_rate"] = inflation_rate
     
+        # Convert NaN to None (null in JSON) recursively
+    import math
+    def convert_nan_to_none(obj):
+        if isinstance(obj, dict):
+            return {k: convert_nan_to_none(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [convert_nan_to_none(item) for item in obj]
+        elif isinstance(obj, float) and math.isnan(obj):
+            return None
+        else:
+            return obj
+    
+    data = convert_nan_to_none(data)
+    
     # Save to JSON file
     # Use relative path for GitHub Actions compatibility
     script_dir = os.path.dirname(os.path.abspath(__file__))
