@@ -51,7 +51,15 @@ export default function Portfolio() {
 
   // Load risk data
   useEffect(() => {
-    fetch(getAssetUrl("risk_data.json"))
+    // Use cache busting to always get fresh data
+    fetch(getAssetUrl("risk_data.json", true), {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    })
       .then((res) => res.json())
       .then((data) => setRiskData(data))
       .catch((err) => console.error("Failed to load risk data:", err));
