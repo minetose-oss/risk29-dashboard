@@ -32,7 +32,15 @@ export default function SignalDetail() {
   useEffect(() => {
     const loadSignalData = async () => {
       try {
-        const response = await fetch(getAssetUrl('risk_data.json'));
+        // Use cache busting to always get fresh data
+        const response = await fetch(getAssetUrl('risk_data.json', true), {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           
