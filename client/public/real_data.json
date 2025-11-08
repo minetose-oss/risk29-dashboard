@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-11-08T06:11:39.197422",
-  "last_updated": "November 08, 2025 06:11",
+  "timestamp": "2025-11-08T06:49:00.481277",
+  "last_updated": "November 08, 2025 06:49",
   "valuation": {
     "market_cap_to_gdp": {
       "value": 194.889,
@@ -1607,6 +1607,10 @@
       "change_pct": -2.1538465450971556,
       "date": "2025-11-07",
       "historical": [
+        {
+          "date": "2025-10-07",
+          "value": 17.239999771118164
+        },
         {
           "date": "2025-10-08",
           "value": 16.299999237060547
