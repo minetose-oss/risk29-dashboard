@@ -102,15 +102,40 @@ export default function GlobalMarkets() {
 
   const americasIndices = getAmericasIndices();
 
-  // Currency Pairs (mock data)
-  const currencies: MarketData[] = [
-    { name: "EUR/USD", value: 1.0875, change: 0.0023, changePercent: 0.21 },
-    { name: "GBP/USD", value: 1.2634, change: -0.0012, changePercent: -0.09 },
-    { name: "USD/JPY", value: 149.45, change: 0.78, changePercent: 0.52 },
-    { name: "USD/CNY", value: 7.2456, change: 0.0234, changePercent: 0.32 },
-    { name: "AUD/USD", value: 0.6523, change: -0.0045, changePercent: -0.68 },
-    { name: "USD/CHF", value: 0.8876, change: 0.0015, changePercent: 0.17 },
-  ];
+    // Currency Pairs - Load from real_data.json
+  const getCurrencies = (): MarketData[] => {
+    // Fallback data while loading
+    const fallback: MarketData[] = [
+      { name: "EUR/USD", value: 1.0875, change: 0.0023, changePercent: 0.21 },
+      { name: "GBP/USD", value: 1.2634, change: -0.0012, changePercent: -0.09 },
+      { name: "USD/JPY", value: 149.45, change: 0.78, changePercent: 0.52 },
+      { name: "USD/CNY", value: 7.2456, change: 0.0234, changePercent: 0.32 },
+      { name: "AUD/USD", value: 0.6523, change: -0.0045, changePercent: -0.68 },
+      { name: "USD/CHF", value: 0.8876, change: 0.0015, changePercent: 0.17 },
+    ];
+
+    if (!realData || !realData.forex) return fallback;
+
+    const eurusd = realData.forex.eurusd;
+    const gbpusd = realData.forex.gbpusd;
+    const usdjpy = realData.forex.usdjpy;
+    const usdcny = realData.forex.usdcny;
+    const audusd = realData.forex.audusd;
+    const usdchf = realData.forex.usdchf;
+
+    const pairs = [
+      eurusd ? { name: "EUR/USD", value: parseFloat(eurusd.value.toFixed(4)), change: eurusd.change || 0, changePercent: eurusd.change_pct || 0 } : null,
+      gbpusd ? { name: "GBP/USD", value: parseFloat(gbpusd.value.toFixed(4)), change: gbpusd.change || 0, changePercent: gbpusd.change_pct || 0 } : null,
+      usdjpy ? { name: "USD/JPY", value: parseFloat(usdjpy.value.toFixed(2)), change: usdjpy.change || 0, changePercent: usdjpy.change_pct || 0 } : null,
+      usdcny ? { name: "USD/CNY", value: parseFloat(usdcny.value.toFixed(4)), change: usdcny.change || 0, changePercent: usdcny.change_pct || 0 } : null,
+      audusd ? { name: "AUD/USD", value: parseFloat(audusd.value.toFixed(4)), change: audusd.change || 0, changePercent: audusd.change_pct || 0 } : null,
+      usdchf ? { name: "USD/CHF", value: parseFloat(usdchf.value.toFixed(4)), change: usdchf.change || 0, changePercent: usdchf.change_pct || 0 } : null,
+    ].filter(Boolean) as MarketData[];
+
+    return pairs.length > 0 ? pairs : fallback;
+  };
+
+  const currencies = getCurrencies();
 
   // Commodities - Load from real_data.json
   const getCommodities = (): MarketData[] => {
