@@ -13,9 +13,15 @@ interface MarketData {
 export default function GlobalMarkets() {
   const [realData, setRealData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    fetch('/real_data.json')
+    fetch(getAssetUrl('real_data.json', true), {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    })
       .then(res => res.json())
       .then(data => {
         setRealData(data);
@@ -26,6 +32,7 @@ export default function GlobalMarkets() {
         setLoading(false);
       });
   }, []);
+  
 
   // Asia Pacific Indices - Load from real_data.json
   const getAsiaIndices = (): MarketData[] => {
