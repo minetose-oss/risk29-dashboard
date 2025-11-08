@@ -290,18 +290,20 @@ export default function GlobalMarkets() {
         <Card className="p-6 bg-zinc-900/50 border-zinc-800">
           <h2 className="text-xl font-bold mb-4">Global Economic Calendar (Today)</h2>
           <div className="space-y-3">
-            {[
-              { time: "09:30", region: "EUR", event: "ECB Interest Rate Decision", impact: "High" },
-              { time: "13:30", region: "USD", event: "Non-Farm Payrolls", impact: "High" },
-              { time: "15:00", region: "USD", event: "ISM Manufacturing PMI", impact: "Medium" },
-              { time: "23:50", region: "JPY", event: "BoJ Policy Meeting Minutes", impact: "Medium" },
-            ].map((event, index) => (
+           {(realData?.economic_calendar?.events || [
+  { time: "09:30", currency: "EUR", event: "ECB Interest Rate Decision", impact: "High" },
+  { time: "13:30", currency: "USD", event: "Non-Farm Payrolls", impact: "High" },
+  { time: "15:00", currency: "USD", event: "ISM Manufacturing PMI", impact: "Medium" },
+  { time: "23:50", currency: "JPY", event: "BoJ Policy Meeting Minutes", impact: "Medium" },
+]).map((event, index) => (
+
               <div key={index} className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg">
                 <div className="flex items-center gap-4">
                   <div className="text-zinc-400 font-mono text-sm">{event.time}</div>
                   <div className="w-12 text-center">
                     <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">
-                      {event.region}
+                      {event.currency || event.region}
+
                     </span>
                   </div>
                   <div className="font-medium">{event.event}</div>
