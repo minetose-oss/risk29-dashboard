@@ -52,7 +52,7 @@ export default function Portfolio() {
   // Load risk data
   useEffect(() => {
     // Use cache busting to always get fresh data
-    fetch(getAssetUrl("risk_data.json", true), {
+    fetch(getAssetUrl("risk_data_v2.json", true), {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-cache, no-store, must-revalidate',
