@@ -180,7 +180,7 @@ export default function Home() {
     qualitative: riskData?.categories?.qualitative?.score || 0,
     global: riskData?.categories?.global?.score || 0,
   };
-  const score = getWeightedScore(categoryScores);
+  const score = riskData?.score || getWeightedScore(categoryScores);
   const lastUpdate = riskData?.last_updated 
     ? new Date(riskData.last_updated).toLocaleDateString('en-US', {
         year: 'numeric',
