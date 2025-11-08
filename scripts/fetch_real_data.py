@@ -11,6 +11,7 @@ from fredapi import Fred
 import yfinance as yf
 import requests
 from typing import Dict, Any
+from bs4 import BeautifulSoup
 
 # API Keys
 FRED_API_KEY = os.getenv('FRED_API_KEY', 'e438e833b710bbc9f7defdb12b9fa33e')
