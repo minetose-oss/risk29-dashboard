@@ -39,17 +39,17 @@ export default function Correlation() {
     if (absValue > 0.7) return value > 0 ? 'bg-red-600' : 'bg-blue-600';
     if (absValue > 0.4) return value > 0 ? 'bg-orange-500' : 'bg-cyan-500';
     if (absValue > 0.2) return value > 0 ? 'bg-yellow-500' : 'bg-teal-500';
-    return 'bg-zinc-700';
+    return 'bg-secondary';
   };
 
   const getTextColor = (value: number) => {
     const absValue = Math.abs(value);
     if (absValue > 0.4) return 'text-white';
-    return 'text-zinc-300';
+    return 'text-foreground';
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -61,12 +61,12 @@ export default function Correlation() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold">Signal Correlation Matrix</h1>
-            <p className="text-zinc-400 text-sm">Showing relationships between risk signals</p>
+            <p className="text-muted-foreground text-sm">Showing relationships between risk signals</p>
           </div>
         </div>
 
         {/* Legend */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+        <Card className="bg-card border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-4">Correlation Strength</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="flex items-center gap-2">
@@ -89,7 +89,7 @@ export default function Correlation() {
         </Card>
 
         {/* Correlation Matrix */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 overflow-x-auto">
+        <Card className="bg-card border-border p-6 overflow-x-auto">
           <h2 className="text-lg font-semibold mb-4">Correlation Heatmap</h2>
           <div className="min-w-max">
             <table className="w-full border-collapse">
@@ -127,22 +127,22 @@ export default function Correlation() {
         </Card>
 
         {/* Insights */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mt-6">
+        <Card className="bg-card border-border p-6 mt-6">
           <h2 className="text-lg font-semibold mb-4">Key Insights</h2>
-          <div className="space-y-3 text-sm text-zinc-300">
+          <div className="space-y-3 text-sm text-foreground">
             <p>
-              <strong className="text-white">Positive Correlation:</strong> When two signals move in the same direction. 
+              <strong className="text-foreground font-bold">Positive Correlation:</strong> When two signals move in the same direction. 
               A value close to +1 indicates strong positive correlation.
             </p>
             <p>
-              <strong className="text-white">Negative Correlation:</strong> When two signals move in opposite directions. 
+              <strong className="text-foreground font-bold">Negative Correlation:</strong> When two signals move in opposite directions. 
               A value close to -1 indicates strong negative correlation.
             </p>
             <p>
-              <strong className="text-white">No Correlation:</strong> Values close to 0 indicate little to no relationship 
+              <strong className="text-foreground font-bold">No Correlation:</strong> Values close to 0 indicate little to no relationship 
               between the signals.
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-muted-foreground">
               <em>Note: This correlation matrix is calculated from historical data over the last 30 days.</em>
             </p>
           </div>
