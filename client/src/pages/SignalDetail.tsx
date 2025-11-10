@@ -95,17 +95,17 @@ export default function SignalDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="text-white">Loading signal data...</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground">Loading signal data...</div>
       </div>
     );
   }
 
   if (!signal) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-white mb-4">Signal Not Found</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">Signal Not Found</h1>
           <Link href="/">
             <Button variant="outline">Back to Dashboard</Button>
           </Link>
@@ -129,7 +129,7 @@ export default function SignalDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-4 md:p-8">
+    <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -142,17 +142,17 @@ export default function SignalDetail() {
           
           <div className="flex items-start justify-between">
             <div>
-              <div className="text-sm text-zinc-400 mb-2">{signal.category}</div>
+              <div className="text-sm text-muted-foreground mb-2">{signal.category}</div>
               <h1 className="text-4xl font-bold mb-2">{signal.name}</h1>
-              <p className="text-zinc-400">{signal.description}</p>
+              <p className="text-muted-foreground">{signal.description}</p>
             </div>
             <div className="text-right">
-              <div className="text-sm text-zinc-400 mb-1">Current Value</div>
+              <div className="text-sm text-muted-foreground mb-1">Current Value</div>
               <div className="text-3xl font-bold text-green-400">
                 {typeof signal.current_value === 'number' 
                   ? signal.current_value.toLocaleString() 
                   : signal.current_value}
-                <span className="text-lg text-zinc-400 ml-2">{signal.unit}</span>
+                <span className="text-lg text-muted-foreground ml-2">{signal.unit}</span>
               </div>
             </div>
           </div>
@@ -165,9 +165,9 @@ export default function SignalDetail() {
               <h2 className="text-xl font-bold mb-2">Risk Score</h2>
               <div className={`text-5xl font-bold ${getRiskColor(signal.risk_score)}`}>
                 {signal.risk_score}
-                <span className="text-2xl text-zinc-400">/100</span>
+                <span className="text-2xl text-muted-foreground">/100</span>
               </div>
-              <div className="text-sm text-zinc-400 mt-2">{signal.status}</div>
+               <div className="text-sm text-muted-foreground mt-2">{signal.status}</div>}</div>
             </div>
             <div className={`w-32 h-32 rounded-full flex items-center justify-center ${getRiskBgColor(signal.risk_score)}`}>
               {signal.risk_score >= 60 ? (
@@ -186,7 +186,7 @@ export default function SignalDetail() {
               <TrendingDown className="w-6 h-6 text-green-500 mt-1" />
               <div>
                 <h3 className="font-bold text-green-500 mb-2">Low Score (Good)</h3>
-                <p className="text-sm text-zinc-300">{signal.interpretation.low}</p>
+                <p className="text-sm text-foreground">{signal.interpretation.low}</p>
               </div>
             </div>
           </Card>
@@ -196,14 +196,14 @@ export default function SignalDetail() {
               <TrendingUp className="w-6 h-6 text-red-500 mt-1" />
               <div>
                 <h3 className="font-bold text-red-500 mb-2">High Score (Risk)</h3>
-                <p className="text-sm text-zinc-300">{signal.interpretation.high}</p>
+                <p className="text-sm text-foreground">{signal.interpretation.high}</p>
               </div>
             </div>
           </Card>
         </div>
 
         {/* Historical Trend Chart */}
-        <Card className="p-6 bg-zinc-900/50 border-zinc-800">
+        <Card className="p-6 bg-card border-border">
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
             <Activity className="w-5 h-5" />
             Historical Trend (30 Days)
@@ -252,17 +252,17 @@ export default function SignalDetail() {
           <div className="mt-4 flex gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-4 h-1 bg-blue-500"></div>
-              <span className="text-zinc-400">Value</span>
+              <span className="text-muted-foreground">Value</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-1 bg-red-500"></div>
-              <span className="text-zinc-400">Risk Score</span>
+              <span className="text-muted-foreground">Risk Score</span>
             </div>
           </div>
         </Card>
 
         {/* Metadata */}
-        <div className="mt-6 text-sm text-zinc-500">
+        <div className="mt-6 text-sm text-muted-foreground">
           Last updated: {new Date(signal.date).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
