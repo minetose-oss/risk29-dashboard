@@ -109,16 +109,16 @@ export default function CategoryDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="text-white">Loading...</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground">Loading...</div>
       </div>
     );
   }
 
   if (!categoryData) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="text-white">Category not found</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground">Category not found</div>
       </div>
     );
   }
@@ -149,11 +149,11 @@ export default function CategoryDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-6">
+    <div className="min-h-screen bg-background text-foreground p-6">
       {/* Header */}
       <div className="mb-8">
         <Link href="/">
-          <Button variant="outline" className="mb-4 bg-zinc-900 border-zinc-800 hover:bg-zinc-800">
+          <Button variant="outline" className="mb-4 bg-card border-border hover:bg-secondary">
             <Home className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>
@@ -165,16 +165,16 @@ export default function CategoryDetail() {
               <span className="text-4xl">{categoryData.icon}</span>
               <h1 className="text-3xl font-bold">{categoryData.name} Conditions</h1>
             </div>
-            <p className="text-zinc-400">{categoryData.description}</p>
+            <p className="text-muted-foreground">{categoryData.description}</p>
           </div>
           <div className="text-right">
-            <div className="text-sm text-zinc-500 mb-1">Category Risk Score</div>
+            <div className="text-sm text-muted-foreground mb-1">Category Risk Score</div>
             <div className={`text-5xl font-bold ${getRiskColor(categoryData.score)}`}>
               {categoryData.score}
             </div>
-            <div className="text-zinc-400 text-lg">/ 100</div>
+            <div className="text-muted-foreground text-lg">/ 100</div>
             <div className="mt-2">
-              <span className="text-zinc-500 text-sm">Watch</span>
+              <span className="text-muted-foreground text-sm">Watch</span>
             </div>
           </div>
         </div>
@@ -187,16 +187,16 @@ export default function CategoryDetail() {
 
       <div className="space-y-6">
         {categoryData.signals.map((signal, index) => (
-          <Card key={index} className="bg-zinc-900 border-zinc-800 p-6">
+          <Card key={index} className="bg-card border-border p-6">
             <div className="space-y-4">
               {/* Signal Header */}
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-2">{signal.name}</h3>
-                  <p className="text-zinc-400 text-sm">{signal.description}</p>
+                  <p className="text-muted-foreground text-sm">{signal.description}</p>
                 </div>
                 <div className="text-right ml-4">
-                  <div className="text-sm text-zinc-500">Current Value</div>
+                  <div className="text-sm text-muted-foreground">Current Value</div>
                   <div className="text-2xl font-bold text-green-500 flex items-center gap-2">
                     {signal.risk_score < 20 && <TrendingDown className="w-5 h-5" />}
                     {signal.risk_score >= 20 && <TrendingUp className="w-5 h-5 text-orange-500" />}
@@ -208,14 +208,14 @@ export default function CategoryDetail() {
               {/* Risk Score */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-zinc-400">Risk Score</span>
+                  <span className="text-sm text-muted-foreground">Risk Score</span>
                   <span className={`text-2xl font-bold ${getRiskColor(signal.risk_score)}`}>
                     {signal.risk_score}
                   </span>
                 </div>
                 <Progress 
                   value={signal.risk_score} 
-                  className="h-2 bg-zinc-800"
+                  className="h-2 bg-secondary"
                 />
               </div>
 
@@ -226,7 +226,7 @@ export default function CategoryDetail() {
                     <TrendingDown className="w-4 h-4 text-green-500" />
                     <span className="text-green-500 font-semibold">Low Score (Good)</span>
                   </div>
-                  <p className="text-sm text-zinc-300">{signal.interpretation.low}</p>
+                  <p className="text-sm text-foreground">{signal.interpretation.low}</p>
                 </div>
 
                 <div className="bg-red-900/20 border border-red-800/30 rounded-lg p-4">
@@ -234,7 +234,7 @@ export default function CategoryDetail() {
                     <TrendingUp className="w-4 h-4 text-red-500" />
                     <span className="text-red-500 font-semibold">High Score (Risk)</span>
                   </div>
-                  <p className="text-sm text-zinc-300">{signal.interpretation.high}</p>
+                  <p className="text-sm text-foreground">{signal.interpretation.high}</p>
                 </div>
               </div>
 
@@ -258,7 +258,7 @@ export default function CategoryDetail() {
                 <div className="font-semibold mb-1">
                   Current Status: <span className={getRiskColor(signal.risk_score)}>{signal.status}</span>
                 </div>
-                <div className="text-sm text-zinc-400">
+                <div className="text-sm text-muted-foreground">
                   Last updated: {new Date(signal.date).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -274,7 +274,7 @@ export default function CategoryDetail() {
       {/* Footer */}
       <div className="mt-8 text-center">
         <Link href="/">
-          <Button variant="outline" className="bg-zinc-900 border-zinc-800 hover:bg-zinc-800">
+          <Button variant="outline" className="bg-card border-border hover:bg-secondary">
             <Home className="w-4 h-4 mr-2" />
             Back to Dashboard
           </Button>
