@@ -44,7 +44,7 @@ export default function Comparison() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -56,14 +56,14 @@ export default function Comparison() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold">Period Comparison</h1>
-            <p className="text-zinc-400 text-sm">Compare risk metrics across different time periods</p>
+            <p className="text-muted-foreground text-sm">Compare risk metrics across different time periods</p>
           </div>
         </div>
 
         {/* Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {comparisons.map(comp => (
-            <Card key={comp.key} className="bg-zinc-900 border-zinc-800 p-4">
+            <Card key={comp.key} className="bg-card border-border p-4">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-semibold">{comp.label}</h3>
                 <div className={`flex items-center gap-1 text-sm ${comp.isIncrease ? 'text-red-500' : 'text-green-500'}`}>
@@ -74,14 +74,14 @@ export default function Comparison() {
               
               <div className="space-y-2">
                 <div>
-                  <div className="text-xs text-zinc-500">Last 7 Days</div>
+                  <div className="text-xs text-muted-foreground">Last 7 Days</div>
                   <div className="text-2xl font-bold" style={{ color: comp.color }}>
                     {comp.period1.toFixed(1)}
                   </div>
                 </div>
                 <div>
-                  <div className="text-xs text-zinc-500">Last 30 Days</div>
-                  <div className="text-lg text-zinc-400">
+                  <div className="text-xs text-muted-foreground">Last 30 Days</div>
+                  <div className="text-lg text-muted-foreground">
                     {comp.period2.toFixed(1)}
                   </div>
                 </div>
@@ -93,7 +93,7 @@ export default function Comparison() {
         {/* Side-by-side Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Last 7 Days */}
-          <Card className="bg-zinc-900 border-zinc-800 p-6">
+          <Card className="bg-card border-border p-6">
             <h2 className="text-lg font-semibold mb-4">Last 7 Days</h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -143,7 +143,7 @@ export default function Comparison() {
           </Card>
 
           {/* Last 30 Days */}
-          <Card className="bg-zinc-900 border-zinc-800 p-6">
+          <Card className="bg-card border-border p-6">
             <h2 className="text-lg font-semibold mb-4">Last 30 Days</h2>
             <div className="h-64">
               <ResponsiveContainer width="100%" height="100%">
@@ -194,13 +194,13 @@ export default function Comparison() {
         </div>
 
         {/* Summary */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mt-6">
+        <Card className="bg-card border-border p-6 mt-6">
           <h2 className="text-lg font-semibold mb-4">Summary</h2>
           <div className="space-y-2 text-sm">
-            <p className="text-zinc-400">
+            <p className="text-muted-foreground">
               Comparing average risk scores between the last 7 days and last 30 days.
             </p>
-            <ul className="list-disc list-inside text-zinc-400 space-y-1">
+            <ul className="list-disc list-inside text-muted-foreground space-y-1">
               {comparisons.map(comp => (
                 <li key={comp.key}>
                   <span className="font-semibold" style={{ color: comp.color }}>{comp.label}</span>: 
