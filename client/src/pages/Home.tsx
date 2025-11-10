@@ -279,14 +279,14 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="text-white">Loading Risk29 Dashboard...</div>
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-foreground">Loading Risk29 Dashboard...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-6">
+    <div className="min-h-screen bg-background text-foreground p-6">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center justify-between">
@@ -295,8 +295,8 @@ export default function Home() {
               <BarChart3 className="w-8 h-8 text-blue-500" />
               <h1 className="text-3xl font-bold">Risk29 Dashboard</h1>
             </div>
-            <p className="text-zinc-400">Financial Risk Monitoring System</p>
-            <p className="text-zinc-500 text-sm">As of {lastUpdate}</p>
+            <p className="text-muted-foreground">Financial Risk Monitoring System</p>
+            <p className="text-muted-foreground text-sm">As of {lastUpdate}</p>
           </div>
           <div className="flex items-center gap-3">
             <ShareDashboard
@@ -413,7 +413,7 @@ export default function Home() {
             </Button>
           </Link>
           <Link href="/settings">
-              <button className="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 rounded-lg transition-colors flex items-center gap-2">
+              <button className="px-4 py-2 bg-secondary hover:bg-secondary/80 rounded-lg transition-colors flex items-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -428,7 +428,7 @@ export default function Home() {
       {/* Top Section - Risk Score and Highlights */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         {/* Overall Risk Score */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6">
+        <Card className="bg-card border-border p-6">
           <div className="flex items-center gap-2 mb-4">
             <Activity className="w-5 h-5 text-green-500" />
             <h2 className="text-lg font-semibold">Overall Risk Score</h2>
@@ -461,7 +461,7 @@ export default function Home() {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <div className="text-5xl font-bold text-green-500">{score}</div>
-                <div className="text-zinc-400 text-sm">/ 100</div>
+                <div className="text-muted-foreground text-sm">/ 100</div>
               </div>
             </div>
           </div>
@@ -475,7 +475,7 @@ export default function Home() {
         </Card>
 
         {/* Top Risk Highlights */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6">
+        <Card className="bg-card border-border p-6">
           <div className="flex items-center gap-2 mb-4">
             <TrendingDown className="w-5 h-5 text-red-500" />
             <h2 className="text-lg font-semibold">Top Risk Highlights</h2>
@@ -486,7 +486,7 @@ export default function Home() {
               <div key={index} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                  <span className="text-zinc-300">{item.name}</span>
+                  <span className="text-foreground">{item.name}</span>
                 </div>
                 <span className="text-red-500 font-semibold">{item.value}</span>
               </div>
@@ -496,7 +496,7 @@ export default function Home() {
       </div>
 
       {/* Risk Breakdown by Category */}
-      <Card className="bg-zinc-900 border-zinc-800 p-6 mb-8">
+      <Card className="bg-card border-border p-6 mb-8">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
             <BarChart3 className="w-5 h-5" />
@@ -512,7 +512,7 @@ export default function Home() {
         </div>
 
         {showCategorySettings && (
-          <Card className="bg-zinc-800 border-zinc-700 p-4 mb-4">
+          <Card className="bg-secondary border-border p-4 mb-4">
             <h3 className="text-sm font-semibold mb-3">Show/Hide Categories</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {['Liquidity', 'Valuation', 'Macro', 'Credit', 'Technical', 'Sentiment', 'Qualitative', 'Global'].map(cat => (
@@ -558,8 +558,8 @@ export default function Home() {
       </Card>
 
       {/* Historical Trend */}
-      <Card className="bg-zinc-900 border-zinc-800 p-6">
-        <div className="text-zinc-500 text-sm mb-4">
+      <Card className="bg-card border-border p-6">
+        <div className="text-muted-foreground text-sm mb-4">
           {Object.values(riskData.categories).reduce((sum: number, cat: any) => sum + (cat?.signals?.length || 0), 0)} signals tracked
         </div>
         
@@ -663,13 +663,13 @@ export default function Home() {
           </ResponsiveContainer>
         </div>
 
-        <p className="text-center text-zinc-500 text-sm mt-4">
+        <p className="text-center text-muted-foreground text-sm mt-4">
           Showing overall risk score and major risk categories over the last 30 days
         </p>
       </Card>
 
       {/* Risk Levels */}
-      <Card className="bg-zinc-900 border-zinc-800 p-6">
+      <Card className="bg-card border-border p-6">
         <h3 className="text-lg font-semibold mb-4">Risk Levels</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
