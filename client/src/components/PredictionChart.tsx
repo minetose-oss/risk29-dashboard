@@ -31,7 +31,7 @@ export default function PredictionChart() {
   useEffect(() => {
     const loadPredictions = async () => {
       try {
-        const response = await fetch('/predictions.json');
+        const response = await fetch(`${import.meta.env.BASE_URL}predictions.json`);
         if (!response.ok) {
           throw new Error('Failed to load predictions');
         }
