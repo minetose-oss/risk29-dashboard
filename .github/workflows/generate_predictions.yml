@@ -1,12 +1,12 @@
-name: Train Risk Prediction Model
+name: Generate Risk Predictions
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Every Sunday at 00:00 UTC
+    - cron: '0 6 * * *'  # Every day at 06:00 UTC
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
-  train:
+  predict:
     runs-on: ubuntu-latest
     
     steps:
@@ -22,18 +22,15 @@ jobs:
       run: |
         pip install pandas prophet scikit-learn
         
-    - name: Prepare data
-      run: python scripts/data_prep.py
+    - name: Generate predictions
+      run: python scripts/generate_predictions.py
       
-    - name: Train model
-      run: python scripts/train_model.py
-      
-    - name: Commit model files
+    - name: Commit prediction file
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add scripts/models/* scripts/data/*
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update trained model"
+        git add client/public/predictions.json
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update predictions"
         
     - name: Push changes
       uses: ad-m/github-push-action@master
