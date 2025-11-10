@@ -167,7 +167,7 @@ export default function SignalDetail() {
                 {signal.risk_score}
                 <span className="text-2xl text-muted-foreground">/100</span>
               </div>
-               <div className="text-sm text-muted-foreground mt-2">{signal.status}</div>}</div>
+               <div className="text-sm text-muted-foreground mt-2">{signal.status}</div>
             </div>
             <div className={`w-32 h-32 rounded-full flex items-center justify-center ${getRiskBgColor(signal.risk_score)}`}>
               {signal.risk_score >= 60 ? (
