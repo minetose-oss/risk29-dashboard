@@ -139,14 +139,14 @@ export default function Settings() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4 flex items-center justify-center">
-        <div className="text-zinc-400">Loading...</div>
+      <div className="min-h-screen bg-background p-4 flex items-center justify-center">
+        <div className="text-muted-foreground">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -169,7 +169,7 @@ export default function Settings() {
         </div>
 
         {/* Notifications */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+        <Card className="bg-card border-border p-6 mb-6">
           <div className="flex items-center gap-3 mb-4">
             <Bell className="w-5 h-5 text-blue-500" />
             <h2 className="text-lg font-semibold">Smart Notifications</h2>
@@ -179,7 +179,7 @@ export default function Settings() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="font-medium">Enable Notifications</div>
-                <div className="text-sm text-zinc-400">Receive risk alerts and updates</div>
+                <div className="text-sm text-muted-foreground">Receive risk alerts and updates</div>
               </div>
               <Switch
                 checked={notifications}
@@ -194,7 +194,7 @@ export default function Settings() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="font-medium">Daily Report</div>
-                <div className="text-sm text-zinc-400">Get daily risk summary every morning at 8 AM</div>
+                <div className="text-sm text-muted-foreground">Get daily risk summary every morning at 8 AM</div>
               </div>
               <Switch
                 checked={dailyReport}
@@ -211,7 +211,7 @@ export default function Settings() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="font-medium">Weekly Report</div>
-                <div className="text-sm text-zinc-400">Get weekly risk analysis every Monday at 9 AM</div>
+                <div className="text-sm text-muted-foreground">Get weekly risk analysis every Monday at 9 AM</div>
               </div>
               <Switch
                 checked={weeklyReport}
@@ -228,7 +228,7 @@ export default function Settings() {
         </Card>
 
         {/* Color Scheme Selector */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+        <Card className="bg-card border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-4">Color Scheme</h2>
           <div className="grid grid-cols-4 gap-4">
             {(['blue', 'green', 'purple', 'red'] as ColorScheme[]).map(scheme => (
@@ -237,8 +237,8 @@ export default function Settings() {
                 onClick={() => setColorScheme(scheme)}
                 className={`p-4 rounded-lg border-2 transition-all ${
                   colorScheme === scheme
-                    ? 'border-white bg-zinc-800'
-                    : 'border-zinc-700 hover:border-zinc-600'
+                    ? 'border-foreground bg-secondary'
+                    : 'border-border hover:border-muted-foreground'
                 }`}
               >
                 <div className="flex flex-col items-center gap-2">
@@ -260,20 +260,20 @@ export default function Settings() {
         </Card>
 
         {/* Info Card */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+        <Card className="bg-card border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-2">Alert Threshold Configuration</h2>
-          <p className="text-zinc-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             Configure when to receive LINE notifications for each risk category. 
             Alerts will be sent only when risk scores exceed your configured thresholds.
           </p>
           <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-yellow-500 rounded"></div>
-              <span className="text-zinc-400">Warning: Alert when score exceeds warning threshold</span>
+              <span className="text-muted-foreground">Warning: Alert when score exceeds warning threshold</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 bg-red-500 rounded"></div>
-              <span className="text-zinc-400">Critical: Urgent alert when score exceeds critical threshold</span>
+              <span className="text-muted-foreground">Critical: Urgent alert when score exceeds critical threshold</span>
             </div>
           </div>
         </Card>
@@ -285,11 +285,11 @@ export default function Settings() {
             const config = settings[key];
             
             return (
-              <Card key={category} className="bg-zinc-900 border-zinc-800 p-6">
+              <Card key={category} className="bg-card border-border p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold">{categoryLabels[category]}</h3>
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-400">
+                    <span className="text-sm text-muted-foreground">
                       {config.enabled ? "Enabled" : "Disabled"}
                     </span>
                     <Switch
@@ -307,7 +307,7 @@ export default function Settings() {
                         <label className="text-sm font-medium text-yellow-500">
                           Warning Threshold
                         </label>
-                        <span className="text-sm font-mono bg-zinc-800 px-2 py-1 rounded">
+                        <span className="text-sm font-mono bg-secondary px-2 py-1 rounded">
                           {config.warning}
                         </span>
                       </div>
@@ -327,7 +327,7 @@ export default function Settings() {
                         <label className="text-sm font-medium text-red-500">
                           Critical Threshold
                         </label>
-                        <span className="text-sm font-mono bg-zinc-800 px-2 py-1 rounded">
+                        <span className="text-sm font-mono bg-secondary px-2 py-1 rounded">
                           {config.critical}
                         </span>
                       </div>
@@ -348,7 +348,7 @@ export default function Settings() {
         </div>
 
         {/* Data Management */}
-        <Card className="bg-zinc-900 border-zinc-800 p-6 mb-6">
+        <Card className="bg-card border-border p-6 mb-6">
           <h2 className="text-lg font-semibold mb-4">Data Management</h2>
 
           <div className="space-y-3">
