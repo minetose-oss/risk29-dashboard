@@ -161,14 +161,14 @@ export default function GlobalMarkets() {
   const commodities = getCommodities();
 
   const MarketCard = ({ title, data, icon: Icon }: { title: string; data: MarketData[]; icon: any }) => (
-    <Card className="p-6 bg-zinc-900/50 border-zinc-800">
+    <Card className="p-6 bg-card border-border">
       <div className="flex items-center gap-2 mb-4">
         <Icon className="w-5 h-5 text-blue-500" />
         <h2 className="text-xl font-bold">{title}</h2>
       </div>
       <div className="space-y-3">
         {data.map((item, index) => (
-          <div key={index} className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg hover:bg-zinc-800 transition-colors">
+          <div key={index} className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors">
             <div>
               <div className="font-medium">{item.name}</div>
               <div className="text-2xl font-bold mt-1">{item.value.toLocaleString()}</div>
@@ -218,12 +218,12 @@ export default function GlobalMarkets() {
         {/* Market Hours Status */}
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           {marketHours.map((market, index) => (
-            <Card key={index} className="p-4 bg-zinc-900/50 border-zinc-800">
+            <Card key={index} className="p-4 bg-card border-border">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm text-zinc-400">{market.region}</div>
+                  <div className="text-sm text-muted-foreground">{market.region}</div>
                   <div className="text-xl font-bold mt-1">{market.status}</div>
-                  <div className="text-xs text-zinc-500 mt-1">
+                  <div className="text-xs text-muted-foreground mt-1">
                     {market.status === "Open" ? `Closes ${market.closes}` : 
                      market.status === "Closed" ? `Opens ${market.nextOpen}` : 
                      `Opens ${market.opens}`}
@@ -266,7 +266,7 @@ export default function GlobalMarkets() {
                     </span>
                   </div>
                 </div>
-                <div className="w-full bg-zinc-800 rounded-full h-2">
+                <div className="w-full bg-secondary rounded-full h-2">
                   <div
                     className={`h-2 rounded-full transition-all ${
                       item.strength >= 70 ? 'bg-green-500' :
@@ -287,23 +287,21 @@ export default function GlobalMarkets() {
         </div>
 
         {/* Global Economic Calendar */}
-        <Card className="p-6 bg-zinc-900/50 border-zinc-800">
+        <Card className="p-6 bg-card border-border">
           <h2 className="text-xl font-bold mb-4">Global Economic Calendar (Today)</h2>
           <div className="space-y-3">
-           {(realData?.economic_calendar?.events || [
-  { time: "09:30", currency: "EUR", event: "ECB Interest Rate Decision", impact: "High" },
-  { time: "13:30", currency: "USD", event: "Non-Farm Payrolls", impact: "High" },
-  { time: "15:00", currency: "USD", event: "ISM Manufacturing PMI", impact: "Medium" },
-  { time: "23:50", currency: "JPY", event: "BoJ Policy Meeting Minutes", impact: "Medium" },
-]).map((event, index) => (
-
-              <div key={index} className="flex items-center justify-between p-3 bg-zinc-800/50 rounded-lg">
+            {[
+              { time: "09:30", region: "EUR", event: "ECB Interest Rate Decision", impact: "High" },
+              { time: "13:30", region: "USD", event: "Non-Farm Payrolls", impact: "High" },
+              { time: "15:00", region: "USD", event: "ISM Manufacturing PMI", impact: "Medium" },
+              { time: "23:50", region: "JPY", event: "BoJ Policy Meeting Minutes", impact: "Medium" },
+            ].map((event, index) => (
+              <div key={index} className="flex items-center justify-between p-3 bg-secondary/50 rounded-lg">
                 <div className="flex items-center gap-4">
-                  <div className="text-zinc-400 font-mono text-sm">{event.time}</div>
+                  <div className="text-muted-foreground font-mono text-sm">{event.time}</div>
                   <div className="w-12 text-center">
                     <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">
-                      {event.currency || event.region}
-
+                      {event.region}
                     </span>
                   </div>
                   <div className="font-medium">{event.event}</div>
