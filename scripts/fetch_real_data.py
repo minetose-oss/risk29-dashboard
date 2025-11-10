@@ -104,120 +104,6 @@ def calculate_yoy_change(current: float, year_ago: float) -> float:
         return 0
     return ((current - year_ago) / year_ago) * 100
 
-def fetch_economic_calendar() -> Dict[str, Any]:
-    """Scrape economic calendar from Investing.com"""
-    try:
-        url = "https://www.investing.com/economic-calendar/"
-        
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64 ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
-        
-        response = requests.get(url, headers=headers, timeout=15)
-        response.raise_for_status()
-        
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Find the calendar table
-        table = soup.find('table', {'id': 'economicCalendarData'})
-        
-        if not table:
-            print("Economic calendar table not found, using fallback data")
-            return {"events": [], "error": "Table not found"}
-        
-        events = []
-        rows = table.find_all('tr', {'class': 'js-event-item'})
-        
-        print(f"Found {len(rows)} economic events")
-        
-        # Get today's date for filtering
-        today = datetime.now().date()
-        
-        for row in rows[:15]:  # Get first 15 events
-            try:
-                # Extract event data
-                time_elem = row.find('td', {'class': 'time'})
-                currency_elem = row.find('td', {'class': 'flagCur'})
-                impact_elem = row.find('td', {'class': 'sentiment'})
-                event_elem = row.find('td', {'class': 'event'})
-                
-                if time_elem and currency_elem and event_elem:
-                    time_text = time_elem.text.strip()
-                    currency = currency_elem.text.strip()
-                    event_name = event_elem.text.strip()
-                    
-                    # Get impact level
-                    impact = 'Low'
-                    if impact_elem:
-                        impact_spans = impact_elem.find_all('i', {'class': 'grayFullBullishIcon'})
-                        if len(impact_spans) == 3:
-                            impact = 'High'
-                        elif len(impact_spans) == 2:
-                            impact = 'Medium'
-                    
-                    # Format time (convert to 12-hour format if needed)
-                    formatted_time = time_text if time_text else "TBD"
-                    
-                    event_data = {
-                        'time': formatted_time,
-                        'currency': currency,
-                        'event': event_name,
-                        'impact': impact
-                    }
-                    
-                    events.append(event_data)
-            except Exception as e:
-                print(f"Error parsing event row: {e}")
-                continue
-        
-        return {
-            "events": events,
-            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        }
-    except Exception as e:
-        print(f"Error fetching economic calendar: {e}")
-        return {
-            "events": [],
-            "error": str(e)
-        }
-def fetch_economic_calendar() -> Dict[str, Any]:
-    """Scrape economic calendar from Investing.com"""
-    try:
-        url = "https://www.investing.com/economic-calendar/"
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64 ) AppleWebKit/537.36'}
-        response = requests.get(url, headers=headers, timeout=15)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.content, 'html.parser')
-        table = soup.find('table', {'id': 'economicCalendarData'})
-        if not table:
-            return {"events": [], "error": "Table not found"}
-        events = []
-        rows = table.find_all('tr', {'class': 'js-event-item'})
-        for row in rows[:15]:
-            try:
-                time_elem = row.find('td', {'class': 'time'})
-                currency_elem = row.find('td', {'class': 'flagCur'})
-                impact_elem = row.find('td', {'class': 'sentiment'})
-                event_elem = row.find('td', {'class': 'event'})
-                if time_elem and currency_elem and event_elem:
-                    time_text = time_elem.text.strip()
-                    currency = currency_elem.text.strip()
-                    event_name = event_elem.text.strip()
-                    impact = 'Low'
-                    if impact_elem:
-                        impact_spans = impact_elem.find_all('i', {'class': 'grayFullBullishIcon'})
-                        if len(impact_spans) == 3:
-                            impact = 'High'
-                        elif len(impact_spans) == 2:
-                            impact = 'Medium'
-                    events.append({'time': time_text, 'currency': currency, 'event': event_name, 'impact': impact})
-            except:
-                continue
-        return {"events": events, "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
-    except Exception as e:
-        return {"events": [], "error": str(e)}
-
-
 def fetch_all_data() -> Dict[str, Any]:
     """Fetch all data from various sources"""
     
@@ -318,7 +204,7 @@ def fetch_all_data() -> Dict[str, Any]:
         
             },
         
-               # Forex / Currency Pairs
+        # Forex / Currency Pairs
         "forex": {
             "eurusd": fetch_yahoo_finance("EURUSD=X"),  # EUR/USD
             "gbpusd": fetch_yahoo_finance("GBPUSD=X"),  # GBP/USD
@@ -341,7 +227,7 @@ def fetch_economic_calendar() -> Dict[str, Any]:
         url = "https://www.investing.com/economic-calendar/"
         
         headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64 ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         }
         
         response = requests.get(url, headers=headers, timeout=15)
@@ -409,6 +295,7 @@ def fetch_economic_calendar() -> Dict[str, Any]:
         print(f"Error scraping economic calendar: {e}")
         # Return empty events list on error
         return {"events": [], "error": str(e)}
+
 def calculate_inflation_rate(cpi_data: Dict[str, Any]) -> float:
     """Calculate inflation rate from CPI data"""
     try:
