@@ -208,7 +208,7 @@ export default function GlobalMarkets() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-4 pb-24 md:pb-8">
+    <div className="min-h-screen bg-background text-foreground p-4 pb-24 md:pb-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 mb-6">
           <Globe className="w-8 h-8 text-blue-500" />
