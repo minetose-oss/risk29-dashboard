@@ -103,55 +103,55 @@ export default function Performance() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white p-4 pb-24 md:pb-8">
+    <div className="min-h-screen bg-background text-foreground p-4 pb-24 md:pb-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Performance Tracking</h1>
 
         {/* Key Metrics */}
         <div className="grid md:grid-cols-4 gap-4 mb-6">
-          <Card className="p-4 bg-zinc-900/50 border-zinc-800">
+          <Card className="p-4 bg-card border-border">
             <div className="flex items-center gap-2 mb-2">
               <DollarSign className="w-4 h-4 text-blue-500" />
-              <div className="text-sm text-zinc-400">Current Value</div>
+              <div className="text-sm text-muted-foreground">Current Value</div>
             </div>
             <div className="text-2xl font-bold">${currentValue.toLocaleString()}</div>
           </Card>
 
-          <Card className="p-4 bg-zinc-900/50 border-zinc-800">
+          <Card className="p-4 bg-card border-border">
             <div className="flex items-center gap-2 mb-2">
               {totalReturn >= 0 ? (
                 <TrendingUp className="w-4 h-4 text-green-500" />
               ) : (
                 <TrendingDown className="w-4 h-4 text-red-500" />
               )}
-              <div className="text-sm text-zinc-400">Total Return</div>
+              <div className="text-sm text-muted-foreground">Total Return</div>
             </div>
             <div className={`text-2xl font-bold ${totalReturn >= 0 ? 'text-green-500' : 'text-red-500'}`}>
               ${Math.abs(totalReturn).toLocaleString()}
             </div>
           </Card>
 
-          <Card className="p-4 bg-zinc-900/50 border-zinc-800">
+          <Card className="p-4 bg-card border-border">
             <div className="flex items-center gap-2 mb-2">
               <Percent className="w-4 h-4 text-purple-500" />
-              <div className="text-sm text-zinc-400">Return %</div>
+              <div className="text-sm text-muted-foreground">Return %</div>
             </div>
             <div className={`text-2xl font-bold ${returnPercentage >= 0 ? 'text-green-500' : 'text-red-500'}`}>
               {returnPercentage >= 0 ? '+' : ''}{returnPercentage.toFixed(2)}%
             </div>
           </Card>
 
-          <Card className="p-4 bg-zinc-900/50 border-zinc-800">
+          <Card className="p-4 bg-card border-border">
             <div className="flex items-center gap-2 mb-2">
               <Target className="w-4 h-4 text-yellow-500" />
-              <div className="text-sm text-zinc-400">Avg Risk Score</div>
+              <div className="text-sm text-muted-foreground">Avg Risk Score</div>
             </div>
             <div className="text-2xl font-bold">{avgRisk.toFixed(1)}</div>
           </Card>
         </div>
 
         {/* Portfolio Value Chart */}
-        <Card className="p-6 bg-zinc-900/50 border-zinc-800 mb-6">
+        <Card className="p-6 bg-card border-border mb-6">
           <h2 className="text-xl font-bold mb-4">Portfolio Value (Last 30 Days)</h2>
           <div className="h-64">
             <Line data={chartData} options={chartOptions} />
@@ -159,18 +159,18 @@ export default function Performance() {
         </Card>
 
         {/* Risk Comparison Chart */}
-        <Card className="p-6 bg-zinc-900/50 border-zinc-800 mb-6">
+        <Card className="p-6 bg-card border-border mb-6">
           <h2 className="text-xl font-bold mb-4">Actual vs Predicted Risk</h2>
           <div className="h-64">
             <Line data={riskChartData} options={chartOptions} />
           </div>
-          <div className="mt-4 text-sm text-zinc-400">
+          <div className="mt-4 text-sm text-muted-foreground">
             Compare how well our risk predictions matched actual market conditions. Lower deviation indicates better forecasting accuracy.
           </div>
         </Card>
 
         {/* ROI Calculator */}
-        <Card className="p-6 bg-zinc-900/50 border-zinc-800">
+        <Card className="p-6 bg-card border-border">
           <h2 className="text-xl font-bold mb-4">ROI Calculator</h2>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -180,13 +180,13 @@ export default function Performance() {
                 type="number"
                 value={initialInvestment}
                 onChange={(e) => setInitialInvestment(Number(e.target.value))}
-                className="bg-zinc-800 border-zinc-700"
+                className="bg-secondary border-border"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">Time Period</label>
-              <select className="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md">
+              <select className="w-full p-2 bg-secondary border border-border rounded-md">
                 <option>30 Days</option>
                 <option>90 Days</option>
                 <option>1 Year</option>
@@ -195,18 +195,18 @@ export default function Performance() {
             </div>
           </div>
 
-          <div className="mt-6 p-4 bg-zinc-800/50 rounded-lg">
+          <div className="mt-6 p-4 bg-secondary/50 rounded-lg">
             <div className="grid md:grid-cols-3 gap-4">
               <div>
-                <div className="text-sm text-zinc-400 mb-1">Initial Investment</div>
+                <div className="text-sm text-muted-foreground mb-1">Initial Investment</div>
                 <div className="text-xl font-bold">${initialInvestment.toLocaleString()}</div>
               </div>
               <div>
-                <div className="text-sm text-zinc-400 mb-1">Current Value</div>
+                <div className="text-sm text-muted-foreground mb-1">Current Value</div>
                 <div className="text-xl font-bold">${currentValue.toLocaleString()}</div>
               </div>
               <div>
-                <div className="text-sm text-zinc-400 mb-1">ROI</div>
+                <div className="text-sm text-muted-foreground mb-1">ROI</div>
                 <div className={`text-xl font-bold ${returnPercentage >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                   {returnPercentage >= 0 ? '+' : ''}{returnPercentage.toFixed(2)}%
                 </div>
@@ -215,16 +215,16 @@ export default function Performance() {
           </div>
 
           <div className="mt-6 space-y-3">
-            <div className="flex items-center justify-between p-3 bg-zinc-800/30 rounded">
-              <span className="text-sm text-zinc-400">Annualized Return</span>
+            <div className="flex items-center justify-between p-3 bg-secondary/30 rounded">
+              <span className="text-sm text-muted-foreground">Annualized Return</span>
               <span className="font-bold">{(returnPercentage * 12).toFixed(2)}%</span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-zinc-800/30 rounded">
-              <span className="text-sm text-zinc-400">Risk-Adjusted Return</span>
+            <div className="flex items-center justify-between p-3 bg-secondary/30 rounded">
+              <span className="text-sm text-muted-foreground">Risk-Adjusted Return</span>
               <span className="font-bold">{(returnPercentage / (avgRisk / 10)).toFixed(2)}%</span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-zinc-800/30 rounded">
-              <span className="text-sm text-zinc-400">Sharpe Ratio (Est.)</span>
+            <div className="flex items-center justify-between p-3 bg-secondary/30 rounded">
+              <span className="text-sm text-muted-foreground">Sharpe Ratio (Est.)</span>
               <span className="font-bold">{(returnPercentage / avgRisk).toFixed(3)}</span>
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function Performance() {
         {/* Performance Summary */}
         <div className="mt-6 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
           <h3 className="font-bold mb-2">Performance Summary</h3>
-          <p className="text-sm text-zinc-300">
+          <p className="text-sm text-foreground">
             Your portfolio has {returnPercentage >= 0 ? 'gained' : 'lost'} {Math.abs(returnPercentage).toFixed(2)}% 
             over the last 30 days with an average risk score of {avgRisk.toFixed(1)}. 
             {returnPercentage >= 0 
