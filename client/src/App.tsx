@@ -1,4 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
+import toast, { Toaster as HotToaster } from 'react-hot-toast';
+import { useDataPolling } from './hooks/useDataPolling';
 import InstallPrompt from "./components/InstallPrompt";
 import MobileBottomNav from "./components/MobileBottomNav";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -75,6 +77,20 @@ function AppRouter() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // Real-time data polling
+  const { isNewData } = useDataPolling('/real_data.json', {
+    interval: 5 * 60 * 1000, // 5 minutes
+    enabled: true,
+    onUpdate: (data) => {
+      console.log('[App] New data received:', data.timestamp);
+      toast.success('Dashboard data updated!', {
+        duration: 4000,
+        position: 'top-right',
+        icon: '🔄',
+      });
+    },
+  });
+
   return (
     <ErrorBoundary>
       <ThemeProvider
@@ -85,6 +101,17 @@ function App() {
           <DashboardProfileProvider>
             <TooltipProvider>
               <Toaster />
+              <HotToaster
+                position="top-right"
+                toastOptions={{
+                  duration: 4000,
+                  style: {
+                    background: 'var(--background)',
+                    color: 'var(--foreground)',
+                    border: '1px solid var(--border)',
+                  },
+                }}
+              />
               <InstallPrompt />
               <AppRouter />
               <MobileBottomNav />
