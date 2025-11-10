@@ -19,6 +19,7 @@ import { DndContext, closestCenter, KeyboardSensor, PointerSensor, useSensor, us
 import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { SortableCategory } from '@/components/SortableCategory';
+import PredictionChart from '@/components/PredictionChart';
 
 interface CategoryData {
   name: string;
@@ -667,6 +668,9 @@ export default function Home() {
           Showing overall risk score and major risk categories over the last 30 days
         </p>
       </Card>
+
+      {/* Risk Forecast */}
+      <PredictionChart />
 
       {/* Risk Levels */}
       <Card className="bg-card border-border p-6">
