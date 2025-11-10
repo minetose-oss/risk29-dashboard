@@ -1,3 +1,4 @@
+// Force rebuild to clear GitHub Pages build cache - Nov 10, 2025 15:30
 import { useState, useEffect } from "react";
 import { useRoute, Link } from "wouter";
 import { Card } from "@/components/ui/card";
