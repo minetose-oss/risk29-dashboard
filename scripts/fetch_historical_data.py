@@ -192,6 +192,7 @@ def fetch_historical_valuation(days: int = 90) -> List[Dict[str, Any]]:
         
         # Fetch S&P 500 index
         sp500_data = fred.get_series("SP500", start_date=start_date, end_date=end_date)
+        # Forward fill to handle weekends and holidays
         sp500_data = sp500_data.resample('D').ffill()
         
         # Fetch S&P 500 P/E Ratio
@@ -388,15 +389,25 @@ def merge_historical_data(liquidity: List, valuation: List, credit: List, macro:
     
     # Convert to list and calculate overall risk
     result = []
+    # Track last known values for forward fill
+    last_values = {
+        'liquidity': 25,
+        'valuation': 50,
+        'credit': 15,
+        'macro': 20,
+        'technical': 25
+    }
+    
     for date in sorted(all_dates):
-        # Use available data or default values
-        data = {
-            'liquidity': liquidity_dict.get(date, 25),
-            'valuation': valuation_dict.get(date, 50),
-            'credit': credit_dict.get(date, 15),
-            'macro': macro_dict.get(date, 20),
-            'technical': technical_dict.get(date, 25)
-        }
+        # Use available data or forward fill from last known value
+        data = {}
+        for key, dict_data in [('liquidity', liquidity_dict), ('valuation', valuation_dict), 
+                               ('credit', credit_dict), ('macro', macro_dict), ('technical', technical_dict)]:
+            if date in dict_data:
+                data[key] = dict_data[date]
+                last_values[key] = dict_data[date]  # Update last known value
+            else:
+                data[key] = last_values[key]  # Use last known value (forward fill)
         
         # Always include (use defaults if data missing)
         if True:
