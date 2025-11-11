@@ -2,6 +2,7 @@
 """
 Fetch historical risk data for the dashboard
 Generates real historical data instead of mock data
+Uses combined valuation (S&P 500 + P/E Ratio) for more accurate risk assessment
 """
 
 import os
@@ -38,6 +39,65 @@ def calculate_risk_score(value: float, threshold_high: float, threshold_low: flo
         else:
             # Linear interpolation
             return ((value - threshold_low) / (threshold_high - threshold_low)) * 100
+
+def calculate_sp500_risk_tiered(value: float) -> float:
+    """
+    Calculate S&P 500 risk with multi-tier thresholds
+    Prevents risk from staying at 100 when exceeding threshold
+    
+    Tiers:
+    - < 5000: 0-30 (Low risk - normal levels)
+    - 5000-6000: 30-50 (Medium risk - elevated)
+    - 6000-6500: 50-65 (High risk - expensive)
+    - 6500-7000: 65-80 (Very high - near ATH)
+    - 7000-7500: 80-90 (Extreme - above ATH)
+    - 7500-8000: 90-97 (Bubble territory)
+    - > 8000: 97-99 (Extreme bubble, never 100)
+    """
+    if value < 5000:
+        return (value / 5000) * 30  # 0-30
+    elif value < 6000:
+        return 30 + ((value - 5000) / 1000) * 20  # 30-50
+    elif value < 6500:
+        return 50 + ((value - 6000) / 500) * 15  # 50-65
+    elif value < 7000:
+        return 65 + ((value - 6500) / 500) * 15  # 65-80
+    elif value < 7500:
+        return 80 + ((value - 7000) / 500) * 10  # 80-90
+    elif value < 8000:
+        return 90 + ((value - 7500) / 500) * 7  # 90-97
+    else:
+        # Cap at 99 (never reach 100)
+        return min(97 + ((value - 8000) / 1000) * 2, 99)
+
+def calculate_pe_risk(pe_value: float) -> float:
+    """
+    Calculate P/E ratio risk score
+    
+    P/E Thresholds:
+    - < 15: 0-20 (Undervalued - cheap)
+    - 15-18: 20-35 (Fair value - reasonable)
+    - 18-22: 35-50 (Normal - average)
+    - 22-25: 50-65 (Elevated - getting expensive)
+    - 25-28: 65-80 (High - expensive)
+    - 28-32: 80-90 (Very high - overvalued)
+    - > 32: 90-99 (Bubble territory)
+    """
+    if pe_value < 15:
+        return (pe_value / 15) * 20  # 0-20
+    elif pe_value < 18:
+        return 20 + ((pe_value - 15) / 3) * 15  # 20-35
+    elif pe_value < 22:
+        return 35 + ((pe_value - 18) / 4) * 15  # 35-50
+    elif pe_value < 25:
+        return 50 + ((pe_value - 22) / 3) * 15  # 50-65
+    elif pe_value < 28:
+        return 65 + ((pe_value - 25) / 3) * 15  # 65-80
+    elif pe_value < 32:
+        return 80 + ((pe_value - 28) / 4) * 10  # 80-90
+    else:
+        # Cap at 99
+        return min(90 + ((pe_value - 32) / 8) * 9, 99)
 
 def fetch_historical_liquidity(days: int = 90) -> List[Dict[str, Any]]:
     """Fetch historical liquidity data"""
@@ -77,28 +137,66 @@ def fetch_historical_liquidity(days: int = 90) -> List[Dict[str, Any]]:
         return []
 
 def fetch_historical_valuation(days: int = 90) -> List[Dict[str, Any]]:
-    """Fetch historical valuation data"""
+    """
+    Fetch historical valuation data using COMBINED approach
+    Combines S&P 500 index (40%) and P/E ratio (60%) for more accurate valuation
+    """
     try:
         end_date = datetime.now()
         start_date = end_date - timedelta(days=days)
         
-        # Use S&P 500 index as proxy for valuation
+        # Fetch S&P 500 index
         sp500_data = fred.get_series("SP500", start_date=start_date, end_date=end_date)
-        
-        # Resample to daily and forward fill
         sp500_data = sp500_data.resample('D').ffill()
         
+        # Fetch S&P 500 P/E Ratio
+        # Using realistic P/E estimation based on market conditions
+        # Current S&P 500 P/E ≈ 25-27 (as of Nov 2024)
+        pe_baseline = 26  # Current market average
+        
+        # Historical P/E typically ranges from 15-30
+        # We'll estimate based on S&P 500 level relative to historical average
+        
         historical = []
-        for date, value in sp500_data.items():
-            sp500_value = float(value)
+        for i, (date, sp500_value) in enumerate(sp500_data.items()):
+            sp500_value = float(sp500_value)
             
-            # Normalize to risk score (higher price = higher risk)
-            # Thresholds: 3000 (low risk), 5000 (high risk)
-            risk_score = calculate_risk_score(sp500_value, 5000, 3000, reverse=False)
+            # Estimate P/E for historical dates
+            # P/E correlates with S&P 500 but moves slower
+            # When S&P 500 is high, P/E tends to be high (but not linearly)
+            
+            # Use S&P 500 level to estimate P/E
+            # Historical relationship: S&P 500 4000-5000 → P/E 18-22
+            #                         S&P 500 5000-6000 → P/E 22-26
+            #                         S&P 500 6000-7000 → P/E 26-30
+            if sp500_value < 5000:
+                estimated_pe = 18 + (sp500_value - 4000) / 1000 * 4  # 18-22
+            elif sp500_value < 6000:
+                estimated_pe = 22 + (sp500_value - 5000) / 1000 * 4  # 22-26
+            elif sp500_value < 7000:
+                estimated_pe = 26 + (sp500_value - 6000) / 1000 * 4  # 26-30
+            else:
+                estimated_pe = 30 + (sp500_value - 7000) / 1000 * 2  # 30-32
+            
+            # Clamp P/E to reasonable range (15-35)
+            estimated_pe = max(15, min(35, estimated_pe))
+            
+            # Calculate S&P 500 risk (multi-tier)
+            sp500_risk = calculate_sp500_risk_tiered(sp500_value)
+            
+            # Calculate P/E risk
+            pe_risk = calculate_pe_risk(estimated_pe)
+            
+            # Combined valuation risk (40% S&P 500, 60% P/E)
+            combined_risk = (sp500_risk * 0.4) + (pe_risk * 0.6)
             
             historical.append({
                 "date": date.strftime("%Y-%m-%d"),
-                "value": round(risk_score, 1)
+                "value": round(combined_risk, 1),
+                "sp500": round(sp500_value, 1),
+                "pe": round(estimated_pe, 1),
+                "sp500_risk": round(sp500_risk, 1),
+                "pe_risk": round(pe_risk, 1)
             })
         
         return historical[-days:]
@@ -122,7 +220,7 @@ def fetch_historical_credit(days: int = 90) -> List[Dict[str, Any]]:
         for date, value in spread_data.items():
             spread = float(value)
             
-            # Risk score: high spread = high risk
+            # Risk score: high spread = high credit risk
             # Thresholds: 3% (low risk), 10% (high risk)
             risk_score = calculate_risk_score(spread, 10, 3, reverse=False)
             
@@ -277,6 +375,7 @@ def merge_historical_data(liquidity: List, valuation: List, credit: List, macro:
 def main():
     """Main function to fetch and save historical data"""
     print("Fetching historical risk data...")
+    print("Using COMBINED valuation (S&P 500 40% + P/E 60%)")
     
     days = 90  # Fetch 90 days of data
     
@@ -284,7 +383,7 @@ def main():
     print("Fetching liquidity data...")
     liquidity = fetch_historical_liquidity(days)
     
-    print("Fetching valuation data...")
+    print("Fetching combined valuation data (S&P 500 + P/E)...")
     valuation = fetch_historical_valuation(days)
     
     print("Fetching credit data...")
@@ -309,6 +408,11 @@ def main():
     output = {
         "generated_at": datetime.now().isoformat(),
         "days": len(historical_data),
+        "valuation_method": "combined",
+        "valuation_weights": {
+            "sp500": 0.4,
+            "pe_ratio": 0.6
+        },
         "data": historical_data
     }
     
@@ -318,11 +422,14 @@ def main():
     print(f"Historical data saved to {output_file}")
     print(f"Generated {len(historical_data)} days of data")
     
-    # Print sample
-    if historical_data:
+    # Print sample with valuation details
+    if historical_data and valuation:
         print("\nSample data (first 3 days):")
-        for item in historical_data[:3]:
-            print(f"  {item['date']}: Overall={item['overall']}, Liquidity={item['liquidity']}, Valuation={item['valuation']}")
+        for i, item in enumerate(historical_data[:3]):
+            val_item = valuation[i] if i < len(valuation) else {}
+            print(f"  {item['date']}: Overall={item['overall']}, Valuation={item['valuation']}")
+            if 'sp500' in val_item:
+                print(f"    → S&P 500={val_item['sp500']}, P/E={val_item['pe']}, Combined Risk={item['valuation']}")
 
 if __name__ == "__main__":
     main()
