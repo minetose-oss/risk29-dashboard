@@ -20,6 +20,7 @@ import { arrayMove, SortableContext, sortableKeyboardCoordinates, useSortable, v
 import { CSS } from '@dnd-kit/utilities';
 import { SortableCategory } from '@/components/SortableCategory';
 import PredictionChart from '@/components/PredictionChart';
+import ModelPerformance from '@/components/ModelPerformance';
 
 interface CategoryData {
   name: string;
@@ -257,26 +258,38 @@ export default function Home() {
     { name: "LEI/CHIPS/M", value: -24 },
   ];
 
-  // Generate mock historical data for chart
-  const generateHistoricalData = () => {
-    const days = 30;
-    const data = [];
-    for (let i = days; i >= 0; i--) {
-      const date = new Date();
-      date.setDate(date.getDate() - i);
-      data.push({
-        date: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
-        overall: Math.floor(Math.random() * 10) + 15,
-        liquidity: Math.floor(Math.random() * 20) + 40,
-        valuation: Math.floor(Math.random() * 20) + 35,
-        credit: Math.floor(Math.random() * 15) + 5,
-        macro: Math.floor(Math.random() * 15) + 15,
-      });
-    }
-    return data;
-  };
-
-  const historicalData = generateHistoricalData();
+  // Load real historical data
+  const [historicalData, setHistoricalData] = useState<any[]>([]);
+  
+  useEffect(() => {
+    const loadHistoricalData = async () => {
+      try {
+        const response = await fetch(getAssetUrl('historical_data.json', true), {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setHistoricalData(data.data || []);
+          console.log('Historical data loaded:', data);
+        }
+      } catch (error) {
+        console.error('Error loading historical data:', error);
+        // Fallback to empty array
+        setHistoricalData([]);
+      }
+    };
+    
+    loadHistoricalData();
+    
+    // Refresh historical data every 5 minutes
+    const interval = setInterval(loadHistoricalData, 300000);
+    return () => clearInterval(interval);
+  }, []);
 
   if (loading) {
     return (
@@ -676,6 +689,9 @@ export default function Home() {
 
       {/* Risk Forecast */}
       <PredictionChart />
+
+      {/* AI Model Performance */}
+      <ModelPerformance />
 
       {/* Risk Levels */}
       <Card className="bg-card border-border p-6">
