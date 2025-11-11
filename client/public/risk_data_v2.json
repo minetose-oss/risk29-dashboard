@@ -1,6 +1,6 @@
 {
-  "timestamp": 1762832284,
-  "last_updated": "2025-11-11T03:38:04.096331",
+  "timestamp": 1762868474,
+  "last_updated": "2025-11-11T13:41:14.097724",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -208,10 +208,10 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 17.6,
+          "current_value": 18.0,
           "unit": "Index",
           "risk_score": 25,
-          "date": "2025-11-10",
+          "date": "2025-11-11",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Low volatility - calm markets",
@@ -228,10 +228,10 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.65,
+          "current_value": 99.36,
           "unit": "Index",
           "risk_score": 25,
-          "date": "2025-11-10",
+          "date": "2025-11-11",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Weak dollar - supports risk assets",
