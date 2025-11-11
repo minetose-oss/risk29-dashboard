@@ -77,19 +77,21 @@ function AppRouter() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
-  // Real-time data polling - Disabled until real_data.json is available
-  // const { isNewData } = useDataPolling('/real_data.json', {
-  //   interval: 5 * 60 * 1000, // 5 minutes
-  //   enabled: true,
-  //   onUpdate: (data) => {
-  //     console.log('[App] New data received:', data.timestamp);
-  //     toast.success('Dashboard data updated!', {
-  //       duration: 4000,
-  //       position: 'top-right',
-  //       icon: '🔄',
-  //     });
-  //   },
-  // });
+  // Real-time data polling - Disabled until real_data.json is available  
+ // เป็น:
+const { isNewData } = useDataPolling(`${import.meta.env.BASE_URL}real_data.json`, {
+  interval: 5 * 60 * 1000,
+  enabled: true,
+  onUpdate: (data) => {
+    console.log('[App] New data received:', data.timestamp);
+    toast.success('Dashboard data updated!', {
+      duration: 4000,
+      position: 'top-right',
+      icon: '🔄',
+    });
+  },
+});
+
   
 
   return (
