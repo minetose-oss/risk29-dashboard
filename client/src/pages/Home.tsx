@@ -619,6 +619,7 @@ export default function Home() {
                 name="Overall Risk"
                 dot={false}
                 activeDot={{ r: 6 }}
+                isAnimationActive={false}
               />
               <Line 
                 type="monotone" 
@@ -629,6 +630,7 @@ export default function Home() {
                 name="Liquidity"
                 dot={false}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
               <Line 
                 type="monotone" 
@@ -639,6 +641,7 @@ export default function Home() {
                 name="Valuation"
                 dot={false}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
               <Line 
                 type="monotone" 
@@ -649,6 +652,7 @@ export default function Home() {
                 name="Credit"
                 dot={false}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
               <Line 
                 type="monotone" 
@@ -659,6 +663,7 @@ export default function Home() {
                 name="Macro"
                 dot={false}
                 activeDot={{ r: 5 }}
+                isAnimationActive={false}
               />
             </LineChart>
           </ResponsiveContainer>
