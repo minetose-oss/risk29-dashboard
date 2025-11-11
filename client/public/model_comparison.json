@@ -1,0 +1,21 @@
+{
+  "generated_at": "2025-11-11T01:38:19.795671",
+  "models": [
+    {
+      "name": "Prophet",
+      "type": "Time Series (Facebook Prophet)",
+      "metrics": {},
+      "predictions_file": "predictions.json"
+    },
+    {
+      "name": "ARIMA",
+      "type": "Statistical (ARIMA)",
+      "metrics": {
+        "mape": 4.28,
+        "rmse": 1.87,
+        "mae": 1.75
+      },
+      "predictions_file": "arima_predictions.json"
+    }
+  ]
+}
