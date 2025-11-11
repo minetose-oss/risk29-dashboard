@@ -574,7 +574,7 @@ export default function Home() {
       {/* Historical Trend */}
       <Card className="bg-card border-border p-6">
         <div className="text-muted-foreground text-sm mb-4">
-          {Object.values(riskData.categories).reduce((sum: number, cat: any) => sum + (cat?.signals?.length || 0), 0)} signals tracked
+         25 signals tracked
         </div>
         
         <div className="flex items-center justify-between mb-6">
