@@ -264,7 +264,7 @@ export default function Home() {
   useEffect(() => {
     const loadHistoricalData = async () => {
       try {
-        const response = await fetch(getAssetUrl('historical_data.json', true), {
+        const response = await fetch(getAssetUrl('enhanced_historical_data.json', true), {
           cache: 'no-store',
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
