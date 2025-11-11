@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, ComposedChart } from 'recharts';
-import { TrendingUp, AlertCircle } from 'lucide-react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, ComposedChart, Brush } from 'recharts';
+import { TrendingUp, AlertCircle, Calendar } from 'lucide-react';
 import { useTheme } from '@/contexts/ThemeContext';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 interface Prediction {
   date: string;
@@ -27,6 +28,7 @@ export default function PredictionChart() {
   const [predictionData, setPredictionData] = useState<PredictionData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [dateRange, setDateRange] = useState<string>('30');
 
   useEffect(() => {
     const loadPredictions = async () => {
@@ -72,13 +74,17 @@ export default function PredictionChart() {
     );
   }
 
-  // Format data for chart
-  const chartData = predictionData.predictions.map(pred => ({
-    date: new Date(pred.date).toLocaleDateString('en-US', { month: 'short', year: '2-digit' }),
+  // Format data for chart with date range filter
+  const allChartData = predictionData.predictions.map(pred => ({
+    date: new Date(pred.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+    fullDate: pred.date,
     predicted: pred.predicted_risk,
     lower: pred.lower_bound,
     upper: pred.upper_bound,
   }));
+  
+  // Filter by date range
+  const chartData = allChartData.slice(0, parseInt(dateRange));
 
   // Calculate average predicted risk
   const avgRisk = predictionData.predictions.reduce((sum, pred) => sum + pred.predicted_risk, 0) / predictionData.predictions.length;
@@ -104,13 +110,28 @@ export default function PredictionChart() {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-blue-500" />
-          <h2 className="text-lg font-semibold">Risk Forecast (Next 30 Days)</h2>
+          <h2 className="text-lg font-semibold">Risk Forecast (Next {dateRange} Days)</h2>
         </div>
-        <div className="text-right">
-          <div className="text-sm text-muted-foreground">Average Predicted Risk</div>
-          <div className={`text-2xl font-bold ${riskLevel.color}`}>
-            {avgRisk.toFixed(1)}
-            <span className="text-sm ml-2 font-normal">{riskLevel.label}</span>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-muted-foreground" />
+            <Select value={dateRange} onValueChange={setDateRange}>
+              <SelectTrigger className="w-[120px]">
+                <SelectValue placeholder="Date range" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="7">7 Days</SelectItem>
+                <SelectItem value="14">14 Days</SelectItem>
+                <SelectItem value="30">30 Days</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="text-right">
+            <div className="text-sm text-muted-foreground">Average Predicted Risk</div>
+            <div className={`text-2xl font-bold ${riskLevel.color}`}>
+              {avgRisk.toFixed(1)}
+              <span className="text-sm ml-2 font-normal">{riskLevel.label}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -140,7 +161,43 @@ export default function PredictionChart() {
                 borderRadius: '8px',
               }}
               labelStyle={{ color: textColor }}
-              formatter={(value: any) => [`${Number(value).toFixed(1)}`, '']}
+              formatter={(value: any, name: string, props: any) => {
+                const val = Number(value).toFixed(1);
+                if (name === 'Predicted Risk') {
+                  // Calculate % change from previous day
+                  const index = chartData.findIndex(d => d.date === props.payload.date);
+                  if (index > 0) {
+                    const prevValue = chartData[index - 1].predicted;
+                    const change = ((value - prevValue) / prevValue * 100).toFixed(1);
+                    const changeStr = change > 0 ? `+${change}%` : `${change}%`;
+                    return [`${val} (${changeStr})`, name];
+                  }
+                }
+                return [`${val}`, name];
+              }}
+              content={({ active, payload, label }) => {
+                if (active && payload && payload.length) {
+                  const data = payload[0].payload;
+                  return (
+                    <div style={{ backgroundColor: tooltipBg, border: `1px solid ${tooltipBorder}`, borderRadius: '8px', padding: '12px' }}>
+                      <p style={{ color: textColor, fontWeight: 'bold', marginBottom: '8px' }}>{label}</p>
+                      <p style={{ color: '#3b82f6', marginBottom: '4px' }}>
+                        <strong>Predicted:</strong> {data.predicted.toFixed(1)}
+                      </p>
+                      <p style={{ color: textColor, fontSize: '12px', marginBottom: '2px' }}>
+                        <strong>Upper Bound:</strong> {data.upper.toFixed(1)}
+                      </p>
+                      <p style={{ color: textColor, fontSize: '12px' }}>
+                        <strong>Lower Bound:</strong> {data.lower.toFixed(1)}
+                      </p>
+                      <p style={{ color: textColor, fontSize: '11px', marginTop: '8px', opacity: 0.7 }}>
+                        95% Confidence Interval
+                      </p>
+                    </div>
+                  );
+                }
+                return null;
+              }}
             />
             <Legend 
               wrapperStyle={{ paddingTop: '20px' }}
