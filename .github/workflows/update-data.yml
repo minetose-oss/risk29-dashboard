@@ -45,6 +45,7 @@ jobs:
           git add client/public/*.json
           git diff --quiet && git diff --staged --quiet || \
          (git commit -m "🤖 Auto-update dashboard data $(date +'%Y-%m-%d %H:%M UTC')" && \
-          git pull --rebase origin master && \  # ← เพิ่มบรรทัดนี้
+          git pull --rebase origin master && 
+          \  # ← เพิ่มบรรทัดนี้
           git push origin master)
 
