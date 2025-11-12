@@ -1,0 +1,72 @@
+name: Update Dashboard Data
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches:
+      - master
+    paths:
+      - 'client/src/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0  # Fetch all history for proper pull
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install fredapi yfinance requests beautifulsoup4 pandas pyyaml numpy
+      
+      - name: Update dashboard data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: |
+          cd scripts
+          python update_all_data.py
+          python fetch_historical_data.py
+      
+      - name: Install Node.js dependencies
+        run: |
+          cd client
+          npm install
+      
+      - name: Build React app
+        run: |
+          cd client
+          npm run build
+      
+      - name: Copy build to docs folder
+        run: |
+          rm -rf docs
+          cp -r client/dist docs
+      
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add client/public/risk_data_v2.json client/public/real_data.json client/public/historical_data.json docs/
+          git diff --quiet && git diff --staged --quiet || \
+          (git commit -m "🤖 Auto-update dashboard data and rebuild app $(date +'%Y-%m-%d %H:%M UTC')" && \
+           git pull --rebase origin master && \
+           git push origin master)

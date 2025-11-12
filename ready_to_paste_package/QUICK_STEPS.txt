@@ -1,0 +1,106 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         QUICK STEPS REFERENCE                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🚀 SUPER QUICK GUIDE (10-15 minutes)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STEP 1: Open GitHub Web Editor
+───────────────────────────────
+1. Go to: https://github.com/minetose-oss/risk29-dashboard
+2. Press . (period/dot key)
+3. GitHub web editor opens
+
+
+STEP 2: Copy Python Scripts (10 files)
+───────────────────────────────────────
+📂 scripts/
+   ✓ calculate_risk.py              (create new)
+   ✓ indicator_weights.py           (create new)
+   ✓ merge_indicators.py            (replace existing)
+   ✓ transform_to_dashboard.py      (replace existing)
+
+📂 scripts/methods/ (create folder first!)
+   ✓ __init__.py                    (create new)
+   ✓ simple_average.py              (create new)
+   ✓ weighted_average.py            (create new)
+   ✓ time_decay_momentum.py         (create new)
+   ✓ regime_adaptive.py             (create new)
+   ✓ meta_ensemble.py               (create new)
+
+
+STEP 3: Copy React Components (2 files)
+────────────────────────────────────────
+📂 client/src/pages/
+   ✓ Settings.tsx                   (create new or replace)
+
+📂 client/src/components/
+   ✓ RiskMethodSettings.tsx         (create new)
+
+
+STEP 4: Copy Workflow (1 file)
+───────────────────────────────
+📂 .github/workflows/
+   ✓ update-data.yml                (replace existing)
+
+
+STEP 5: Commit & Push
+─────────────────────
+1. Click Source Control icon (left sidebar)
+2. Enter commit message:
+   "Add Risk Calculator and fix workflow"
+3. Click ✓ Commit & Push
+
+
+STEP 6: Wait for Deployment
+────────────────────────────
+1. Go to: https://github.com/minetose-oss/risk29-dashboard/actions
+2. Wait ~3-5 minutes
+3. Check for ✅ success
+
+
+STEP 7: Check Dashboard
+────────────────────────
+1. Go to: https://minetose-oss.github.io/risk29-dashboard/
+2. Press Ctrl+Shift+R (hard refresh)
+3. Click Settings → See 5 methods!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 TIPS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Create folders first, then files
+✓ Use Ctrl+A to select all when replacing
+✓ Double-check file paths
+✓ Commit after each section if you want
+✓ Check the diff to see changes
+
+
+🔧 HOW TO CREATE FILES IN WEB EDITOR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+New File:      Right-click folder → New File → Type name
+New Folder:    Right-click folder → New Folder → Type name
+Replace:       Click file → Ctrl+A → Paste new content
+
+
+🎯 CHECKLIST:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] Opened GitHub web editor
+[ ] Created scripts/methods/ folder
+[ ] Copied 10 Python files
+[ ] Copied 2 React components
+[ ] Copied 1 workflow file
+[ ] Committed and pushed
+[ ] Workflow running
+[ ] Workflow succeeded
+[ ] Dashboard refreshed
+[ ] Settings page visible
+
+
+═══════════════════════════════════════════════════════════════════════════════
+For detailed instructions, see COPY_PASTE_GUIDE.md
+═══════════════════════════════════════════════════════════════════════════════
