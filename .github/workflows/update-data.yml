@@ -2,7 +2,7 @@ name: Update Dashboard Data
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
+    - cron: '0 */6 * * *'  # Run every 6 hours at 00:00, 06:00, 12:00, 18:00 UTC
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install fredapi yfinance requests beautifulsoup4 pandas
+          pip install fredapi yfinance requests beautifulsoup4 pandas numpy
       
-      - name: Update dashboard data
+      - name: Update all dashboard data (23 indicators)
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
@@ -37,5 +37,5 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add client/public/risk_data_v2.json client/public/real_data.json client/public/historical_data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update dashboard data $(date +'%Y-%m-%d %H:%M UTC')" && git push)
+          git add client/public/*.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-update dashboard data - 23 indicators ($(date -u +'%Y-%m-%d %H:%M UTC'))" && git push)
