@@ -574,7 +574,7 @@ export default function Home() {
       {/* Historical Trend */}
       <Card className="bg-card border-border p-6">
         <div className="text-muted-foreground text-sm mb-4">
-         25 signals tracked
+          {Object.values(riskData.categories).reduce((sum: number, cat: any) => sum + (cat?.signals?.length || 0), 0)} signals tracked
         </div>
         
         <div className="flex items-center justify-between mb-6">
@@ -592,6 +592,57 @@ export default function Home() {
             Export Chart
           </Button>
         </div>
+
+        {/* Current Category Values */}
+        {historicalData.length > 0 && (
+          <div className="mb-6 p-4 bg-muted/30 rounded-lg border border-border">
+            <div className="text-sm font-medium text-muted-foreground mb-3">Current Risk Scores (Latest)</div>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#3b82f6' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Overall:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].overall.toFixed(1)}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#f97316' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Liquidity:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].liquidity.toFixed(1)}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#ef4444' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Credit:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].credit.toFixed(1)}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#22c55e' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Macro:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].macro.toFixed(1)}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#eab308' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Valuation:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].valuation.toFixed(1)}</span>
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#a855f7' }}></div>
+                <span className="text-sm">
+                  <span className="text-muted-foreground">Technical:</span>{' '}
+                  <span className="font-semibold">{historicalData[historicalData.length - 1].technical.toFixed(1)}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div ref={chartRef} className="h-80">
           <ResponsiveContainer width="100%" height="100%">
@@ -674,6 +725,17 @@ export default function Home() {
                 strokeWidth={2}
                 strokeDasharray="5 5"
                 name="Macro"
+                dot={false}
+                activeDot={{ r: 5 }}
+                isAnimationActive={false}
+              />
+              <Line 
+                type="monotone" 
+                dataKey="technical" 
+                stroke="#a855f7" 
+                strokeWidth={2}
+                strokeDasharray="5 5"
+                name="Technical"
                 dot={false}
                 activeDot={{ r: 5 }}
                 isAnimationActive={false}
