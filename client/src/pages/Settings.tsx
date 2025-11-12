@@ -7,6 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import { ArrowLeft, Save, Settings as SettingsIcon, Bell, Download, Upload, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { useColorScheme, ColorScheme } from "@/contexts/ColorSchemeContext";
+import { RiskMethodSettings } from "@/components/RiskMethodSettings";
 
 interface ThresholdConfig {
   enabled: boolean;
@@ -258,6 +259,9 @@ export default function Settings() {
             ))}
           </div>
         </Card>
+
+        {/* Risk Calculation Method */}
+        <RiskMethodSettings />
 
         {/* Info Card */}
         <Card className="bg-card border-border p-6 mb-6">
