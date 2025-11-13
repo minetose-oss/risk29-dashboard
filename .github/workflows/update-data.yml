@@ -45,11 +45,12 @@ jobs:
           cd scripts
           python update_all_data.py
           python fetch_historical_data.py
+          python calculate_all_risk_methods.py
       
       - name: Install Node.js dependencies
         run: |
           cd client
-          npm install
+          npm install --legacy-peer-deps
       
       - name: Build React app
         run: |
@@ -65,7 +66,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
-          git add client/public/risk_data_v2.json client/public/real_data.json client/public/historical_data.json docs/
+          git add client/public/risk_data_v2.json client/public/real_data.json client/public/historical_data.json client/public/risk_methods.json docs/
           git diff --quiet && git diff --staged --quiet || \
           (git commit -m "🤖 Auto-update dashboard data and rebuild app $(date +'%Y-%m-%d %H:%M UTC')" && \
            git pull --rebase origin master && \
