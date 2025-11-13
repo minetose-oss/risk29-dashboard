@@ -40,11 +40,13 @@ jobs:
       
       - name: Update dashboard data
         env:
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+            FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
-          cd scripts
-          python update_all_data.py
-          python fetch_historical_data.py
+           cd scripts
+           python update_all_data.py
+           python fetch_historical_data.py
+           python calculate_all_risk_methods.py
+
       
       - name: Install Node.js dependencies
         run: |
