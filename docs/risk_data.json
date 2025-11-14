@@ -1,11 +1,11 @@
 {
-  "timestamp": 1763155310,
-  "last_updated": "2025-11-14T21:21:50.797146",
-  "score": 46,
+  "timestamp": 1763155413,
+  "last_updated": "2025-11-14T21:23:33.664561",
+  "score": 44,
   "summary": {
     "high_risk_count": 3,
-    "medium_risk_count": 9,
-    "low_risk_count": 7
+    "medium_risk_count": 8,
+    "low_risk_count": 8
   },
   "categories": {
     "liquidity": {
@@ -188,7 +188,7 @@
     },
     "technical": {
       "name": "Technical",
-      "score": 42,
+      "score": 30,
       "signals": [
         {
           "id": "SP500",
@@ -208,11 +208,11 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 20.07,
+          "current_value": 19.95,
           "unit": "Index",
-          "risk_score": 50,
+          "risk_score": 25,
           "date": "2025-11-14",
-          "status": "Moderate risk - monitor closely",
+          "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Low volatility - calm markets",
             "high": "High volatility - fearful markets"
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.27,
+          "current_value": 99.28,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-14",
