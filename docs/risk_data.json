@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763150917,
-  "last_updated": "2025-11-14T20:08:37.896576",
+  "timestamp": 1763151011,
+  "last_updated": "2025-11-14T20:10:11.001447",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -194,7 +194,7 @@
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6758.61,
+          "current_value": 6757.23,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-14",
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.29,
+          "current_value": 99.3,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-14",
