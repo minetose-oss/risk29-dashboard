@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-11-14T22:38:01.812660",
-  "last_updated": "November 14, 2025 22:38",
+  "timestamp": "2025-11-14T22:39:39.349906",
+  "last_updated": "November 14, 2025 22:39",
   "valuation": {
     "market_cap_to_gdp": {
       "value": 194.889,
@@ -5867,97 +5867,7 @@
     }
   },
   "economic_calendar": {
-    "events": [
-      {
-        "time": "01:30",
-        "currency": "INR",
-        "event": "WPI Food (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "01:30",
-        "currency": "INR",
-        "event": "WPI Fuel (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "01:30",
-        "currency": "INR",
-        "event": "WPI Inflation (YoY)  (Oct)",
-        "impact": "Medium"
-      },
-      {
-        "time": "01:30",
-        "currency": "INR",
-        "event": "WPI Manufacturing Inflation (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "02:15",
-        "currency": "EUR",
-        "event": "German Buba Balz Speaks",
-        "impact": "Medium"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French CPI NSA (MoM)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French CPI NSA (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French CPI (MoM)  (Oct)",
-        "impact": "Medium"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French CPI (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French HICP (MoM)  (Oct)",
-        "impact": "Medium"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "French HICP (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "02:45",
-        "currency": "EUR",
-        "event": "France Inflation Ex-Tobacco (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "03:00",
-        "currency": "EUR",
-        "event": "Core CPI (YoY)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "03:00",
-        "currency": "EUR",
-        "event": "Spanish CPI (MoM)  (Oct)",
-        "impact": "Low"
-      },
-      {
-        "time": "03:00",
-        "currency": "EUR",
-        "event": "Spanish CPI (YoY)  (Oct)",
-        "impact": "Medium"
-      }
-    ]
+    "events": [],
+    "error": "502 Server Error: Bad Gateway for url: https://www.investing.com/economic-calendar/"
   }
 }

@@ -1,6 +1,6 @@
 {
   "model_version": "enhanced_v2_23indicators",
-  "generated_at": "2025-11-14 22:38:24",
+  "generated_at": "2025-11-14 22:40:11",
   "total_indicators": 23,
   "enhancements": {
     "liquidity": "5 indicators: M2, Fed BS, RRP, Reserves, SOFR",
@@ -12,10 +12,10 @@
   "data": [
     {
       "date": "2025-09-28",
-      "overall": 41.5,
-      "liquidity": 42.7,
+      "overall": 41.6,
+      "liquidity": 42.6,
       "credit": 6.0,
-      "macro": 54.8,
+      "macro": 55.3,
       "valuation": 70.3,
       "technical": 25.8,
       "new_indicators": {
@@ -29,10 +29,10 @@
     },
     {
       "date": "2025-10-01",
-      "overall": 42.2,
+      "overall": 42.1,
       "liquidity": 44.6,
       "credit": 6.0,
-      "macro": 55.7,
+      "macro": 55.4,
       "valuation": 71.4,
       "technical": 24.2,
       "new_indicators": {
@@ -46,10 +46,10 @@
     },
     {
       "date": "2025-10-02",
-      "overall": 42.1,
-      "liquidity": 44.8,
+      "overall": 42.2,
+      "liquidity": 45.1,
       "credit": 6.0,
-      "macro": 55.7,
+      "macro": 55.4,
       "valuation": 71.5,
       "technical": 23.3,
       "new_indicators": {
@@ -64,9 +64,9 @@
     {
       "date": "2025-10-06",
       "overall": 42.3,
-      "liquidity": 44.6,
+      "liquidity": 44.4,
       "credit": 6.0,
-      "macro": 56.0,
+      "macro": 55.9,
       "valuation": 71.8,
       "technical": 24.2,
       "new_indicators": {
@@ -82,16 +82,16 @@
       "date": "2025-10-20",
       "overall": 41.7,
       "liquidity": 43.6,
-      "credit": 11.4,
-      "macro": 41.2,
+      "credit": 11.3,
+      "macro": 41.3,
       "valuation": 71.8,
       "technical": 29.3,
       "new_indicators": {
         "sofr": 37.4,
         "yield_curve": 19.2,
-        "consumer_delinquency": 19.7,
+        "consumer_delinquency": 19.3,
         "sahm_rule": 10.2,
-        "housing_starts": 30.5,
+        "housing_starts": 30.3,
         "retail_sales": 12.8
       }
     },
@@ -100,16 +100,16 @@
       "overall": 41.6,
       "liquidity": 44.0,
       "credit": 11.4,
-      "macro": 41.6,
+      "macro": 41.5,
       "valuation": 71.8,
       "technical": 27.7,
       "new_indicators": {
         "sofr": 38.5,
         "yield_curve": 19.4,
-        "consumer_delinquency": 19.4,
+        "consumer_delinquency": 19.6,
         "sahm_rule": 10.2,
-        "housing_starts": 30.7,
-        "retail_sales": 12.6
+        "housing_starts": 30.5,
+        "retail_sales": 12.7
       }
     },
     {
@@ -117,56 +117,39 @@
       "overall": 42.2,
       "liquidity": 43.9,
       "credit": 11.4,
-      "macro": 41.5,
+      "macro": 41.4,
       "valuation": 71.2,
       "technical": 32.9,
       "new_indicators": {
         "sofr": 38.1,
         "yield_curve": 19.6,
-        "consumer_delinquency": 19.3,
+        "consumer_delinquency": 19.2,
         "sahm_rule": 10.1,
-        "housing_starts": 30.5,
-        "retail_sales": 12.6
+        "housing_starts": 30.2,
+        "retail_sales": 12.8
       }
     },
     {
       "date": "2025-10-23",
       "overall": 41.1,
-      "liquidity": 43.8,
+      "liquidity": 43.7,
       "credit": 11.3,
-      "macro": 41.2,
+      "macro": 41.1,
       "valuation": 71.8,
       "technical": 25.2,
       "new_indicators": {
         "sofr": 38.6,
         "yield_curve": 19.4,
-        "consumer_delinquency": 19.1,
-        "sahm_rule": 10.0,
-        "housing_starts": 29.7,
-        "retail_sales": 12.5
+        "consumer_delinquency": 19.3,
+        "sahm_rule": 10.1,
+        "housing_starts": 30.0,
+        "retail_sales": 12.2
       }
     },
     {
       "date": "2025-10-24",
       "overall": 40.8,
-      "liquidity": 43.8,
-      "credit": 11.2,
-      "macro": 40.8,
-      "valuation": 72.7,
-      "technical": 21.8,
-      "new_indicators": {
-        "sofr": 38.6,
-        "yield_curve": 19.2,
-        "consumer_delinquency": 18.9,
-        "sahm_rule": 10.1,
-        "housing_starts": 28.7,
-        "retail_sales": 12.4
-      }
-    },
-    {
-      "date": "2025-10-25",
-      "overall": 40.7,
-      "liquidity": 43.6,
+      "liquidity": 44.0,
       "credit": 11.2,
       "macro": 40.9,
       "valuation": 72.7,
@@ -174,18 +157,35 @@
       "new_indicators": {
         "sofr": 38.6,
         "yield_curve": 19.2,
-        "consumer_delinquency": 18.7,
+        "consumer_delinquency": 19.0,
         "sahm_rule": 9.9,
-        "housing_starts": 28.1,
-        "retail_sales": 11.8
+        "housing_starts": 29.3,
+        "retail_sales": 12.1
+      }
+    },
+    {
+      "date": "2025-10-25",
+      "overall": 40.8,
+      "liquidity": 44.0,
+      "credit": 11.2,
+      "macro": 40.7,
+      "valuation": 72.7,
+      "technical": 21.8,
+      "new_indicators": {
+        "sofr": 38.6,
+        "yield_curve": 19.2,
+        "consumer_delinquency": 18.4,
+        "sahm_rule": 9.8,
+        "housing_starts": 28.8,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-10-26",
-      "overall": 40.6,
-      "liquidity": 43.6,
+      "overall": 40.7,
+      "liquidity": 43.8,
       "credit": 11.1,
-      "macro": 40.6,
+      "macro": 40.4,
       "valuation": 72.7,
       "technical": 21.8,
       "new_indicators": {
@@ -194,30 +194,30 @@
         "consumer_delinquency": 18.2,
         "sahm_rule": 9.9,
         "housing_starts": 28.2,
-        "retail_sales": 11.8
+        "retail_sales": 11.9
       }
     },
     {
       "date": "2025-10-27",
       "overall": 40.6,
-      "liquidity": 43.4,
+      "liquidity": 43.5,
       "credit": 11.2,
-      "macro": 40.5,
+      "macro": 40.4,
       "valuation": 74.0,
       "technical": 19.6,
       "new_indicators": {
         "sofr": 39.0,
         "yield_curve": 19.4,
-        "consumer_delinquency": 18.3,
+        "consumer_delinquency": 18.6,
         "sahm_rule": 9.8,
-        "housing_starts": 28.2,
-        "retail_sales": 11.8
+        "housing_starts": 28.7,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-10-28",
-      "overall": 40.9,
-      "liquidity": 43.6,
+      "overall": 40.8,
+      "liquidity": 43.3,
       "credit": 11.3,
       "macro": 40.5,
       "valuation": 74.2,
@@ -225,52 +225,69 @@
       "new_indicators": {
         "sofr": 39.6,
         "yield_curve": 19.6,
-        "consumer_delinquency": 18.4,
+        "consumer_delinquency": 18.7,
         "sahm_rule": 9.8,
-        "housing_starts": 27.7,
+        "housing_starts": 28.7,
         "retail_sales": 12.0
       }
     },
     {
       "date": "2025-10-29",
-      "overall": 40.6,
-      "liquidity": 43.0,
-      "credit": 11.4,
-      "macro": 40.2,
+      "overall": 40.8,
+      "liquidity": 43.2,
+      "credit": 11.5,
+      "macro": 40.7,
       "valuation": 74.2,
       "technical": 20.1,
       "new_indicators": {
         "sofr": 39.0,
         "yield_curve": 20.2,
-        "consumer_delinquency": 18.3,
-        "sahm_rule": 9.8,
-        "housing_starts": 28.1,
-        "retail_sales": 12.1
+        "consumer_delinquency": 18.8,
+        "sahm_rule": 9.9,
+        "housing_starts": 29.0,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-10-30",
-      "overall": 41.0,
-      "liquidity": 42.2,
+      "overall": 41.1,
+      "liquidity": 42.4,
       "credit": 11.4,
-      "macro": 40.3,
+      "macro": 40.6,
       "valuation": 73.2,
       "technical": 25.5,
       "new_indicators": {
         "sofr": 35.6,
         "yield_curve": 20.0,
-        "consumer_delinquency": 18.8,
-        "sahm_rule": 9.9,
-        "housing_starts": 28.8,
-        "retail_sales": 12.3
+        "consumer_delinquency": 19.0,
+        "sahm_rule": 10.0,
+        "housing_starts": 28.3,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-10-31",
+      "overall": 41.4,
+      "liquidity": 41.7,
+      "credit": 11.4,
+      "macro": 40.2,
+      "valuation": 73.4,
+      "technical": 28.7,
+      "new_indicators": {
+        "sofr": 38.3,
+        "yield_curve": 19.8,
+        "consumer_delinquency": 19.0,
+        "sahm_rule": 10.0,
+        "housing_starts": 28.9,
+        "retail_sales": 12.4
+      }
+    },
+    {
+      "date": "2025-11-01",
       "overall": 41.3,
       "liquidity": 41.4,
       "credit": 11.4,
-      "macro": 40.1,
+      "macro": 40.2,
       "valuation": 73.4,
       "technical": 28.7,
       "new_indicators": {
@@ -278,116 +295,116 @@
         "yield_curve": 19.8,
         "consumer_delinquency": 19.2,
         "sahm_rule": 10.0,
-        "housing_starts": 29.7,
-        "retail_sales": 12.4
-      }
-    },
-    {
-      "date": "2025-11-01",
-      "overall": 41.4,
-      "liquidity": 41.4,
-      "credit": 11.4,
-      "macro": 40.6,
-      "valuation": 73.4,
-      "technical": 28.7,
-      "new_indicators": {
-        "sofr": 38.3,
-        "yield_curve": 19.8,
-        "consumer_delinquency": 19.0,
-        "sahm_rule": 10.2,
-        "housing_starts": 29.5,
-        "retail_sales": 12.6
+        "housing_starts": 30.2,
+        "retail_sales": 12.3
       }
     },
     {
       "date": "2025-11-02",
       "overall": 41.4,
       "liquidity": 41.5,
-      "credit": 11.5,
-      "macro": 40.4,
+      "credit": 11.4,
+      "macro": 40.3,
       "valuation": 73.4,
       "technical": 28.7,
       "new_indicators": {
         "sofr": 38.3,
         "yield_curve": 19.8,
-        "consumer_delinquency": 19.6,
+        "consumer_delinquency": 19.3,
         "sahm_rule": 10.1,
-        "housing_starts": 29.7,
-        "retail_sales": 12.7
+        "housing_starts": 30.1,
+        "retail_sales": 12.6
       }
     },
     {
       "date": "2025-11-03",
-      "overall": 41.9,
+      "overall": 42.0,
       "liquidity": 42.3,
       "credit": 11.5,
-      "macro": 40.0,
+      "macro": 40.4,
       "valuation": 73.6,
       "technical": 31.0,
       "new_indicators": {
         "sofr": 36.9,
         "yield_curve": 19.4,
-        "consumer_delinquency": 19.8,
+        "consumer_delinquency": 19.7,
         "sahm_rule": 10.1,
-        "housing_starts": 29.9,
-        "retail_sales": 12.6
+        "housing_starts": 30.5,
+        "retail_sales": 13.0
       }
     },
     {
       "date": "2025-11-04",
-      "overall": 42.9,
+      "overall": 43.0,
       "liquidity": 42.4,
-      "credit": 11.9,
+      "credit": 12.0,
       "macro": 40.4,
       "valuation": 72.3,
       "technical": 38.9,
       "new_indicators": {
         "sofr": 35.0,
         "yield_curve": 19.6,
-        "consumer_delinquency": 19.7,
-        "sahm_rule": 10.2,
-        "housing_starts": 30.8,
-        "retail_sales": 12.8
+        "consumer_delinquency": 19.8,
+        "sahm_rule": 10.1,
+        "housing_starts": 30.0,
+        "retail_sales": 12.7
       }
     },
     {
       "date": "2025-11-05",
-      "overall": 42.4,
-      "liquidity": 42.1,
+      "overall": 42.5,
+      "liquidity": 42.4,
       "credit": 11.5,
-      "macro": 40.1,
+      "macro": 40.4,
       "valuation": 72.8,
       "technical": 35.4,
       "new_indicators": {
         "sofr": 34.3,
         "yield_curve": 19.2,
-        "consumer_delinquency": 19.3,
-        "sahm_rule": 10.3,
-        "housing_starts": 30.5,
+        "consumer_delinquency": 19.7,
+        "sahm_rule": 10.1,
+        "housing_starts": 30.1,
         "retail_sales": 12.6
       }
     },
     {
       "date": "2025-11-06",
       "overall": 42.8,
-      "liquidity": 42.2,
+      "liquidity": 42.3,
       "credit": 11.8,
-      "macro": 40.1,
+      "macro": 40.3,
       "valuation": 71.5,
       "technical": 39.9,
       "new_indicators": {
         "sofr": 34.4,
         "yield_curve": 19.2,
-        "consumer_delinquency": 19.2,
-        "sahm_rule": 10.1,
-        "housing_starts": 29.6,
-        "retail_sales": 12.4
+        "consumer_delinquency": 19.6,
+        "sahm_rule": 10.2,
+        "housing_starts": 30.0,
+        "retail_sales": 12.6
       }
     },
     {
       "date": "2025-11-07",
+      "overall": 42.7,
+      "liquidity": 42.7,
+      "credit": 11.6,
+      "macro": 40.0,
+      "valuation": 71.7,
+      "technical": 38.9,
+      "new_indicators": {
+        "sofr": 34.5,
+        "yield_curve": 18.8,
+        "consumer_delinquency": 19.1,
+        "sahm_rule": 10.0,
+        "housing_starts": 29.8,
+        "retail_sales": 12.3
+      }
+    },
+    {
+      "date": "2025-11-08",
       "overall": 42.8,
-      "liquidity": 42.5,
+      "liquidity": 42.7,
       "credit": 11.6,
       "macro": 40.5,
       "valuation": 71.7,
@@ -396,60 +413,43 @@
         "sofr": 34.5,
         "yield_curve": 18.8,
         "consumer_delinquency": 18.9,
-        "sahm_rule": 10.1,
-        "housing_starts": 29.1,
-        "retail_sales": 12.2
-      }
-    },
-    {
-      "date": "2025-11-08",
-      "overall": 42.8,
-      "liquidity": 42.5,
-      "credit": 11.7,
-      "macro": 40.5,
-      "valuation": 71.7,
-      "technical": 38.9,
-      "new_indicators": {
-        "sofr": 34.5,
-        "yield_curve": 18.8,
-        "consumer_delinquency": 19.2,
-        "sahm_rule": 10.0,
-        "housing_starts": 29.2,
+        "sahm_rule": 9.9,
+        "housing_starts": 29.5,
         "retail_sales": 12.3
       }
     },
     {
       "date": "2025-11-09",
-      "overall": 42.8,
+      "overall": 42.7,
       "liquidity": 42.7,
-      "credit": 11.6,
-      "macro": 40.4,
+      "credit": 11.5,
+      "macro": 40.0,
       "valuation": 71.7,
       "technical": 38.9,
       "new_indicators": {
         "sofr": 34.5,
         "yield_curve": 18.8,
-        "consumer_delinquency": 18.8,
-        "sahm_rule": 9.8,
-        "housing_starts": 28.7,
-        "retail_sales": 12.2
+        "consumer_delinquency": 18.4,
+        "sahm_rule": 9.9,
+        "housing_starts": 28.4,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-11-10",
       "overall": 42.1,
-      "liquidity": 42.6,
+      "liquidity": 42.7,
       "credit": 11.2,
-      "macro": 40.6,
+      "macro": 40.5,
       "valuation": 73.3,
       "technical": 32.1,
       "new_indicators": {
         "sofr": 34.6,
         "yield_curve": 19.0,
-        "consumer_delinquency": 18.6,
-        "sahm_rule": 9.8,
+        "consumer_delinquency": 18.8,
+        "sahm_rule": 9.9,
         "housing_starts": 28.6,
-        "retail_sales": 11.8
+        "retail_sales": 11.7
       }
     },
     {
@@ -457,56 +457,56 @@
       "overall": NaN,
       "liquidity": NaN,
       "credit": NaN,
-      "macro": 40.3,
+      "macro": 40.4,
       "valuation": 73.6,
       "technical": 26.9,
       "new_indicators": {
         "sofr": NaN,
         "yield_curve": NaN,
-        "consumer_delinquency": 18.5,
-        "sahm_rule": 9.8,
-        "housing_starts": 27.8,
-        "retail_sales": 11.6
+        "consumer_delinquency": 18.6,
+        "sahm_rule": 9.7,
+        "housing_starts": 28.3,
+        "retail_sales": 11.9
       }
     },
     {
       "date": "2025-11-12",
       "overall": 41.8,
-      "liquidity": 43.1,
-      "credit": 11.3,
-      "macro": 40.8,
+      "liquidity": 42.8,
+      "credit": 11.4,
+      "macro": 40.6,
       "valuation": 73.6,
       "technical": 28.6,
       "new_indicators": {
         "sofr": 34.9,
         "yield_curve": 19.6,
-        "consumer_delinquency": 18.3,
-        "sahm_rule": 9.8,
-        "housing_starts": 28.5,
-        "retail_sales": 11.8
+        "consumer_delinquency": 18.6,
+        "sahm_rule": 9.7,
+        "housing_starts": 28.7,
+        "retail_sales": 11.7
       }
     },
     {
       "date": "2025-11-13",
-      "overall": 42.6,
-      "liquidity": 42.8,
-      "credit": 11.5,
-      "macro": 40.5,
+      "overall": 42.7,
+      "liquidity": 43.0,
+      "credit": 11.6,
+      "macro": 40.3,
       "valuation": 71.8,
       "technical": 37.3,
       "new_indicators": {
         "sofr": 35.0,
         "yield_curve": 19.4,
-        "consumer_delinquency": 18.6,
+        "consumer_delinquency": 18.8,
         "sahm_rule": 9.8,
-        "housing_starts": 28.7,
-        "retail_sales": 11.9
+        "housing_starts": 28.2,
+        "retail_sales": 12.0
       }
     },
     {
       "date": "2025-11-14",
-      "overall": 43.4,
-      "liquidity": 45.3,
+      "overall": 43.3,
+      "liquidity": 45.0,
       "credit": 11.7,
       "macro": 41.1,
       "valuation": 71.8,
@@ -516,7 +516,7 @@
         "yield_curve": 19.6,
         "consumer_delinquency": 19.0,
         "sahm_rule": 9.9,
-        "housing_starts": 29.2,
+        "housing_starts": 28.8,
         "retail_sales": 12.1
       }
     }
