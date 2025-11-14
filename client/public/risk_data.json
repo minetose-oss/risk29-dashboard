@@ -1,11 +1,11 @@
 {
-  "timestamp": 1763153741,
-  "last_updated": "2025-11-14T20:55:41.063089",
-  "score": 44,
+  "timestamp": 1763153835,
+  "last_updated": "2025-11-14T20:57:15.508616",
+  "score": 46,
   "summary": {
     "high_risk_count": 3,
-    "medium_risk_count": 8,
-    "low_risk_count": 8
+    "medium_risk_count": 9,
+    "low_risk_count": 7
   },
   "categories": {
     "liquidity": {
@@ -188,13 +188,13 @@
     },
     "technical": {
       "name": "Technical",
-      "score": 30,
+      "score": 42,
       "signals": [
         {
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6736.16,
+          "current_value": 6732.78,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-14",
@@ -208,11 +208,11 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 19.94,
+          "current_value": 20.15,
           "unit": "Index",
-          "risk_score": 25,
+          "risk_score": 50,
           "date": "2025-11-14",
-          "status": "Low risk - conditions are stable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Low volatility - calm markets",
             "high": "High volatility - fearful markets"
