@@ -1,11 +1,11 @@
 {
-  "timestamp": 1763143536,
-  "last_updated": "2025-11-14T18:05:36.760421",
-  "score": 44,
+  "timestamp": 1763143621,
+  "last_updated": "2025-11-14T18:07:01.910130",
+  "score": 46,
   "summary": {
     "high_risk_count": 3,
-    "medium_risk_count": 8,
-    "low_risk_count": 8
+    "medium_risk_count": 9,
+    "low_risk_count": 7
   },
   "categories": {
     "liquidity": {
@@ -188,13 +188,13 @@
     },
     "technical": {
       "name": "Technical",
-      "score": 30,
+      "score": 42,
       "signals": [
         {
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6742.81,
+          "current_value": 6744.05,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-14",
@@ -208,11 +208,11 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 19.94,
+          "current_value": 20.27,
           "unit": "Index",
-          "risk_score": 25,
+          "risk_score": 50,
           "date": "2025-11-14",
-          "status": "Low risk - conditions are stable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Low volatility - calm markets",
             "high": "High volatility - fearful markets"
@@ -242,7 +242,7 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.94,
+          "current_value": 54.88,
           "unit": "Price",
           "risk_score": 40,
           "date": "2025-11-14",
