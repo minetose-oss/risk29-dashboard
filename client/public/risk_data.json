@@ -1,11 +1,11 @@
 {
-  "timestamp": 1763150123,
-  "last_updated": "2025-11-14T19:55:23.214135",
-  "score": 44,
+  "timestamp": 1763150221,
+  "last_updated": "2025-11-14T19:57:01.444166",
+  "score": 46,
   "summary": {
     "high_risk_count": 3,
-    "medium_risk_count": 8,
-    "low_risk_count": 8
+    "medium_risk_count": 9,
+    "low_risk_count": 7
   },
   "categories": {
     "liquidity": {
@@ -188,13 +188,13 @@
     },
     "technical": {
       "name": "Technical",
-      "score": 30,
+      "score": 42,
       "signals": [
         {
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6762.7,
+          "current_value": 6760.7,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-14",
@@ -208,11 +208,11 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 19.98,
+          "current_value": 20.01,
           "unit": "Index",
-          "risk_score": 25,
+          "risk_score": 50,
           "date": "2025-11-14",
-          "status": "Low risk - conditions are stable",
+          "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Low volatility - calm markets",
             "high": "High volatility - fearful markets"
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.31,
+          "current_value": 99.3,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-14",
@@ -242,7 +242,7 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.99,
+          "current_value": 54.97,
           "unit": "Price",
           "risk_score": 40,
           "date": "2025-11-14",
