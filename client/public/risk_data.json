@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763104528,
-  "last_updated": "2025-11-14T07:15:28.752663",
+  "timestamp": 1763104620,
+  "last_updated": "2025-11-14T07:17:00.991654",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -78,10 +78,10 @@
           "id": "WILL5000INDFC",
           "name": "Wilshire 5000 Index",
           "description": "Total US stock market index. Tracks overall market valuation.",
-          "current_value": 68286.29,
+          "current_value": 67087.68,
           "unit": "Index",
           "risk_score": 45,
-          "date": "2025-11-12",
+          "date": "2025-11-13",
           "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Index below historical average",
