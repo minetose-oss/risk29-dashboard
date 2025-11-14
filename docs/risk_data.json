@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763130603,
-  "last_updated": "2025-11-14T14:30:03.183530",
+  "timestamp": 1763130692,
+  "last_updated": "2025-11-14T14:31:32.645034",
   "score": 46,
   "summary": {
     "high_risk_count": 3,
@@ -194,10 +194,10 @@
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6737.49,
+          "current_value": 6663.44,
           "unit": "Index",
           "risk_score": 35,
-          "date": "2025-11-13",
+          "date": "2025-11-14",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "Index in uptrend with positive momentum",
@@ -242,10 +242,10 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.93,
+          "current_value": 54.54,
           "unit": "Price",
           "risk_score": 40,
-          "date": "2025-11-13",
+          "date": "2025-11-14",
           "status": "Low risk - conditions are stable",
           "interpretation": {
             "low": "EM outperforming - global growth strong",
