@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763120369,
-  "last_updated": "2025-11-14T11:39:29.239081",
+  "timestamp": 1763120480,
+  "last_updated": "2025-11-14T11:41:20.310194",
   "score": 46,
   "summary": {
     "high_risk_count": 3,
@@ -208,7 +208,7 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 21.75,
+          "current_value": 21.73,
           "unit": "Index",
           "risk_score": 50,
           "date": "2025-11-14",
