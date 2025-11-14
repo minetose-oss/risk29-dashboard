@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763147848,
-  "last_updated": "2025-11-14T19:17:28.048956",
+  "timestamp": 1763147949,
+  "last_updated": "2025-11-14T19:19:09.915854",
   "score": 46,
   "summary": {
     "high_risk_count": 3,
@@ -194,7 +194,7 @@
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6749.37,
+          "current_value": 6750.56,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-11-14",
@@ -208,7 +208,7 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 20.55,
+          "current_value": 20.51,
           "unit": "Index",
           "risk_score": 50,
           "date": "2025-11-14",
