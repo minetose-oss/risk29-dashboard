@@ -1,0 +1,199 @@
+{
+  "generated_at": "2025-11-11T01:38:19.794877",
+  "model": "ARIMA",
+  "order": "(1,1,1)",
+  "forecast_horizon_days": 30,
+  "predictions": [
+    {
+      "date": "2025-11-12",
+      "predicted_risk": 41.25528354269903,
+      "lower_bound": 38.53001562873527,
+      "upper_bound": 43.980551456662795
+    },
+    {
+      "date": "2025-11-13",
+      "predicted_risk": 40.79697616732955,
+      "lower_bound": 37.40961359000041,
+      "upper_bound": 44.18433874465868
+    },
+    {
+      "date": "2025-11-14",
+      "predicted_risk": 40.471180776286786,
+      "lower_bound": 36.765999458461486,
+      "upper_bound": 44.176362094112086
+    },
+    {
+      "date": "2025-11-15",
+      "predicted_risk": 40.2395837247684,
+      "lower_bound": 36.36453176229725,
+      "upper_bound": 44.114635687239556
+    },
+    {
+      "date": "2025-11-16",
+      "predicted_risk": 40.0749491235841,
+      "lower_bound": 36.103509007377156,
+      "upper_bound": 44.04638923979104
+    },
+    {
+      "date": "2025-11-17",
+      "predicted_risk": 39.957915889657265,
+      "lower_bound": 35.92931787572671,
+      "upper_bound": 43.98651390358782
+    },
+    {
+      "date": "2025-11-18",
+      "predicted_risk": 39.874720876307435,
+      "lower_bound": 35.81097328174126,
+      "upper_bound": 43.93846847087361
+    },
+    {
+      "date": "2025-11-19",
+      "predicted_risk": 39.815580322688234,
+      "lower_bound": 35.72954022419741,
+      "upper_bound": 43.90162042117906
+    },
+    {
+      "date": "2025-11-20",
+      "predicted_risk": 39.773539280304135,
+      "lower_bound": 35.672990023791385,
+      "upper_bound": 43.874088536816885
+    },
+    {
+      "date": "2025-11-21",
+      "predicted_risk": 39.743653708787136,
+      "lower_bound": 35.633458762612854,
+      "upper_bound": 43.85384865496142
+    },
+    {
+      "date": "2025-11-22",
+      "predicted_risk": 39.722409055128516,
+      "lower_bound": 35.60569244888172,
+      "upper_bound": 43.83912566137531
+    },
+    {
+      "date": "2025-11-23",
+      "predicted_risk": 39.70730694109272,
+      "lower_bound": 35.58612269293022,
+      "upper_bound": 43.82849118925522
+    },
+    {
+      "date": "2025-11-24",
+      "predicted_risk": 39.696571353117726,
+      "lower_bound": 35.572295884756,
+      "upper_bound": 43.82084682147945
+    },
+    {
+      "date": "2025-11-25",
+      "predicted_risk": 39.6889397825379,
+      "lower_bound": 35.56250943297991,
+      "upper_bound": 43.81537013209589
+    },
+    {
+      "date": "2025-11-26",
+      "predicted_risk": 39.68351475415096,
+      "lower_bound": 35.55557391965585,
+      "upper_bound": 43.811455588646076
+    },
+    {
+      "date": "2025-11-27",
+      "predicted_risk": 39.679658282839945,
+      "lower_bound": 35.550654344948796,
+      "upper_bound": 43.808662220731094
+    },
+    {
+      "date": "2025-11-28",
+      "predicted_risk": 39.67691684631428,
+      "lower_bound": 35.547162435490655,
+      "upper_bound": 43.8066712571379
+    },
+    {
+      "date": "2025-11-29",
+      "predicted_risk": 39.67496805073974,
+      "lower_bound": 35.54468268052756,
+      "upper_bound": 43.80525342095193
+    },
+    {
+      "date": "2025-11-30",
+      "predicted_risk": 39.67358271711783,
+      "lower_bound": 35.5429210563328,
+      "upper_bound": 43.80424437790286
+    },
+    {
+      "date": "2025-12-01",
+      "predicted_risk": 39.672597929760414,
+      "lower_bound": 35.541669232299796,
+      "upper_bound": 43.80352662722103
+    },
+    {
+      "date": "2025-12-02",
+      "predicted_risk": 39.671897877351384,
+      "lower_bound": 35.54077945708105,
+      "upper_bound": 43.80301629762172
+    },
+    {
+      "date": "2025-12-03",
+      "predicted_risk": 39.67140023349792,
+      "lower_bound": 35.54014687289307,
+      "upper_bound": 43.80265359410277
+    },
+    {
+      "date": "2025-12-04",
+      "predicted_risk": 39.671046475119695,
+      "lower_bound": 35.539697027595444,
+      "upper_bound": 43.802395922643946
+    },
+    {
+      "date": "2025-12-05",
+      "predicted_risk": 39.67079500011545,
+      "lower_bound": 35.53937703998468,
+      "upper_bound": 43.802212960246216
+    },
+    {
+      "date": "2025-12-06",
+      "predicted_risk": 39.67061623494222,
+      "lower_bound": 35.539149340981176,
+      "upper_bound": 43.80208312890327
+    },
+    {
+      "date": "2025-12-07",
+      "predicted_risk": 39.67048915675705,
+      "lower_bound": 35.538987235300674,
+      "upper_bound": 43.801991078213426
+    },
+    {
+      "date": "2025-12-08",
+      "predicted_risk": 39.670398821123676,
+      "lower_bound": 35.53887175187738,
+      "upper_bound": 43.80192589036997
+    },
+    {
+      "date": "2025-12-09",
+      "predicted_risk": 39.670334604542006,
+      "lower_bound": 35.538789407705,
+      "upper_bound": 43.80187980137901
+    },
+    {
+      "date": "2025-12-10",
+      "predicted_risk": 39.67028895512098,
+      "lower_bound": 35.53873061962568,
+      "upper_bound": 43.80184729061628
+    },
+    {
+      "date": "2025-12-11",
+      "predicted_risk": 39.67025650447373,
+      "lower_bound": 35.53868857603099,
+      "upper_bound": 43.80182443291646
+    }
+  ],
+  "performance_metrics": {
+    "mape": 4.28,
+    "rmse": 1.87,
+    "mae": 1.75
+  },
+  "metadata": {
+    "model": "ARIMA(1,1,1)",
+    "confidence_interval": "95%",
+    "description": "ARIMA model predictions for the next 30 days",
+    "training_data_points": 30
+  }
+}

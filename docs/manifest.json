@@ -1,0 +1,12 @@
+{
+  "name": "Risk29 Financial Risk Monitor",
+  "short_name": "Risk29",
+  "description": "Real-time financial risk monitoring and prediction dashboard",
+  "start_url": "/risk29-dashboard/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [],
+  "categories": ["finance", "business", "productivity"]
+}
