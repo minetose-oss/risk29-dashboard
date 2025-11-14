@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763109872,
-  "last_updated": "2025-11-14T08:44:32.787305",
+  "timestamp": 1763109970,
+  "last_updated": "2025-11-14T08:46:10.401227",
   "score": 46,
   "summary": {
     "high_risk_count": 3,
@@ -78,10 +78,10 @@
           "id": "WILL5000INDFC",
           "name": "Wilshire 5000 Index",
           "description": "Total US stock market index. Tracks overall market valuation.",
-          "current_value": 68286.29,
+          "current_value": 67087.68,
           "unit": "Index",
           "risk_score": 45,
-          "date": "2025-11-12",
+          "date": "2025-11-13",
           "status": "Moderate risk - monitor closely",
           "interpretation": {
             "low": "Index below historical average",
@@ -208,7 +208,7 @@
           "id": "VIX",
           "name": "VIX Volatility Index",
           "description": "Market volatility and fear gauge.",
-          "current_value": 21.41,
+          "current_value": 21.44,
           "unit": "Index",
           "risk_score": 50,
           "date": "2025-11-14",
