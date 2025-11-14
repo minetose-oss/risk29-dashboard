@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763157500,
-  "last_updated": "2025-11-14T21:58:20.266317",
+  "timestamp": 1763157597,
+  "last_updated": "2025-11-14T21:59:57.529995",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.28,
+          "current_value": 99.27,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-14",
