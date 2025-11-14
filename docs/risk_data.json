@@ -1,6 +1,6 @@
 {
-  "timestamp": 1763155790,
-  "last_updated": "2025-11-14T21:29:50.574016",
+  "timestamp": 1763155883,
+  "last_updated": "2025-11-14T21:31:23.764723",
   "score": 44,
   "summary": {
     "high_risk_count": 3,
@@ -228,7 +228,7 @@
           "id": "DXY",
           "name": "US Dollar Index",
           "description": "US dollar strength vs basket of currencies.",
-          "current_value": 99.27,
+          "current_value": 99.26,
           "unit": "Index",
           "risk_score": 25,
           "date": "2025-11-14",
@@ -242,7 +242,7 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.99,
+          "current_value": 54.96,
           "unit": "Price",
           "risk_score": 40,
           "date": "2025-11-14",
