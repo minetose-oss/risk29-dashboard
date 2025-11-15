@@ -1,6 +1,6 @@
 {
   "model_version": "6_new_indicators_v1",
-  "generated_at": "2025-11-15 08:34:00",
+  "generated_at": "2025-11-15 08:35:26",
   "indicators": {
     "sofr": [
       {
@@ -309,7 +309,7 @@
     "consumer_delinquency": [
       {
         "date": "2025-10-17",
-        "value": 18.8,
+        "value": 19.3,
         "raw_value": 2.76
       },
       {
@@ -319,32 +319,32 @@
       },
       {
         "date": "2025-10-19",
-        "value": 19.3,
+        "value": 19.2,
         "raw_value": 2.76
       },
       {
         "date": "2025-10-20",
-        "value": 19.7,
-        "raw_value": 2.76
-      },
-      {
-        "date": "2025-10-21",
-        "value": 19.8,
-        "raw_value": 2.76
-      },
-      {
-        "date": "2025-10-22",
-        "value": 19.3,
-        "raw_value": 2.76
-      },
-      {
-        "date": "2025-10-23",
         "value": 19.4,
         "raw_value": 2.76
       },
       {
+        "date": "2025-10-21",
+        "value": 19.4,
+        "raw_value": 2.76
+      },
+      {
+        "date": "2025-10-22",
+        "value": 19.5,
+        "raw_value": 2.76
+      },
+      {
+        "date": "2025-10-23",
+        "value": 19.1,
+        "raw_value": 2.76
+      },
+      {
         "date": "2025-10-24",
-        "value": 19.2,
+        "value": 19.3,
         "raw_value": 2.76
       },
       {
@@ -364,47 +364,47 @@
       },
       {
         "date": "2025-10-28",
-        "value": 18.3,
-        "raw_value": 2.76
-      },
-      {
-        "date": "2025-10-29",
-        "value": 18.6,
-        "raw_value": 2.76
-      },
-      {
-        "date": "2025-10-30",
         "value": 18.5,
         "raw_value": 2.76
       },
       {
+        "date": "2025-10-29",
+        "value": 18.7,
+        "raw_value": 2.76
+      },
+      {
+        "date": "2025-10-30",
+        "value": 18.6,
+        "raw_value": 2.76
+      },
+      {
         "date": "2025-10-31",
-        "value": 18.9,
+        "value": 19.0,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-01",
-        "value": 18.8,
+        "value": 19.2,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-02",
-        "value": 19.2,
+        "value": 19.3,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-03",
-        "value": 19.2,
+        "value": 19.5,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-04",
-        "value": 19.6,
+        "value": 19.8,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-05",
-        "value": 19.6,
+        "value": 19.3,
         "raw_value": 2.76
       },
       {
@@ -419,12 +419,12 @@
       },
       {
         "date": "2025-11-08",
-        "value": 19.0,
+        "value": 19.3,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-09",
-        "value": 19.2,
+        "value": 19.1,
         "raw_value": 2.76
       },
       {
@@ -434,12 +434,12 @@
       },
       {
         "date": "2025-11-11",
-        "value": 18.5,
+        "value": 18.4,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-12",
-        "value": 18.7,
+        "value": 18.3,
         "raw_value": 2.76
       },
       {
@@ -449,19 +449,19 @@
       },
       {
         "date": "2025-11-14",
-        "value": 18.4,
+        "value": 18.7,
         "raw_value": 2.76
       },
       {
         "date": "2025-11-15",
-        "value": 18.9,
+        "value": 18.6,
         "raw_value": 2.76
       }
     ],
     "sahm_rule": [
       {
         "date": "2025-10-17",
-        "value": 10.1,
+        "value": 10.0,
         "raw_value": 0.13
       },
       {
@@ -471,17 +471,17 @@
       },
       {
         "date": "2025-10-19",
-        "value": 10.2,
+        "value": 10.1,
         "raw_value": 0.13
       },
       {
         "date": "2025-10-20",
-        "value": 10.1,
+        "value": 10.3,
         "raw_value": 0.13
       },
       {
         "date": "2025-10-21",
-        "value": 10.1,
+        "value": 10.2,
         "raw_value": 0.13
       },
       {
@@ -496,7 +496,7 @@
       },
       {
         "date": "2025-10-24",
-        "value": 9.9,
+        "value": 10.1,
         "raw_value": 0.13
       },
       {
@@ -506,12 +506,12 @@
       },
       {
         "date": "2025-10-26",
-        "value": 9.9,
+        "value": 9.8,
         "raw_value": 0.13
       },
       {
         "date": "2025-10-27",
-        "value": 9.8,
+        "value": 9.7,
         "raw_value": 0.13
       },
       {
@@ -521,17 +521,17 @@
       },
       {
         "date": "2025-10-29",
-        "value": 9.9,
+        "value": 9.7,
         "raw_value": 0.13
       },
       {
         "date": "2025-10-30",
-        "value": 9.8,
+        "value": 9.9,
         "raw_value": 0.13
       },
       {
         "date": "2025-10-31",
-        "value": 10.0,
+        "value": 9.9,
         "raw_value": 0.13
       },
       {
@@ -546,7 +546,7 @@
       },
       {
         "date": "2025-11-03",
-        "value": 10.2,
+        "value": 10.1,
         "raw_value": 0.13
       },
       {
@@ -556,12 +556,12 @@
       },
       {
         "date": "2025-11-05",
-        "value": 10.2,
+        "value": 10.1,
         "raw_value": 0.13
       },
       {
         "date": "2025-11-06",
-        "value": 10.2,
+        "value": 10.1,
         "raw_value": 0.13
       },
       {
@@ -581,17 +581,17 @@
       },
       {
         "date": "2025-11-10",
-        "value": 9.8,
+        "value": 9.9,
         "raw_value": 0.13
       },
       {
         "date": "2025-11-11",
-        "value": 9.8,
+        "value": 9.7,
         "raw_value": 0.13
       },
       {
         "date": "2025-11-12",
-        "value": 9.9,
+        "value": 9.8,
         "raw_value": 0.13
       },
       {
@@ -601,54 +601,54 @@
       },
       {
         "date": "2025-11-14",
-        "value": 9.9,
+        "value": 9.8,
         "raw_value": 0.13
       },
       {
         "date": "2025-11-15",
-        "value": 9.8,
+        "value": 10.0,
         "raw_value": 0.13
       }
     ],
     "housing_starts": [
       {
         "date": "2025-10-17",
-        "value": 29.5,
+        "value": 28.8,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-18",
-        "value": 29.8,
+        "value": 29.4,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-19",
-        "value": 29.7,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-10-20",
-        "value": 30.0,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-10-21",
         "value": 30.2,
         "raw_value": 1.307
       },
       {
+        "date": "2025-10-20",
+        "value": 30.4,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-10-21",
+        "value": 30.6,
+        "raw_value": 1.307
+      },
+      {
         "date": "2025-10-22",
-        "value": 29.9,
+        "value": 30.0,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-23",
-        "value": 30.3,
+        "value": 30.4,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-24",
-        "value": 29.5,
+        "value": 29.8,
         "raw_value": 1.307
       },
       {
@@ -658,102 +658,102 @@
       },
       {
         "date": "2025-10-26",
-        "value": 28.8,
+        "value": 28.3,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-27",
-        "value": 28.1,
+        "value": 27.9,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-28",
-        "value": 28.5,
+        "value": 28.1,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-29",
-        "value": 28.5,
+        "value": 28.1,
         "raw_value": 1.307
       },
       {
         "date": "2025-10-30",
-        "value": 28.4,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-10-31",
-        "value": 29.1,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-01",
-        "value": 28.9,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-02",
-        "value": 29.7,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-03",
-        "value": 29.9,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-04",
-        "value": 29.9,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-05",
-        "value": 30.2,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-06",
-        "value": 30.4,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-07",
-        "value": 29.9,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-08",
-        "value": 29.3,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-09",
-        "value": 29.2,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-10",
-        "value": 28.1,
-        "raw_value": 1.307
-      },
-      {
-        "date": "2025-11-11",
         "value": 28.0,
         "raw_value": 1.307
       },
       {
+        "date": "2025-10-31",
+        "value": 28.6,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-01",
+        "value": 29.1,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-02",
+        "value": 29.5,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-03",
+        "value": 30.0,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-04",
+        "value": 30.8,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-05",
+        "value": 30.8,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-06",
+        "value": 30.2,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-07",
+        "value": 30.2,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-08",
+        "value": 29.1,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-09",
+        "value": 29.1,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-10",
+        "value": 29.1,
+        "raw_value": 1.307
+      },
+      {
+        "date": "2025-11-11",
+        "value": 28.6,
+        "raw_value": 1.307
+      },
+      {
         "date": "2025-11-12",
-        "value": 28.3,
+        "value": 28.5,
         "raw_value": 1.307
       },
       {
         "date": "2025-11-13",
-        "value": 28.3,
+        "value": 28.0,
         "raw_value": 1.307
       },
       {
         "date": "2025-11-14",
-        "value": 28.1,
+        "value": 28.3,
         "raw_value": 1.307
       },
       {
@@ -765,27 +765,27 @@
     "retail_sales": [
       {
         "date": "2025-10-17",
-        "value": 12.1,
+        "value": 12.3,
         "raw_value": 4.77
       },
       {
         "date": "2025-10-18",
-        "value": 12.5,
+        "value": 12.7,
         "raw_value": 4.77
       },
       {
         "date": "2025-10-19",
-        "value": 12.8,
+        "value": 12.4,
         "raw_value": 4.77
       },
       {
         "date": "2025-10-20",
-        "value": 13.0,
+        "value": 12.7,
         "raw_value": 4.77
       },
       {
         "date": "2025-10-21",
-        "value": 12.9,
+        "value": 12.8,
         "raw_value": 4.77
       },
       {
@@ -805,32 +805,32 @@
       },
       {
         "date": "2025-10-25",
-        "value": 12.2,
+        "value": 12.1,
         "raw_value": 4.77
       },
       {
         "date": "2025-10-26",
-        "value": 11.8,
-        "raw_value": 4.77
-      },
-      {
-        "date": "2025-10-27",
-        "value": 11.9,
-        "raw_value": 4.77
-      },
-      {
-        "date": "2025-10-28",
-        "value": 11.8,
-        "raw_value": 4.77
-      },
-      {
-        "date": "2025-10-29",
         "value": 12.0,
         "raw_value": 4.77
       },
       {
+        "date": "2025-10-27",
+        "value": 11.6,
+        "raw_value": 4.77
+      },
+      {
+        "date": "2025-10-28",
+        "value": 11.7,
+        "raw_value": 4.77
+      },
+      {
+        "date": "2025-10-29",
+        "value": 11.6,
+        "raw_value": 4.77
+      },
+      {
         "date": "2025-10-30",
-        "value": 11.8,
+        "value": 12.0,
         "raw_value": 4.77
       },
       {
@@ -850,27 +850,27 @@
       },
       {
         "date": "2025-11-03",
-        "value": 12.9,
+        "value": 12.4,
         "raw_value": 4.77
       },
       {
         "date": "2025-11-04",
-        "value": 12.7,
+        "value": 12.8,
         "raw_value": 4.77
       },
       {
         "date": "2025-11-05",
-        "value": 12.9,
+        "value": 12.7,
         "raw_value": 4.77
       },
       {
         "date": "2025-11-06",
-        "value": 12.5,
+        "value": 12.8,
         "raw_value": 4.77
       },
       {
         "date": "2025-11-07",
-        "value": 12.3,
+        "value": 12.7,
         "raw_value": 4.77
       },
       {
@@ -880,12 +880,12 @@
       },
       {
         "date": "2025-11-09",
-        "value": 12.1,
+        "value": 12.0,
         "raw_value": 4.77
       },
       {
         "date": "2025-11-10",
-        "value": 12.3,
+        "value": 12.1,
         "raw_value": 4.77
       },
       {
@@ -895,17 +895,17 @@
       },
       {
         "date": "2025-11-12",
-        "value": 11.6,
-        "raw_value": 4.77
-      },
-      {
-        "date": "2025-11-13",
         "value": 12.0,
         "raw_value": 4.77
       },
       {
+        "date": "2025-11-13",
+        "value": 11.7,
+        "raw_value": 4.77
+      },
+      {
         "date": "2025-11-14",
-        "value": 12.2,
+        "value": 11.9,
         "raw_value": 4.77
       },
       {
