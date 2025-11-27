@@ -1,126 +1,126 @@
 {
-  "generated_at": "2025-11-26T06:35:16.140217",
+  "generated_at": "2025-11-27T06:35:55.433219",
   "forecast_horizon_days": 30,
   "predictions": [
     {
       "date": "2025-10-01",
       "predicted_risk": 11.29,
-      "lower_bound": 6.99,
-      "upper_bound": 15.81
+      "lower_bound": 7.03,
+      "upper_bound": 15.42
     },
     {
       "date": "2025-11-01",
       "predicted_risk": 9.41,
-      "lower_bound": 5.49,
-      "upper_bound": 13.67
+      "lower_bound": 5.08,
+      "upper_bound": 14.01
     },
     {
       "date": "2025-12-01",
       "predicted_risk": 11.77,
-      "lower_bound": 7.5,
-      "upper_bound": 16.01
+      "lower_bound": 7.84,
+      "upper_bound": 15.76
     },
     {
       "date": "2026-01-01",
       "predicted_risk": 10.25,
-      "lower_bound": 5.9,
-      "upper_bound": 14.78
+      "lower_bound": 6.01,
+      "upper_bound": 14.51
     },
     {
       "date": "2026-02-01",
       "predicted_risk": 8.17,
-      "lower_bound": 3.77,
-      "upper_bound": 12.64
+      "lower_bound": 3.9,
+      "upper_bound": 12.47
     },
     {
       "date": "2026-03-01",
       "predicted_risk": 14.28,
-      "lower_bound": 10.24,
-      "upper_bound": 18.85
+      "lower_bound": 9.93,
+      "upper_bound": 18.86
     },
     {
       "date": "2026-04-01",
       "predicted_risk": 2.74,
       "lower_bound": 0,
-      "upper_bound": 7.37
+      "upper_bound": 7.08
     },
     {
       "date": "2026-05-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 4.04
+      "upper_bound": 3.91
     },
     {
       "date": "2026-06-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 3.91
+      "upper_bound": 3.71
     },
     {
       "date": "2026-07-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 3.35
+      "upper_bound": 2.92
     },
     {
       "date": "2026-08-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 3.35
+      "upper_bound": 3.28
     },
     {
       "date": "2026-09-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 2.9
+      "upper_bound": 3.25
     },
     {
       "date": "2026-10-01",
       "predicted_risk": 4.19,
       "lower_bound": 0,
-      "upper_bound": 8.4
+      "upper_bound": 8.54
     },
     {
       "date": "2026-11-01",
       "predicted_risk": 4.19,
       "lower_bound": 0,
-      "upper_bound": 8.63
+      "upper_bound": 8.74
     },
     {
       "date": "2026-12-01",
       "predicted_risk": 6.09,
-      "lower_bound": 1.99,
-      "upper_bound": 10.3
+      "lower_bound": 1.87,
+      "upper_bound": 10.21
     },
     {
       "date": "2027-01-01",
       "predicted_risk": 4.66,
-      "lower_bound": 0.24,
-      "upper_bound": 9.16
+      "lower_bound": 0.55,
+      "upper_bound": 8.7
     },
     {
       "date": "2027-02-01",
       "predicted_risk": 2.65,
       "lower_bound": 0,
-      "upper_bound": 7.13
+      "upper_bound": 7.02
     },
     {
       "date": "2027-03-01",
       "predicted_risk": 17.18,
-      "lower_bound": 12.79,
-      "upper_bound": 21.71
+      "lower_bound": 12.62,
+      "upper_bound": 21.55
     },
     {
       "date": "2027-04-01",
       "predicted_risk": 0.3,
       "lower_bound": 0,
-      "upper_bound": 4.77
+      "upper_bound": 4.7
     },
     {
       "date": "2027-05-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 0.39
+      "upper_bound": 0.52
     },
     {
       "date": "2027-06-01",
@@ -132,55 +132,55 @@
       "date": "2027-07-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 1.14
+      "upper_bound": 1.23
     },
     {
       "date": "2027-08-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 2.91
+      "upper_bound": 3.09
     },
     {
       "date": "2027-09-01",
       "predicted_risk": 0,
       "lower_bound": 0,
-      "upper_bound": 4.35
+      "upper_bound": 4.39
     },
     {
       "date": "2027-10-01",
       "predicted_risk": 3.94,
       "lower_bound": 0,
-      "upper_bound": 8.17
+      "upper_bound": 8.27
     },
     {
       "date": "2027-11-01",
       "predicted_risk": 4.47,
-      "lower_bound": 0.38,
-      "upper_bound": 8.5
+      "lower_bound": 0,
+      "upper_bound": 8.77
     },
     {
       "date": "2027-12-01",
       "predicted_risk": 4.85,
-      "lower_bound": 0.72,
-      "upper_bound": 9.5
+      "lower_bound": 0.73,
+      "upper_bound": 9.46
     },
     {
       "date": "2028-01-01",
       "predicted_risk": 2.66,
       "lower_bound": 0,
-      "upper_bound": 6.83
+      "upper_bound": 6.87
     },
     {
       "date": "2028-02-01",
       "predicted_risk": 0.09,
       "lower_bound": 0,
-      "upper_bound": 4.25
+      "upper_bound": 4.44
     },
     {
       "date": "2028-03-01",
       "predicted_risk": 0.85,
       "lower_bound": 0,
-      "upper_bound": 5.07
+      "upper_bound": 5.37
     }
   ],
   "metadata": {
