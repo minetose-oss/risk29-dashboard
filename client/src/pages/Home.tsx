@@ -144,7 +144,7 @@ export default function Home() {
     const loadData = async () => {
       try {
         // Use cache busting to always get fresh data
-        const response = await fetch(getAssetUrl('risk_data_v2.json', true), {
+        const response = await fetch(getAssetUrl('risk_data.json', true), {
           cache: 'no-store',
           headers: {
             'Cache-Control': 'no-cache, no-store, must-revalidate',
