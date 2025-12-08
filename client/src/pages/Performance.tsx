@@ -18,25 +18,32 @@ export default function Performance() {
   const [performanceData, setPerformanceData] = useState<PerformanceData[]>([]);
 
   useEffect(() => {
-    // Generate mock performance data for last 30 days
-    const data: PerformanceData[] = [];
-    const today = new Date();
-    let value = initialInvestment;
-    
-    for (let i = 29; i >= 0; i--) {
-      const date = new Date(today);
-      date.setDate(date.getDate() - i);
-      
-      // Simulate portfolio growth with some volatility
-      value += (Math.random() - 0.45) * 1000;
-      
-      data.push({
-        date: date.toISOString().split('T')[0],
-        portfolioValue: value,
-        actualRisk: Math.floor(Math.random() * 40) + 10,
-        predictedRisk: Math.floor(Math.random() * 40) + 10,
+    // ✅ FIXED: Fetch real predictions data
+    setLoading(true);
+    fetch('/predictions.json')
+      .then(res => res.json())
+      .then(data => {
+        const formattedData = data.predictions.map((p: any) => ({
+          date: p.date,
+          portfolioValue: initialInvestment * (1 + (p.predicted_risk - 50) / 100),
+          actualRisk: p.predicted_risk,
+          predictedRisk: p.predicted_risk,
+        }));
+        
+        setPerformanceData(formattedData);
+        
+        if (formattedData.length > 0) {
+          setCurrentValue(formattedData[formattedData.length - 1].portfolioValue);
+        }
+        
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Error loading predictions:', err);
+        setLoading(false);
       });
-    }
+  }, [initialInvestment]);
+
     
     setPerformanceData(data);
     setCurrentValue(value);
