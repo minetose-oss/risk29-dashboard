@@ -1,6 +1,6 @@
 {
-  "timestamp": 1765205037,
-  "last_updated": "2025-12-08T14:43:57.750111",
+  "timestamp": 1765205137,
+  "last_updated": "2025-12-08T14:45:37.316790",
   "score": 43,
   "summary": {
     "high_risk_count": 3,
@@ -194,7 +194,7 @@
           "id": "SP500",
           "name": "S&P 500",
           "description": "S&P 500 index level and momentum.",
-          "current_value": 6869.47,
+          "current_value": 6868.85,
           "unit": "Index",
           "risk_score": 35,
           "date": "2025-12-08",
@@ -242,7 +242,7 @@
           "id": "EEM",
           "name": "Emerging Markets ETF",
           "description": "Emerging market equity performance.",
-          "current_value": 54.81,
+          "current_value": 54.79,
           "unit": "Price",
           "risk_score": 40,
           "date": "2025-12-08",
