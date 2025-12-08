@@ -41,6 +41,15 @@ jobs:
           python update_all_data.py
           python fetch_historical_data.py
           python calculate_all_risk_methods.py
+          python generate_predictions.py
+          python train_arima_model.py
+
+      - name: Verify generated files
+        run: |
+          ls -lh client/public/predictions.json
+          ls -lh client/public/arima_predictions.json
+          ls -lh client/public/model_comparison.json
+
 
       - name: Install Node.js dependencies
         run: |
