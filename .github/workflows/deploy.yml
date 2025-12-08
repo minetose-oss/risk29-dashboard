@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
+    paths-ignore:  # ✅ เพิ่มบรรทัดนี้!
+      - 'client/public/*.json'
+      - 'docs/**'
+      - '**.json'
   workflow_dispatch:
 
 permissions:
