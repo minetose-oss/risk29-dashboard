@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-08T14:45:53.916503",
+  "generated_at": "2025-12-08T14:47:24.697948",
   "days": 30,
   "model_version": "enhanced_v1",
   "enhancements": {
@@ -13,91 +13,91 @@
     {
       "date": "Nov 08",
       "overall": 45.3,
-      "liquidity": 46.6,
+      "liquidity": 46.4,
       "valuation": 71.7,
       "credit": 6.8,
-      "macro": 57.1,
+      "macro": 57.0,
       "technical": 38.9
     },
     {
       "date": "Nov 09",
-      "overall": 45.3,
-      "liquidity": 46.3,
+      "overall": 45.4,
+      "liquidity": 46.4,
       "valuation": 71.7,
       "credit": 6.8,
-      "macro": 57.5,
+      "macro": 57.8,
       "technical": 38.9
     },
     {
       "date": "Nov 10",
-      "overall": 44.5,
-      "liquidity": 46.2,
+      "overall": 44.4,
+      "liquidity": 46.1,
       "valuation": 73.3,
       "credit": 6.1,
-      "macro": 57.4,
+      "macro": 56.9,
       "technical": 32.1
     },
     {
       "date": "Nov 11",
       "overall": 38.9,
-      "liquidity": 26.4,
+      "liquidity": 26.5,
       "valuation": 73.6,
       "credit": 6.1,
-      "macro": 57.5,
+      "macro": 57.4,
       "technical": 26.9
     },
     {
       "date": "Nov 12",
-      "overall": 44.0,
-      "liquidity": 46.4,
+      "overall": 44.1,
+      "liquidity": 46.1,
       "valuation": 73.6,
       "credit": 6.1,
-      "macro": 56.7,
+      "macro": 57.5,
       "technical": 28.6
     },
     {
       "date": "Nov 13",
       "overall": 44.9,
-      "liquidity": 46.4,
+      "liquidity": 46.1,
       "valuation": 71.8,
       "credit": 6.5,
-      "macro": 56.7,
+      "macro": 57.1,
       "technical": 37.3
     },
     {
       "date": "Nov 14",
-      "overall": 45.0,
-      "liquidity": 46.4,
+      "overall": 44.9,
+      "liquidity": 46.1,
       "valuation": 71.7,
       "credit": 6.4,
-      "macro": 56.8,
+      "macro": 56.7,
       "technical": 37.5
     },
     {
       "date": "Nov 15",
-      "overall": 44.9,
-      "liquidity": 46.4,
+      "overall": 44.8,
+      "liquidity": 46.1,
       "valuation": 71.7,
       "credit": 6.4,
-      "macro": 56.3,
+      "macro": 56.4,
       "technical": 37.5
     },
     {
       "date": "Nov 16",
-      "overall": 44.9,
-      "liquidity": 46.2,
+      "overall": 44.8,
+      "liquidity": 46.3,
       "valuation": 71.7,
       "credit": 6.4,
-      "macro": 56.9,
+      "macro": 56.0,
       "technical": 37.5
     },
     {
       "date": "Nov 17",
-      "overall": 46.4,
-      "liquidity": 46.0,
+      "overall": 46.5,
+      "liquidity": 46.1,
       "valuation": 70.8,
       "credit": 6.8,
-      "macro": 56.4,
+      "macro": 56.7,
       "technical": 49.5
     },
     {
@@ -106,22 +106,22 @@
       "liquidity": 46.2,
       "valuation": 69.9,
       "credit": 7.2,
-      "macro": 55.8,
+      "macro": 56.2,
       "technical": 54.3
     },
     {
       "date": "Nov 19",
-      "overall": 46.3,
-      "liquidity": 46.1,
+      "overall": 46.2,
+      "liquidity": 46.0,
       "valuation": 70.3,
       "credit": 7.0,
-      "macro": 56.1,
+      "macro": 55.6,
       "technical": 49.2
     },
     {
       "date": "Nov 20",
       "overall": 47.5,
-      "liquidity": 45.9,
+      "liquidity": 45.6,
       "valuation": 68.6,
       "credit": 7.0,
       "macro": 55.6,
@@ -130,73 +130,73 @@
     {
       "date": "Nov 21",
       "overall": 45.5,
-      "liquidity": 45.8,
+      "liquidity": 46.1,
+      "valuation": 69.6,
+      "credit": 7.1,
+      "macro": 55.2,
+      "technical": 45.9
+    },
+    {
+      "date": "Nov 22",
+      "overall": 45.4,
+      "liquidity": 45.7,
       "valuation": 69.6,
       "credit": 7.1,
       "macro": 55.4,
       "technical": 45.9
     },
     {
-      "date": "Nov 22",
-      "overall": 45.5,
-      "liquidity": 45.9,
-      "valuation": 69.6,
-      "credit": 7.1,
-      "macro": 55.6,
-      "technical": 45.9
-    },
-    {
       "date": "Nov 23",
-      "overall": 45.5,
-      "liquidity": 45.8,
+      "overall": 45.6,
+      "liquidity": 46.0,
       "valuation": 69.6,
       "credit": 7.1,
-      "macro": 55.9,
+      "macro": 55.8,
       "technical": 45.9
     },
     {
       "date": "Nov 24",
-      "overall": 44.7,
-      "liquidity": 46.0,
+      "overall": 44.6,
+      "liquidity": 45.9,
       "valuation": 71.3,
       "credit": 6.8,
-      "macro": 55.6,
+      "macro": 54.8,
       "technical": 38.0
     },
     {
       "date": "Nov 25",
       "overall": 43.2,
-      "liquidity": 45.7,
+      "liquidity": 45.8,
       "valuation": 72.3,
       "credit": 6.6,
-      "macro": 55.7,
+      "macro": 55.6,
       "technical": 26.7
     },
     {
       "date": "Nov 26",
-      "overall": 42.4,
-      "liquidity": 45.6,
+      "overall": 42.5,
+      "liquidity": 45.7,
       "valuation": 73.0,
       "credit": 6.0,
-      "macro": 55.2,
+      "macro": 55.6,
       "technical": 21.8
     },
     {
       "date": "Nov 28",
-      "overall": 42.0,
-      "liquidity": 45.6,
+      "overall": 41.9,
+      "liquidity": 45.5,
       "valuation": 73.6,
       "credit": 6.0,
-      "macro": 55.5,
+      "macro": 54.7,
       "technical": 18.1
     },
     {
       "date": "Nov 29",
       "overall": 42.0,
-      "liquidity": 45.4,
+      "liquidity": 45.5,
       "valuation": 73.6,
       "credit": 6.0,
-      "macro": 55.5,
+      "macro": 55.6,
       "technical": 18.1
     },
     {
@@ -205,57 +205,48 @@
       "liquidity": 45.6,
       "valuation": 73.6,
       "credit": 6.0,
-      "macro": 55.5,
+      "macro": 55.4,
       "technical": 18.1
     },
     {
       "date": "Dec 01",
       "overall": 42.2,
-      "liquidity": 45.6,
+      "liquidity": 45.9,
       "valuation": 73.0,
       "credit": 6.0,
-      "macro": 55.4,
+      "macro": 54.8,
       "technical": 20.6
     },
     {
       "date": "Dec 02",
-      "overall": 42.7,
+      "overall": 42.6,
       "liquidity": 45.8,
       "valuation": 73.3,
       "credit": 6.0,
-      "macro": 55.6,
+      "macro": 55.1,
       "technical": 22.6
     },
     {
       "date": "Dec 03",
-      "overall": 42.9,
+      "overall": 42.8,
       "liquidity": 45.7,
       "valuation": 73.6,
       "credit": 6.0,
-      "macro": 55.9,
+      "macro": 55.2,
       "technical": 23.2
     },
     {
       "date": "Dec 04",
-      "overall": 43.1,
+      "overall": 43.0,
       "liquidity": 45.8,
       "valuation": 73.7,
       "credit": 6.0,
-      "macro": 55.8,
+      "macro": 55.2,
       "technical": 24.3
     },
     {
       "date": "Dec 05",
       "overall": 43.2,
-      "liquidity": 45.9,
-      "valuation": 73.9,
-      "credit": 6.0,
-      "macro": 56.0,
-      "technical": 24.4
-    },
-    {
-      "date": "Dec 06",
-      "overall": 43.2,
       "liquidity": 46.0,
       "valuation": 73.9,
       "credit": 6.0,
@@ -263,9 +254,18 @@
       "technical": 24.4
     },
     {
+      "date": "Dec 06",
+      "overall": 43.2,
+      "liquidity": 46.1,
+      "valuation": 73.9,
+      "credit": 6.0,
+      "macro": 55.6,
+      "technical": 24.4
+    },
+    {
       "date": "Dec 07",
       "overall": 43.2,
-      "liquidity": 46.0,
+      "liquidity": 46.1,
       "valuation": 73.9,
       "credit": 6.0,
       "macro": 55.8,
@@ -277,8 +277,8 @@
       "liquidity": 46.2,
       "valuation": 73.9,
       "credit": 6.0,
-      "macro": 56.0,
-      "technical": 25.0
+      "macro": 55.8,
+      "technical": 25.4
     }
   ]
 }
