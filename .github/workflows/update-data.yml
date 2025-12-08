@@ -45,8 +45,11 @@ jobs:
           python update_all_data.py
           python fetch_historical_data.py
           python calculate_all_risk_methods.py
+          python data_prep.py              ← เพิ่มบรรทัดนี้
+          python train_model.py            ← เพิ่มบรรทัดนี้
           python generate_predictions.py
           python train_arima_model.py
+
 
       - name: Verify generated files
         run: |
