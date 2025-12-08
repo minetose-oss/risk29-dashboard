@@ -67,8 +67,11 @@ jobs:
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
           git add -A
-          git stash --include-untracked || true
-          git diff --quiet && git diff --staged --quiet || \
-          (git commit -m "🤖 Auto-update dashboard data and rebuild app $(date +'%Y-%m-%d %H:%M UTC')" && \
-           git pull --rebase origin master && \
-           git push origin master)
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 Auto-update dashboard data and rebuild app $(date +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin master
+            git push origin master
+            echo "✅ Changes committed and pushed successfully!"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
