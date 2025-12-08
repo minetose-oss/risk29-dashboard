@@ -12,19 +12,17 @@ export default function Predictions() {
 
   useEffect(() => {
     // Generate sample historical data (30 days)
-    const historicalData = Array.from({ length: 30 }, (_, i) => {
-      const base = 45;
-      const trend = i * 0.3; // Slight upward trend
-      const noise = (Math.random() - 0.5) * 10;
-      const seasonal = Math.sin(i / 5) * 5;
-      return Math.max(0, Math.min(100, base + trend + noise + seasonal));
-    });
+ const [historicalData, setHistoricalData] = useState<number[]>([]);
 
-    const predictionSummary = generatePredictionSummary(historicalData);
-    setSummary(predictionSummary);
-    setLoading(false);
-  }, []);
-
+  useEffect(() => {
+  fetch('/predictions.json')
+    .then(res => res.json())
+    .then(data => {
+      const riskScores = data.predictions.map((p: any) => p.predicted_risk);
+      setHistoricalData(riskScores);
+    })
+    .catch(err => console.error('Error:', err));
+}, []);
   if (loading || !summary) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
