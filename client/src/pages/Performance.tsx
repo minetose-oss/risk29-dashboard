@@ -46,10 +46,6 @@ export default function Performance() {
   }, [initialInvestment]);
 
     
-    setPerformanceData(data);
-    setCurrentValue(value);
-  }, [initialInvestment]);
-
   const totalReturn = currentValue - initialInvestment;
   const returnPercentage = ((currentValue - initialInvestment) / initialInvestment) * 100;
   const avgRisk = performanceData.reduce((sum, d) => sum + d.actualRisk, 0) / performanceData.length;
