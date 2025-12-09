@@ -16,6 +16,7 @@ export default function Performance() {
   const [initialInvestment, setInitialInvestment] = useState(100000);
   const [currentValue, setCurrentValue] = useState(105000);
   const [performanceData, setPerformanceData] = useState<PerformanceData[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // ✅ FIXED: Fetch real predictions data
