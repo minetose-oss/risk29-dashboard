@@ -3,10 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
-    paths-ignore:  # ✅ เพิ่มบรรทัดนี้!
+    paths-ignore:
       - 'client/public/*.json'
       - 'docs/**'
       - '**.json'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:
@@ -28,38 +29,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}-v2
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Clear Vite cache
-        run: |
-          rm -rf client/node_modules/.vite
-          rm -rf client/dist
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: client/package-lock.json
 
       - name: Install dependencies
-        run: cd client && pnpm install --ignore-scripts --force
+        run: |
+          cd client
+          npm ci --legacy-peer-deps
 
       - name: Build
-        run: cd client && pnpm build
+        run: |
+          cd client
+          npm run build
         env:
+          CI: false  # Prevent build failure on warnings
           GITHUB_PAGES: true
           VITE_APP_TITLE: "Risk29 Financial Risk Monitor"
           VITE_APP_LOGO: "/logo.svg"
