@@ -1,284 +1,212 @@
-{
-  "generated_at": "2025-12-08T15:10:59.890690",
-  "days": 30,
-  "model_version": "enhanced_v1",
-  "enhancements": {
-    "liquidity": "4 indicators (M2, Fed BS, RRP, Reserves)",
-    "macro": "4 indicators (Unemployment, Claims, PMI, Confidence)",
-    "credit": "3 indicators (HY Spread, TED Spread, CP Spread)",
-    "valuation": "3 indicators (S&P 500, P/E Ratio, Buffett Indicator)",
-    "technical": "3 indicators (VIX, Put/Call Ratio, Market Breadth)"
+[
+  {
+    "date": "2025-11-20",
+    "risk_score": 62.86,
+    "vix": 23.66,
+    "unemployment": 4.6,
+    "inflation": 325.03
   },
-  "data": [
-    {
-      "date": "Nov 08",
-      "overall": 45.3,
-      "liquidity": 46.6,
-      "valuation": 71.7,
-      "credit": 6.8,
-      "macro": 57.1,
-      "technical": 38.9
-    },
-    {
-      "date": "Nov 09",
-      "overall": 45.3,
-      "liquidity": 46.4,
-      "valuation": 71.7,
-      "credit": 6.8,
-      "macro": 57.4,
-      "technical": 38.9
-    },
-    {
-      "date": "Nov 10",
-      "overall": 44.6,
-      "liquidity": 46.3,
-      "valuation": 73.3,
-      "credit": 6.1,
-      "macro": 57.8,
-      "technical": 32.1
-    },
-    {
-      "date": "Nov 11",
-      "overall": 38.8,
-      "liquidity": 26.5,
-      "valuation": 73.6,
-      "credit": 6.1,
-      "macro": 56.9,
-      "technical": 26.9
-    },
-    {
-      "date": "Nov 12",
-      "overall": 44.0,
-      "liquidity": 46.4,
-      "valuation": 73.6,
-      "credit": 6.1,
-      "macro": 56.7,
-      "technical": 28.6
-    },
-    {
-      "date": "Nov 13",
-      "overall": 45.0,
-      "liquidity": 46.4,
-      "valuation": 71.8,
-      "credit": 6.5,
-      "macro": 57.0,
-      "technical": 37.3
-    },
-    {
-      "date": "Nov 14",
-      "overall": 45.0,
-      "liquidity": 46.3,
-      "valuation": 71.7,
-      "credit": 6.4,
-      "macro": 57.3,
-      "technical": 37.5
-    },
-    {
-      "date": "Nov 15",
-      "overall": 44.8,
-      "liquidity": 46.1,
-      "valuation": 71.7,
-      "credit": 6.4,
-      "macro": 56.2,
-      "technical": 37.5
-    },
-    {
-      "date": "Nov 16",
-      "overall": 44.7,
-      "liquidity": 46.0,
-      "valuation": 71.7,
-      "credit": 6.4,
-      "macro": 56.1,
-      "technical": 37.5
-    },
-    {
-      "date": "Nov 17",
-      "overall": 46.5,
-      "liquidity": 46.2,
-      "valuation": 70.8,
-      "credit": 6.8,
-      "macro": 56.3,
-      "technical": 49.5
-    },
-    {
-      "date": "Nov 18",
-      "overall": 47.1,
-      "liquidity": 46.2,
-      "valuation": 69.9,
-      "credit": 7.2,
-      "macro": 56.6,
-      "technical": 54.3
-    },
-    {
-      "date": "Nov 19",
-      "overall": 46.3,
-      "liquidity": 46.1,
-      "valuation": 70.3,
-      "credit": 7.0,
-      "macro": 56.0,
-      "technical": 49.2
-    },
-    {
-      "date": "Nov 20",
-      "overall": 47.5,
-      "liquidity": 45.8,
-      "valuation": 68.6,
-      "credit": 7.0,
-      "macro": 55.6,
-      "technical": 61.2
-    },
-    {
-      "date": "Nov 21",
-      "overall": 45.6,
-      "liquidity": 45.9,
-      "valuation": 69.6,
-      "credit": 7.1,
-      "macro": 56.2,
-      "technical": 45.9
-    },
-    {
-      "date": "Nov 22",
-      "overall": 45.5,
-      "liquidity": 45.7,
-      "valuation": 69.6,
-      "credit": 7.1,
-      "macro": 56.1,
-      "technical": 45.9
-    },
-    {
-      "date": "Nov 23",
-      "overall": 45.4,
-      "liquidity": 45.8,
-      "valuation": 69.6,
-      "credit": 7.1,
-      "macro": 55.1,
-      "technical": 45.9
-    },
-    {
-      "date": "Nov 24",
-      "overall": 44.7,
-      "liquidity": 45.9,
-      "valuation": 71.3,
-      "credit": 6.8,
-      "macro": 55.7,
-      "technical": 38.0
-    },
-    {
-      "date": "Nov 25",
-      "overall": 43.1,
-      "liquidity": 45.8,
-      "valuation": 72.3,
-      "credit": 6.6,
-      "macro": 55.2,
-      "technical": 26.7
-    },
-    {
-      "date": "Nov 26",
-      "overall": 42.5,
-      "liquidity": 45.8,
-      "valuation": 73.0,
-      "credit": 6.0,
-      "macro": 55.4,
-      "technical": 21.8
-    },
-    {
-      "date": "Nov 28",
-      "overall": 42.0,
-      "liquidity": 45.4,
-      "valuation": 73.6,
-      "credit": 6.0,
-      "macro": 55.4,
-      "technical": 18.1
-    },
-    {
-      "date": "Nov 29",
-      "overall": 42.0,
-      "liquidity": 45.6,
-      "valuation": 73.6,
-      "credit": 6.0,
-      "macro": 55.2,
-      "technical": 18.1
-    },
-    {
-      "date": "Nov 30",
-      "overall": 42.0,
-      "liquidity": 45.7,
-      "valuation": 73.6,
-      "credit": 6.0,
-      "macro": 55.4,
-      "technical": 18.1
-    },
-    {
-      "date": "Dec 01",
-      "overall": 42.3,
-      "liquidity": 45.8,
-      "valuation": 73.0,
-      "credit": 6.0,
-      "macro": 55.5,
-      "technical": 20.6
-    },
-    {
-      "date": "Dec 02",
-      "overall": 42.6,
-      "liquidity": 45.5,
-      "valuation": 73.3,
-      "credit": 6.0,
-      "macro": 55.3,
-      "technical": 22.6
-    },
-    {
-      "date": "Dec 03",
-      "overall": 43.0,
-      "liquidity": 45.9,
-      "valuation": 73.6,
-      "credit": 6.0,
-      "macro": 56.0,
-      "technical": 23.2
-    },
-    {
-      "date": "Dec 04",
-      "overall": 43.2,
-      "liquidity": 46.1,
-      "valuation": 73.7,
-      "credit": 6.0,
-      "macro": 56.0,
-      "technical": 24.3
-    },
-    {
-      "date": "Dec 05",
-      "overall": 43.1,
-      "liquidity": 45.8,
-      "valuation": 73.9,
-      "credit": 6.0,
-      "macro": 55.3,
-      "technical": 24.4
-    },
-    {
-      "date": "Dec 06",
-      "overall": 43.2,
-      "liquidity": 46.0,
-      "valuation": 73.9,
-      "credit": 6.0,
-      "macro": 55.7,
-      "technical": 24.4
-    },
-    {
-      "date": "Dec 07",
-      "overall": 43.3,
-      "liquidity": 46.1,
-      "valuation": 73.9,
-      "credit": 6.0,
-      "macro": 56.2,
-      "technical": 24.4
-    },
-    {
-      "date": "Dec 08",
-      "overall": 43.7,
-      "liquidity": 46.2,
-      "valuation": 73.9,
-      "credit": 6.0,
-      "macro": 56.0,
-      "technical": 27.2
-    }
-  ]
-}
+  {
+    "date": "2025-11-21",
+    "risk_score": 65.62,
+    "vix": 26.42,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-22",
+    "risk_score": 62.63,
+    "vix": 23.43,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-23",
+    "risk_score": 59.72,
+    "vix": 20.52,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-24",
+    "risk_score": 57.76,
+    "vix": 18.56,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-25",
+    "risk_score": 56.39,
+    "vix": 17.19,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-26",
+    "risk_score": 56.41,
+    "vix": 17.21,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-27",
+    "risk_score": 55.55,
+    "vix": 16.35,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-28",
+    "risk_score": 56.44,
+    "vix": 17.24,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-29",
+    "risk_score": 55.79,
+    "vix": 16.59,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-11-30",
+    "risk_score": 55.28,
+    "vix": 16.08,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-01",
+    "risk_score": 54.98,
+    "vix": 15.78,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-02",
+    "risk_score": 54.61,
+    "vix": 15.41,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-03",
+    "risk_score": 55.86,
+    "vix": 16.66,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-04",
+    "risk_score": 56.13,
+    "vix": 16.93,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-05",
+    "risk_score": 54.97,
+    "vix": 15.77,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-06",
+    "risk_score": 54.05,
+    "vix": 14.85,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-07",
+    "risk_score": 54.94,
+    "vix": 15.74,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-08",
+    "risk_score": 55.7,
+    "vix": 16.5,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-09",
+    "risk_score": 55.68,
+    "vix": 16.48,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-10",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-11",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-12",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-13",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-14",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-15",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-16",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-17",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-18",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-19",
+    "risk_score": 56.82,
+    "vix": 17.62,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  }
+]
