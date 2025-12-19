@@ -1,0 +1,54 @@
+name: Update Dashboard Data (Simple)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run every day at midnight UTC
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      - name: Update dashboard data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: |
+          python scripts/update_dashboard_simple.py
+      
+      - name: Verify generated files
+        run: |
+          echo "📁 Checking generated files..."
+          ls -lh client/public/risk_data.json
+          ls -lh client/public/historical_data.json
+          ls -lh client/public/predictions.json
+          echo "✅ All files generated successfully!"
+      
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          git add client/public/*.json
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "🤖 Auto-update dashboard data $(date +'%Y-%m-%d %H:%M UTC')"
+            git push origin master
+            echo "✅ Changes committed and pushed successfully!"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
