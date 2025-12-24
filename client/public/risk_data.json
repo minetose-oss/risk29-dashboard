@@ -1,8 +1,8 @@
 {
-  "date": "2025-12-23",
-  "risk_score": 54.11,
+  "date": "2025-12-24",
+  "risk_score": 53.28,
   "indicators": {
-    "vix": 14.91,
+    "vix": 14.08,
     "unemployment": 4.6,
     "inflation": 325.03,
     "market_volatility": 15
