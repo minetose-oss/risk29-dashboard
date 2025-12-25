@@ -1,125 +1,125 @@
 {
-  "generated_at": "2025-12-24T02:08:06.525933",
+  "generated_at": "2025-12-25T01:50:54.524170",
   "predictions": [
     {
-      "date": "2025-12-25",
-      "predicted_risk": 53.28
-    },
-    {
       "date": "2025-12-26",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2025-12-27",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2025-12-28",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2025-12-29",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2025-12-30",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2025-12-31",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-01",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-02",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-03",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-04",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-05",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-06",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-07",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-08",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-09",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-10",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-11",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-12",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-13",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-14",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-15",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-16",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-17",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-18",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-19",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-20",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-21",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-22",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
     },
     {
       "date": "2026-01-23",
-      "predicted_risk": 53.28
+      "predicted_risk": 53.2
+    },
+    {
+      "date": "2026-01-24",
+      "predicted_risk": 53.2
     }
   ]
 }
