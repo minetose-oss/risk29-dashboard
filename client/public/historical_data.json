@@ -1,12 +1,5 @@
 [
   {
-    "date": "2025-11-28",
-    "risk_score": 56.41,
-    "vix": 17.21,
-    "unemployment": 4.6,
-    "inflation": 325.03
-  },
-  {
     "date": "2025-11-29",
     "risk_score": 55.55,
     "vix": 16.35,
@@ -204,6 +197,13 @@
   },
   {
     "date": "2025-12-27",
+    "risk_score": 52.67,
+    "vix": 13.47,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-28",
     "risk_score": 52.67,
     "vix": 13.47,
     "unemployment": 4.6,
