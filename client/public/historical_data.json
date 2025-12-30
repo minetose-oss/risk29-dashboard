@@ -1,127 +1,120 @@
 [
   {
-    "date": "2025-11-30",
+    "date": "2025-12-01",
     "risk_score": 56.44,
     "vix": 17.24,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-01",
+    "date": "2025-12-02",
     "risk_score": 55.79,
     "vix": 16.59,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-02",
+    "date": "2025-12-03",
     "risk_score": 55.28,
     "vix": 16.08,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-03",
+    "date": "2025-12-04",
     "risk_score": 54.98,
     "vix": 15.78,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-04",
+    "date": "2025-12-05",
     "risk_score": 54.61,
     "vix": 15.41,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-05",
+    "date": "2025-12-06",
     "risk_score": 55.86,
     "vix": 16.66,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-06",
+    "date": "2025-12-07",
     "risk_score": 56.13,
     "vix": 16.93,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-07",
+    "date": "2025-12-08",
     "risk_score": 54.97,
     "vix": 15.77,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-08",
+    "date": "2025-12-09",
     "risk_score": 54.05,
     "vix": 14.85,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-09",
+    "date": "2025-12-10",
     "risk_score": 54.94,
     "vix": 15.74,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-10",
+    "date": "2025-12-11",
     "risk_score": 55.7,
     "vix": 16.5,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-11",
+    "date": "2025-12-12",
     "risk_score": 55.68,
     "vix": 16.48,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-12",
+    "date": "2025-12-13",
     "risk_score": 56.82,
     "vix": 17.62,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-13",
+    "date": "2025-12-14",
     "risk_score": 56.07,
     "vix": 16.87,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-14",
+    "date": "2025-12-15",
     "risk_score": 54.11,
     "vix": 14.91,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-15",
+    "date": "2025-12-16",
     "risk_score": 53.28,
     "vix": 14.08,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
-    "date": "2025-12-16",
+    "date": "2025-12-17",
     "risk_score": 53.2,
     "vix": 14.0,
-    "unemployment": 4.6,
-    "inflation": 325.03
-  },
-  {
-    "date": "2025-12-17",
-    "risk_score": 52.67,
-    "vix": 13.47,
     "unemployment": 4.6,
     "inflation": 325.03
   },
@@ -134,78 +127,85 @@
   },
   {
     "date": "2025-12-19",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-20",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-21",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-22",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-23",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-24",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-25",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-26",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-27",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-28",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   },
   {
     "date": "2025-12-29",
-    "risk_score": 52.67,
-    "vix": 13.47,
+    "risk_score": 52.8,
+    "vix": 13.6,
+    "unemployment": 4.6,
+    "inflation": 325.03
+  },
+  {
+    "date": "2025-12-30",
+    "risk_score": 52.8,
+    "vix": 13.6,
     "unemployment": 4.6,
     "inflation": 325.03
   }
