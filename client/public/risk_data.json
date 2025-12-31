@@ -1,10 +1,10 @@
 {
-  "date": "2025-12-30",
-  "risk_score": 52.8,
+  "date": "2025-12-31",
+  "risk_score": 44.2,
   "indicators": {
-    "vix": 13.6,
-    "unemployment": 4.6,
-    "inflation": 325.03,
+    "vix": 14.2,
+    "unemployment": 4,
+    "inflation": 3,
     "market_volatility": 15
   }
 }
