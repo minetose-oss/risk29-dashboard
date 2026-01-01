@@ -1,12 +1,5 @@
 [
   {
-    "date": "2025-12-02",
-    "risk_score": 47.24,
-    "vix": 17.24,
-    "unemployment": 4,
-    "inflation": 3
-  },
-  {
     "date": "2025-12-03",
     "risk_score": 46.59,
     "vix": 16.59,
@@ -141,71 +134,78 @@
   },
   {
     "date": "2025-12-22",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-23",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-24",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-25",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-26",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-27",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-28",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-29",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-30",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   },
   {
     "date": "2025-12-31",
-    "risk_score": 44.2,
-    "vix": 14.2,
+    "risk_score": 44.33,
+    "vix": 14.33,
+    "unemployment": 4,
+    "inflation": 3
+  },
+  {
+    "date": "2026-01-01",
+    "risk_score": 44.33,
+    "vix": 14.33,
     "unemployment": 4,
     "inflation": 3
   }
