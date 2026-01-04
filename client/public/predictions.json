@@ -1,10 +1,6 @@
 {
-  "generated_at": "2026-01-03T02:06:22.088490",
+  "generated_at": "2026-01-04T02:02:52.528450",
   "predictions": [
-    {
-      "date": "2026-01-04",
-      "predicted_risk": 44.95
-    },
     {
       "date": "2026-01-05",
       "predicted_risk": 44.95
@@ -119,6 +115,10 @@
     },
     {
       "date": "2026-02-02",
+      "predicted_risk": 44.95
+    },
+    {
+      "date": "2026-02-03",
       "predicted_risk": 44.95
     }
   ]
