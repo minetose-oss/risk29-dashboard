@@ -1,12 +1,5 @@
 [
   {
-    "date": "2025-12-17",
-    "risk_score": 55.28,
-    "vix": 16.48,
-    "unemployment": 4.4,
-    "inflation": 326.03
-  },
-  {
     "date": "2025-12-18",
     "risk_score": 56.42,
     "vix": 17.62,
@@ -134,78 +127,85 @@
   },
   {
     "date": "2026-01-05",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-06",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-07",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-08",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-09",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-10",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-11",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-12",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-13",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-14",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   },
   {
     "date": "2026-01-15",
-    "risk_score": 54.78,
-    "vix": 15.98,
+    "risk_score": 55.55,
+    "vix": 16.75,
+    "unemployment": 4.4,
+    "inflation": 326.03
+  },
+  {
+    "date": "2026-01-16",
+    "risk_score": 55.55,
+    "vix": 16.75,
     "unemployment": 4.4,
     "inflation": 326.03
   }
