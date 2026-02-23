@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-01-24",
-    "risk_score": 54.69,
-    "vix": 16.09,
-    "unemployment": 4.3,
-    "inflation": 326.59
-  },
-  {
     "date": "2026-01-25",
     "risk_score": 54.75,
     "vix": 16.15,
@@ -204,6 +197,13 @@
   },
   {
     "date": "2026-02-22",
+    "risk_score": 58.83,
+    "vix": 20.23,
+    "unemployment": 4.3,
+    "inflation": 326.59
+  },
+  {
+    "date": "2026-02-23",
     "risk_score": 58.83,
     "vix": 20.23,
     "unemployment": 4.3,
