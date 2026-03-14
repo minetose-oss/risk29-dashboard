@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-13",
-  "risk_score": 63.03,
+  "date": "2026-03-14",
+  "risk_score": 66.09,
   "indicators": {
-    "vix": 24.23,
+    "vix": 27.29,
     "unemployment": 4.4,
     "inflation": 327.46,
     "market_volatility": 15
