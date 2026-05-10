@@ -1,191 +1,125 @@
 {
-  "generated_at": "2026-05-09T08:00:22.049433",
-  "forecast_horizon_days": 30,
+  "generated_at": "2026-05-10T03:30:14.017128",
   "predictions": [
     {
-      "date": "2025-11-01",
-      "predicted_risk": 9.94,
-      "lower_bound": 5.31,
-      "upper_bound": 14.82
+      "date": "2026-05-11",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2025-12-01",
-      "predicted_risk": 11.92,
-      "lower_bound": 6.73,
-      "upper_bound": 16.44
+      "date": "2026-05-12",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-01-01",
-      "predicted_risk": 10.5,
-      "lower_bound": 5.47,
-      "upper_bound": 15.21
+      "date": "2026-05-13",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-02-01",
-      "predicted_risk": 8.71,
-      "lower_bound": 3.58,
-      "upper_bound": 13.74
+      "date": "2026-05-14",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-03-01",
-      "predicted_risk": 10.8,
-      "lower_bound": 6.1,
-      "upper_bound": 15.46
+      "date": "2026-05-15",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-04-01",
-      "predicted_risk": 9.88,
-      "lower_bound": 4.91,
-      "upper_bound": 14.47
+      "date": "2026-05-16",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-05-01",
-      "predicted_risk": 0.16,
-      "lower_bound": 0,
-      "upper_bound": 4.95
+      "date": "2026-05-17",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-18",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-19",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-20",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-21",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-22",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-23",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-24",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-25",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-26",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-27",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-28",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-29",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-30",
+      "predicted_risk": 47.68
+    },
+    {
+      "date": "2026-05-31",
+      "predicted_risk": 47.68
     },
     {
       "date": "2026-06-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.67
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-07-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.49
+      "date": "2026-06-02",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-08-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.3
+      "date": "2026-06-03",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-09-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.39
+      "date": "2026-06-04",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-10-01",
-      "predicted_risk": 0.21,
-      "lower_bound": 0,
-      "upper_bound": 5.01
+      "date": "2026-06-05",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-11-01",
-      "predicted_risk": 3.64,
-      "lower_bound": 0,
-      "upper_bound": 8.47
+      "date": "2026-06-06",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2026-12-01",
-      "predicted_risk": 5.51,
-      "lower_bound": 0.6,
-      "upper_bound": 10.57
+      "date": "2026-06-07",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2027-01-01",
-      "predicted_risk": 4.06,
-      "lower_bound": 0,
-      "upper_bound": 8.46
+      "date": "2026-06-08",
+      "predicted_risk": 47.68
     },
     {
-      "date": "2027-02-01",
-      "predicted_risk": 2.01,
-      "lower_bound": 0,
-      "upper_bound": 6.79
-    },
-    {
-      "date": "2027-03-01",
-      "predicted_risk": 10.63,
-      "lower_bound": 6.05,
-      "upper_bound": 15.34
-    },
-    {
-      "date": "2027-04-01",
-      "predicted_risk": 10.84,
-      "lower_bound": 5.99,
-      "upper_bound": 15.59
-    },
-    {
-      "date": "2027-05-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 0.51
-    },
-    {
-      "date": "2027-06-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 1.84
-    },
-    {
-      "date": "2027-07-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 1.72
-    },
-    {
-      "date": "2027-08-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 3.35
-    },
-    {
-      "date": "2027-09-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.47
-    },
-    {
-      "date": "2027-10-01",
-      "predicted_risk": 0.85,
-      "lower_bound": 0,
-      "upper_bound": 5.47
-    },
-    {
-      "date": "2027-11-01",
-      "predicted_risk": 3.93,
-      "lower_bound": 0,
-      "upper_bound": 8.82
-    },
-    {
-      "date": "2027-12-01",
-      "predicted_risk": 4.46,
-      "lower_bound": 0,
-      "upper_bound": 9.16
-    },
-    {
-      "date": "2028-01-01",
-      "predicted_risk": 1.98,
-      "lower_bound": 0,
-      "upper_bound": 6.78
-    },
-    {
-      "date": "2028-02-01",
-      "predicted_risk": 0,
-      "lower_bound": 0,
-      "upper_bound": 4.09
-    },
-    {
-      "date": "2028-03-01",
-      "predicted_risk": 1.77,
-      "lower_bound": 0,
-      "upper_bound": 6.4
-    },
-    {
-      "date": "2028-04-01",
-      "predicted_risk": 0.1,
-      "lower_bound": 0,
-      "upper_bound": 4.86
+      "date": "2026-06-09",
+      "predicted_risk": 47.68
     }
-  ],
-  "metadata": {
-    "model": "Prophet",
-    "confidence_interval": "95%",
-    "description": "30-day risk score forecast based on historical M2 Money Supply data"
-  }
+  ]
 }
