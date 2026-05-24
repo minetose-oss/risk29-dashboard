@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-04-24",
-    "risk_score": 57.91,
-    "vix": 19.31,
-    "unemployment": 4.3,
-    "inflation": 332.41
-  },
-  {
     "date": "2026-04-25",
     "risk_score": 57.31,
     "vix": 18.71,
@@ -204,6 +197,13 @@
   },
   {
     "date": "2026-05-23",
+    "risk_score": 55.36,
+    "vix": 16.76,
+    "unemployment": 4.3,
+    "inflation": 332.41
+  },
+  {
+    "date": "2026-05-24",
     "risk_score": 55.36,
     "vix": 16.76,
     "unemployment": 4.3,
