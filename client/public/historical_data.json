@@ -1,212 +1,212 @@
 [
   {
-    "date": "2026-05-05",
-    "risk_score": 56.29,
-    "vix": 18.29,
-    "unemployment": 4,
-    "inflation": 49.16
-  },
-  {
     "date": "2026-05-06",
-    "risk_score": 55.38,
+    "risk_score": 47.38,
     "vix": 17.38,
     "unemployment": 4,
-    "inflation": 51.12
+    "inflation": 3
   },
   {
     "date": "2026-05-07",
-    "risk_score": 55.39,
+    "risk_score": 47.39,
     "vix": 17.39,
     "unemployment": 4,
-    "inflation": 52.5
+    "inflation": 3
   },
   {
     "date": "2026-05-08",
-    "risk_score": 55.08,
+    "risk_score": 47.08,
     "vix": 17.08,
     "unemployment": 4,
-    "inflation": 45.51
+    "inflation": 3
   },
   {
     "date": "2026-05-09",
-    "risk_score": 55.19,
+    "risk_score": 47.19,
     "vix": 17.19,
     "unemployment": 4,
-    "inflation": 50.83
+    "inflation": 3
   },
   {
     "date": "2026-05-10",
-    "risk_score": 56.38,
+    "risk_score": 48.38,
     "vix": 18.38,
     "unemployment": 4,
-    "inflation": 47.54
+    "inflation": 3
   },
   {
     "date": "2026-05-11",
-    "risk_score": 55.99,
+    "risk_score": 47.99,
     "vix": 17.99,
     "unemployment": 4,
-    "inflation": 49.85
+    "inflation": 3
   },
   {
     "date": "2026-05-12",
-    "risk_score": 55.87,
+    "risk_score": 47.87,
     "vix": 17.87,
     "unemployment": 4,
-    "inflation": 52.44
+    "inflation": 3
   },
   {
     "date": "2026-05-13",
-    "risk_score": 55.26,
+    "risk_score": 47.26,
     "vix": 17.26,
     "unemployment": 4,
-    "inflation": 55.13
+    "inflation": 3
   },
   {
     "date": "2026-05-14",
-    "risk_score": 56.43,
+    "risk_score": 48.43,
     "vix": 18.43,
     "unemployment": 4,
-    "inflation": 55.46
+    "inflation": 3
   },
   {
     "date": "2026-05-15",
-    "risk_score": 55.82,
+    "risk_score": 47.82,
     "vix": 17.82,
     "unemployment": 4,
-    "inflation": 47.12
+    "inflation": 3
   },
   {
     "date": "2026-05-16",
-    "risk_score": 56.06,
+    "risk_score": 48.06,
     "vix": 18.06,
     "unemployment": 4,
-    "inflation": 49.54
+    "inflation": 3
   },
   {
     "date": "2026-05-17",
-    "risk_score": 55.44,
+    "risk_score": 47.44,
     "vix": 17.44,
     "unemployment": 4,
-    "inflation": 51.52
+    "inflation": 3
   },
   {
     "date": "2026-05-18",
-    "risk_score": 54.76,
+    "risk_score": 46.76,
     "vix": 16.76,
     "unemployment": 4,
-    "inflation": 48.42
+    "inflation": 3
   },
   {
     "date": "2026-05-19",
-    "risk_score": 54.7,
+    "risk_score": 46.7,
     "vix": 16.7,
     "unemployment": 4,
-    "inflation": 53.54
+    "inflation": 3
   },
   {
     "date": "2026-05-20",
-    "risk_score": 54.59,
+    "risk_score": 46.59,
     "vix": 16.59,
     "unemployment": 4,
-    "inflation": 47.81
+    "inflation": 3
   },
   {
     "date": "2026-05-21",
-    "risk_score": 55.01,
+    "risk_score": 47.01,
     "vix": 17.01,
     "unemployment": 4,
-    "inflation": 53.28
+    "inflation": 3
   },
   {
     "date": "2026-05-22",
-    "risk_score": 54.29,
+    "risk_score": 46.29,
     "vix": 16.29,
     "unemployment": 4,
-    "inflation": 49.95
+    "inflation": 3
   },
   {
     "date": "2026-05-23",
-    "risk_score": 53.74,
+    "risk_score": 45.74,
     "vix": 15.74,
     "unemployment": 4,
-    "inflation": 50.34
+    "inflation": 3
   },
   {
     "date": "2026-05-24",
-    "risk_score": 53.32,
+    "risk_score": 45.32,
     "vix": 15.32,
     "unemployment": 4,
-    "inflation": 54.06
+    "inflation": 3
   },
   {
     "date": "2026-05-25",
-    "risk_score": 54.05,
+    "risk_score": 46.05,
     "vix": 16.05,
     "unemployment": 4,
-    "inflation": 53.78
+    "inflation": 3
   },
   {
     "date": "2026-05-26",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 56.11
+    "inflation": 3
   },
   {
     "date": "2026-05-27",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 56.44
+    "inflation": 3
   },
   {
     "date": "2026-05-28",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 55.45
+    "inflation": 3
   },
   {
     "date": "2026-05-29",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 49.11
+    "inflation": 3
   },
   {
     "date": "2026-05-30",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 49.84
+    "inflation": 3
   },
   {
     "date": "2026-05-31",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 49.57
+    "inflation": 3
   },
   {
     "date": "2026-06-01",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 53.75
+    "inflation": 3
   },
   {
     "date": "2026-06-02",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 55.06
+    "inflation": 3
   },
   {
     "date": "2026-06-03",
-    "risk_score": 54.05,
-    "vix": 16.05,
+    "risk_score": 45.77,
+    "vix": 15.77,
     "unemployment": 4,
-    "inflation": 55.85
+    "inflation": 3
+  },
+  {
+    "date": "2026-06-04",
+    "risk_score": 45.77,
+    "vix": 15.77,
+    "unemployment": 4,
+    "inflation": 3
   }
 ]
