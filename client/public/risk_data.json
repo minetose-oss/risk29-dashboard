@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-10",
-  "risk_score": 49.52,
+  "date": "2026-06-11",
+  "risk_score": 58.47,
   "indicators": {
-    "vix": 18.92,
+    "vix": 19.87,
     "unemployment": 4.3,
-    "inflation": 3,
+    "inflation": 333.98,
     "market_volatility": 15
   }
 }
