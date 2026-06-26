@@ -10,8 +10,7 @@ export default function Predictions() {
   const [summary, setSummary] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Generate sample historical data (30 days)
+ 
  const [historicalData, setHistoricalData] = useState<number[]>([]);
 
   useEffect(() => {
