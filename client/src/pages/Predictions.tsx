@@ -15,7 +15,8 @@ export default function Predictions() {
  const [historicalData, setHistoricalData] = useState<number[]>([]);
 
   useEffect(() => {
-  fetch('/predictions.json')
+    // Generate sample historical data (30 days)
+    fetch('/predictions.json')
     .then(res => res.json())
     .then(data => {
       const riskScores = data.predictions.map((p: any) => p.predicted_risk);
