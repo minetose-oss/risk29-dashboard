@@ -1,8 +1,8 @@
 {
-  "date": "2026-07-01",
-  "risk_score": 47.65,
+  "date": "2026-07-02",
+  "risk_score": 46.45,
   "indicators": {
-    "vix": 17.65,
+    "vix": 16.45,
     "unemployment": 4,
     "inflation": 3,
     "market_volatility": 15
