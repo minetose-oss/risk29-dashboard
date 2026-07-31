@@ -1,10 +1,10 @@
 {
-  "date": "2026-07-30",
-  "risk_score": 56.61,
+  "date": "2026-07-31",
+  "risk_score": 50.66,
   "indicators": {
-    "vix": 18.21,
-    "unemployment": 4.2,
-    "inflation": 332.57,
+    "vix": 20.66,
+    "unemployment": 4,
+    "inflation": 3,
     "market_volatility": 15
   }
 }
