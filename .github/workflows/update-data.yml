@@ -1,19 +1,20 @@
-name: Update Dashboard Data (Simple)
+name: Update Dashboard Data
 
 on:
   schedule:
     - cron: '0 0 * * *'  # Run every day at midnight UTC
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: write   # ให้ GITHUB_TOKEN ของ workflow push กลับเข้า repo ได้ (ไม่ต้องใช้ PAT_TOKEN)
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
+        uses: actions/checkout@v5
       
       - name: Set up Python
         uses: actions/setup-python@v5
