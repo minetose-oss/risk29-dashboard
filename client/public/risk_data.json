@@ -1,8 +1,8 @@
 {
-  "date": "2026-09-29",
-  "risk_score": 52.41,
+  "date": "2026-09-30",
+  "risk_score": 54.27,
   "indicators": {
-    "vix": 14.21,
+    "vix": 16.07,
     "unemployment": 4.1,
     "inflation": 334.13,
     "market_volatility": 15
