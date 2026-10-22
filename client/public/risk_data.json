@@ -1,10 +1,10 @@
 {
-  "date": "2026-10-21",
-  "risk_score": 56.84,
+  "date": "2026-10-22",
+  "risk_score": 90.0,
   "indicators": {
-    "vix": 18.44,
-    "unemployment": 4.2,
-    "inflation": 336.3,
+    "vix": 55.29,
+    "unemployment": 56.63,
+    "inflation": 55.35,
     "market_volatility": 15
   }
 }
