@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-20",
-  "risk_score": 62.76,
+  "date": "2026-11-21",
+  "risk_score": 66.64,
   "indicators": {
-    "vix": 24.56,
+    "vix": 28.44,
     "unemployment": 4.1,
     "inflation": 337.48,
     "market_volatility": 15
